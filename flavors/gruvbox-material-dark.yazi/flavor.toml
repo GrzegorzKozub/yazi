@@ -138,6 +138,7 @@ rules = [
   { name = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
   { name = "*~", fg = "darkgray" },
 
+  { name = "*.{cache,config,local}/", fg = "gray" },
   { name = "*.{azure-pipelines,git,github,vscode}/", fg = "gray" },
 
   { name = "*", fg = "reset" },
@@ -185,6 +186,10 @@ rules = [
   { name = "*~", text = "󰘓" },
 
   # no dir_colors from here
+
+  { name = "*.cache/", text = "󱐋" },
+  { name = "*.config/", text = "" },
+  { name = "*.local/", text = "󰆼" },
 
   { name = "*.azure-pipelines/", text = "󰿕" },
   { name = "*.git/", text = "" },

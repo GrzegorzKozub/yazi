@@ -1,3 +1,7 @@
+require("session"):setup {
+	sync_yanked = true,
+}
+
 function Status:mode()
   local mode = tostring(cx.active.mode):upper()
   if mode == 'UNSET' then

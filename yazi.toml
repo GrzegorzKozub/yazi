@@ -24,8 +24,8 @@ reveal = [
   { run = 'explorer /select, "%1"', orphan = true, desc = "Reveal", for = "windows" },
 ]
 extract = [
-  { run = 'unar "$1"', desc = "Extract", for = "unix" },
-  { run = 'unar "%1"', desc = "Extract", for = "windows" },
+  { run = 'ouch decompress "$1"', desc = "Extract", for = "unix" },
+  { run = 'ouch decompress "%1"', desc = "Extract", for = "windows" },
 ]
 play = [
   { run = 'mpv "$@"', orphan = true, desc = "Play", for = "unix" },
@@ -54,8 +54,8 @@ previewers = [
   { mime = "*/{csv,javascript,json}", run = "code" },
   { mime = "image/*", run = "image" },
   { mime = "video/*", run = "video" },
-  { mime = "application/*zip", run = "ouch" },                               # archive
-  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", run = "ouch" }, # archive
+  { mime = "application/*zip", run = "ouch" },
+  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", run = "ouch" },
   { mime = "application/pdf", run = "pdf" },
   { name = "*", run = "file" },
 ]
@@ -64,24 +64,34 @@ previewers = [
 
 cd_title = " Change directory "
 cd_origin = "center"
+
 create_title = " Create file or directory "
 create_origin = "center"
+
 rename_title = " Rename "
 rename_origin = "center"
+
 trash_title = " Trash {n} file{s}? (y/N) "
 trash_origin = "center"
+
 delete_title = " Delete {n} file{s}? (y/N) "
 delete_origin = "center"
+
 filter_title = " Filter "
 filter_origin = "center"
+
 find_title = [" Find next ", " Find previous "]
 find_origin = "center"
+
 search_title = " Search with {n} "
 search_origin = "center"
+
 shell_title = [" Shell ", " Shell (blocking) "]
 shell_origin = "center"
+
 overwrite_title = " Overwrite? (y/N) "
 overwrite_origin = "center"
+
 quit_title = " Quit with {n} task{s} running? (y/N) "
 quit_origin = "center"
 
