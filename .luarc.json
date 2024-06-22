@@ -1,5 +1,5 @@
 {
   "diagnostics": {
-    "globals": ["Progress", "Status", "cx", "ui", "ya"]
+    "globals": ["Progress", "Status", "THEME", "cx", "ui", "ya"]
   }
 }

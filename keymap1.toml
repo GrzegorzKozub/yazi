@@ -1,0 +1,72 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+# j/k dn/up lists, ctrl d/u list pages, alt j/k dn/up previews, alt d/u preview pages
+
+[manager]
+
+keymap = [
+  { on = ["<Esc>"], run = "quit", desc = "Exit the process" },
+  { on = ["<A-Up>"], run = "seek -5", desc = "Seek up 5 units in the preview" },
+  { on = ["<A-Down>"], run = "seek 5", desc = "Seek down 5 units in the preview" },
+  # keep but doesnt work really
+  { on = ["<A-u>"], run = "seek -50", desc = "Seek up 5 units in the preview" },
+  { on = ["<A-d>"], run = "seek 50", desc = "Seek down 5 units in the preview" },
+
+
+
+
+
+  { on = ["<Enter>"], run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
+
+
+
+  { on = ["1"], run = "tab_switch 0", desc = "Switch to the first tab" },
+  { on = ["2"], run = "tab_switch 1", desc = "Switch to the second tab" },
+  { on = ["3"], run = "tab_switch 2", desc = "Switch to the third tab" },
+  { on = ["4"], run = "tab_switch 3", desc = "Switch to the fourth tab" },
+  { on = ["5"], run = "tab_switch 4", desc = "Switch to the fifth tab" },
+  { on = ["6"], run = "tab_switch 5", desc = "Switch to the sixth tab" },
+  { on = ["7"], run = "tab_switch 6", desc = "Switch to the seventh tab" },
+  { on = ["8"], run = "tab_switch 7", desc = "Switch to the eighth tab" },
+  { on = ["9"], run = "tab_switch 8", desc = "Switch to the ninth tab" },
+
+  { on = ["["], run = "tab_switch -1 --relative", desc = "Switch to the previous tab" },
+  { on = ["]"], run = "tab_switch 1 --relative", desc = "Switch to the next tab" },
+
+  # Goto
+  { on = ["g", "h"], run = "cd ~", desc = "Go to the home directory" },
+  { on = ["g", "c"], run = "cd ~/.config", desc = "Go to the config directory" },
+  { on = ["g", "d"], run = "cd ~/Downloads", desc = "Go to the downloads directory" },
+  { on = ["g", "t"], run = "cd /tmp", desc = "Go to the temporary directory" },
+
+  { on = ["<F1>"], run = "help", desc = "Open help" },
+]
+
+[tasks]
+
+keymap = [
+
+  { on = ["~"], run = "help", desc = "Open help" },
+]
+
+[select]
+
+keymap = [
+
+  { on = ["~"], run = "help", desc = "Open help" },
+]
+
+[input]
+
+keymap = [
+
+  # Help
+  { on = ["~"], run = "help", desc = "Open help" },
+]
+
+[completion]
+
+keymap = [
+
+  { on = ["~"], run = "help", desc = "Open help" },
+]

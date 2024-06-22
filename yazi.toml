@@ -62,30 +62,30 @@ previewers = [
 
 [input]
 
-cd_title = " cd "
+cd_title = " Change directory "
 cd_origin = "center"
-create_title = " create "
+create_title = " Create file or directory "
 create_origin = "center"
-rename_title = " rename "
+rename_title = " Rename "
 rename_origin = "center"
-trash_title = " trash {n} file{s}? (y/N) "
+trash_title = " Trash {n} file{s}? (y/N) "
 trash_origin = "center"
-delete_title = " delete {n} file{s}? (y/N) "
+delete_title = " Delete {n} file{s}? (y/N) "
 delete_origin = "center"
-filter_title = " filter "
+filter_title = " Filter "
 filter_origin = "center"
-find_title = [" find next ", " find previous "]
+find_title = [" Find next ", " Find previous "]
 find_origin = "center"
-search_title = " search with {n} "
+search_title = " Search with {n} "
 search_origin = "center"
-shell_title = [" shell ", " shell (blocking) "]
+shell_title = [" Shell ", " Shell (blocking) "]
 shell_origin = "center"
-overwrite_title = " overwrite? (y/N) "
+overwrite_title = " Overwrite? (y/N) "
 overwrite_origin = "center"
-quit_title = " quit when {n} task{s} running? (y/N) "
+quit_title = " Quit with {n} task{s} running? (y/N) "
 quit_origin = "center"
 
 [select]
 
-open_title = " open "
+open_title = " Open "
 open_origin = "center"

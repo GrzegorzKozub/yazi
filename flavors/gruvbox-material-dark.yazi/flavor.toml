@@ -6,7 +6,7 @@ use = ""
 
 [manager]
 
-cwd = { fg = "cyan" }
+cwd = { fg = "cyan", bold = true }
 
 hovered = { reversed = true }
 preview_hovered = {}
@@ -62,7 +62,7 @@ inactive = { fg = "gray" }
 border = { fg = "darkgray" }
 title = { fg = "darkgray" }
 value = { fg = "reset" }
-selected = { reversed = true }
+selected = { bg = "darkgray" }
 
 [completion]
 
