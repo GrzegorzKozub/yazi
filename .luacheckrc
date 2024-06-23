@@ -1,4 +1,5 @@
 globals = {
+  'Command',
   'Progress',
   'Status',
   'THEME',
