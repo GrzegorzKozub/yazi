@@ -1,66 +1,72 @@
 local M = {}
 
-function Status:mode()
-  return ui.Line { ui.Span(' ' .. tostring(cx.active.mode):sub(1, 1) .. ' '):style(self.style()) }
-end
+-- todo: icons, size based colors (eza), smart dates (eza)
 
 function Status:size()
   local h = cx.active.current.hovered
   if not h then
-    return ui.Line {}
-  end
-  return ui.Line {
-    ui.Span(' ' .. ya.readable_size(h:size() or h.cha.length) .. ' '):fg('#32302f'):bg '#514945',
-  }
-end
-
-function Status:name()
-  local h = cx.active.current.hovered
-  if not h then
     return ui.Span ''
   end
-  local link = h.link_to ~= nil and ' -> ' .. tostring(h.link_to) or ''
-  return ui.Span(' ' .. h.name .. link):fg '#7c6f64'
+  local size = ya.readable_size(h:size() or h.cha.length)
+  return ui.Span(' ' .. string.format('%6s', size)):fg 'gray'
 end
 
 function Status:owner()
   local h = cx.active.current.hovered
-  if h == nil or ya.target_family() ~= 'unix' then
-    return ui.Line {}
+  if not h or ya.target_family() ~= 'unix' then
+    return ui.Span ''
   end
   local owner = ya.user_name(h.cha.uid) or tostring(h.cha.uid)
-  return ui.Line {
-    ui.Span(' ' .. owner .. ' ')
-      :fg(owner == 'root' and THEME.notify.title_error.fg or '#7c6f64'),
-  }
+  return ui.Span(' ' .. owner):fg(owner == 'root' and 'red' or 'darkgray')
 end
 
-local function permissions_margin()
-  return ui.Span(' '):style(THEME.status.permissions_s)
+function Status:modified()
+  local h = cx.active.current.hovered
+  if not h then
+    return ui.Span ''
+  end
+  local modified = math.floor(h.cha.modified)
+  return ui.Span(' ' .. tostring(os.date('%d %b %H:%M', modified)):lower()):fg 'gray'
 end
 
-function Status:percentage_and_position()
-  local percent = 0
-  local cursor = cx.active.current.cursor
-  local length = #cx.active.current.files
-  if cursor ~= 0 and length ~= 0 then
-    percent = math.floor((cursor + 1) * 100 / length)
+function Status:link()
+  local h = cx.active.current.hovered
+  if not h or not h.link_to then
+    return ui.Span ''
+  end
+  local link = '-> ' .. tostring(h.link_to)
+  return ui.Span(' ' .. link):fg(h.cha.is_orphan and 'red' or 'blue')
+end
+
+function Status:mode()
+  local mode = tostring(cx.active.mode):sub(1, 1)
+  if mode == 'n' then
+    return ui.Span '    '
   end
   return ui.Line {
-    ui.Span(string.format(' %d%% %d/%d ', percent, cursor + 1, length))
-      :style(THEME.status.mode_normal),
+    ui.Span(' ' .. mode .. ' '):style(self.style()),
+    ui.Span ' ',
   }
+end
+
+function Status:position()
+  local cursor = cx.active.current.cursor
+  local length = #cx.active.current.files
+  return ui.Span(string.format('%2d/%-2d', cursor + 1, length)):fg 'darkgray'
 end
 
 function Status:render(area)
   self.area = area
-  local left = ui.Line { self:mode(), self:size(), self:name() }
-  local right = ui.Line {
-    self:owner(),
-    permissions_margin(),
+  local left = ui.Line {
     self:permissions(),
-    permissions_margin(),
-    self:percentage_and_position(),
+    self:size(),
+    self:owner(),
+    self:modified(),
+    self:link(),
+  }
+  local right = ui.Line {
+    self:mode(),
+    self:position(),
   }
   return {
     ui.Paragraph(area, { left }),

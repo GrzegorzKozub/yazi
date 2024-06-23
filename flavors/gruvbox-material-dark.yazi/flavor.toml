@@ -32,11 +32,11 @@ border_style = { fg = "black" }
 
 [status]
 
-separator_open = ""
+separator_open  = ""
 separator_close = ""
-separator_style = { fg = "black", bg = "darkgray" }
+separator_style = { fg = "gray", bg = "gray" }
 
-mode_normal = { fg = "black", bg = "#7c6f64" }      # nvim compat: replaced gray with #7c6f64
+mode_normal = { fg = "black", bg = "gray" }
 mode_select = { fg = "black", bg = "lightmagenta" }
 mode_unset = { fg = "black", bg = "red" }
 
@@ -44,11 +44,11 @@ progress_label = { reverse = true }
 progress_normal = { fg = "blue", bg = "reset" }
 progress_error = { fg = "red", bg = "reset" }
 
-permissions_t = { fg = "black", bg = "#514945" }   # nvim compat: replaced darkgray with #514945
-permissions_r = { fg = "black", bg = "#514945" }
-permissions_w = { fg = "black", bg = "#514945" }
-permissions_x = { fg = "black", bg = "#514945" }
-permissions_s = { fg = "#514945", bg = "#514945" }
+permissions_t = { fg = "gray", bg = "reset" }
+permissions_r = { fg = "gray", bg = "reset" }
+permissions_w = { fg = "gray", bg = "reset" }
+permissions_x = { fg = "gray", bg = "reset" }
+permissions_s = { fg = "darkgray", bg = "reset" }
 
 [select]
 
