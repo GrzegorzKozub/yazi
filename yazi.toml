@@ -38,11 +38,11 @@ rules = [
   { name = "*/", use = ["edit", "open", "reveal"] },
   { mime = "text/*", use = ["edit", "reveal"] },
   { mime = "*/{csv,javascript,json}", use = ["edit", "reveal"] },
-  { mime = "inode/x-empty", use = ["edit", "reveal"] },
   { mime = "image/*", use = ["open", "reveal"] },
   { mime = "{audio,video}/*", use = ["play", "reveal"] },
   { mime = "application/*zip", use = ["extract", "reveal"] },
   { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = ["extract", "reveal"] },
+  { mime = "inode/x-empty", use = ["edit", "reveal"] },
   { mime = "*", use = ["open", "reveal"] },
 ]
 
@@ -52,13 +52,14 @@ previewers = [
   { name = "*/", run = "folder", sync = true },
   { mime = "text/*", run = "code" },
   { mime = "*/{csv,javascript,json}", run = "code" },
+  { name = "*.[ot]tf", run = "font" },
   { mime = "image/*", run = "image" },
   { mime = "video/*", run = "video" },
   { mime = "application/*zip", run = "ouch" },
   { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", run = "ouch" },
   { mime = "application/pdf", run = "pdf" },
-  { mime = "inode/x-empty", run = "noop" },
-  { name = "*", run = "file" },
+  # { mime = "inode/x-empty", run = "noop" },
+  { name = "*", run = "noop" },
 ]
 
 [input]

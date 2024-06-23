@@ -7,3 +7,4 @@ globals = {
   'ui',
   'ya',
 }
+ignore = { '212/self' }

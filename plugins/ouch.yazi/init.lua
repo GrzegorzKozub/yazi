@@ -11,7 +11,7 @@ function M:peek()
   local skip = 0
   repeat
     local line, event = child:read_line()
-    if event > 0 then
+    if event ~= 0 then
       break
     elseif not line:find('Archive') then
       if skip >= self.skip then
