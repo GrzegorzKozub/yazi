@@ -1,14 +1,28 @@
 local M = {}
 
--- todo: icons, size based colors (eza), smart dates (eza)
+-- todo: icons
+
+local function color(size)
+  if size < 1024 then
+    return 'darkgray'
+  elseif size < 1024 ^ 2 then
+    return 'gray'
+  elseif size < 1024 ^ 3 then
+    return 'yellow'
+  elseif size < 1024 ^ 4 then
+    return 'red'
+  else
+    return 'brightred'
+  end
+end
 
 function Status:size()
   local h = cx.active.current.hovered
   if not h then
     return ui.Span ''
   end
-  local size = ya.readable_size(h:size() or h.cha.length)
-  return ui.Span(' ' .. string.format('%6s', size)):fg 'gray'
+  local size = h:size() or h.cha.length
+  return ui.Span(' ' .. string.format('%6s', ya.readable_size(size))):fg(color(size))
 end
 
 function Status:owner()
@@ -20,13 +34,19 @@ function Status:owner()
   return ui.Span(' ' .. owner):fg(owner == 'root' and 'red' or 'darkgray')
 end
 
+local function year(date)
+  return tonumber(os.date('%Y', date))
+end
+
 function Status:modified()
   local h = cx.active.current.hovered
   if not h then
     return ui.Span ''
   end
   local modified = math.floor(h.cha.modified)
-  return ui.Span(' ' .. tostring(os.date('%d %b %H:%M', modified)):lower()):fg 'gray'
+  local now = math.floor(ya.time())
+  local format = year(modified) < year(now) and '%d %b  %Y' or '%d %b %H:%M'
+  return ui.Span(' ' .. tostring(os.date(format, modified)):lower()):fg 'gray'
 end
 
 function Status:link()
