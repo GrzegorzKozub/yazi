@@ -140,6 +140,9 @@ rules = [
 
   { name = "*.{cache,config,local}/", fg = "gray" },
   { name = "*.{azure-pipelines,git,github,vscode}/", fg = "gray" },
+  { name = "*node_modules/", fg = "gray" },
+
+  { name = "**/.*/", fg = "gray" },
 
   { name = "*", fg = "reset" },
   { name = "*/", fg = "cyan" },
@@ -195,6 +198,9 @@ rules = [
   { name = "*.git/", text = "" },
   { name = "*.github/", text = "󰊤" },
   { name = "*.vscode/", text = "󰨞" },
+  { name = "*node_modules/", text = "󰎙" },
+
+  { name = "**/.*/", text = "󰷏" },
 
   # no yazi colors from here
 

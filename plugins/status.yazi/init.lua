@@ -1,8 +1,6 @@
 local M = {}
 
--- todo: icons
-
-local function color(size)
+local function size_color(size)
   if size < 1024 then
     return 'darkgray'
   elseif size < 1024 ^ 2 then
@@ -22,7 +20,17 @@ function Status:size()
     return ui.Span ''
   end
   local size = h:size() or h.cha.length
-  return ui.Span(' ' .. string.format('%6s', ya.readable_size(size))):fg(color(size))
+  return ui.Span(' ' .. string.format('%6s', ya.readable_size(size))):fg(size_color(size))
+end
+
+local function owner_color(owner)
+  if owner == 'root' then
+    return 'red'
+  elseif owner == 'greg' then
+    return 'darkgray'
+  else
+    return 'yellow'
+  end
 end
 
 function Status:owner()
@@ -31,7 +39,7 @@ function Status:owner()
     return ui.Span ''
   end
   local owner = ya.user_name(h.cha.uid) or tostring(h.cha.uid)
-  return ui.Span(' ' .. owner):fg(owner == 'root' and 'red' or 'darkgray')
+  return ui.Span(' ' .. owner):fg(owner_color(owner))
 end
 
 local function year(date)

@@ -51,6 +51,7 @@ rules = [
 previewers = [
   { name = "*/", run = "folder", sync = true },
   { mime = "text/*", run = "code" },
+  { mime = "application/octet-stream", run = "code" },
   { mime = "*/{csv,javascript,json,x-ndjson}", run = "code" },
   { name = "*.[ot]tf", run = "font" },
   { mime = "image/{heic,jxl,svg+xml}", run = "magick" },
