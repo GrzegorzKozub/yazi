@@ -32,7 +32,7 @@ border_style = { fg = "black" }
 
 [status]
 
-separator_open  = ""
+separator_open = ""
 separator_close = ""
 separator_style = { fg = "gray", bg = "gray" }
 
@@ -127,8 +127,9 @@ rules = [
 
   { name = "*.dockerignore", fg = "gray" },
   { name = "*.editorconfig", fg = "gray" },
-  { name = "*.{env,eslintrc,eslintrc.js,npmrc,nvmrc}", fg = "gray" },
+  { name = "*.{env,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
   { name = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", fg = "gray" },
+  { name = "*.lock", fg = "gray" },
   { name = "*.{luacheckrc,luarc.json,stylua.toml}", fg = "gray" },
   { name = "*.{prettierignore,prettierrc}", fg = "gray" },
   { name = "*.pylintrc", fg = "gray" },
@@ -145,7 +146,6 @@ rules = [
 ]
 
 [icon]
-
 rules = [
   { name = "*", is = "link", text = "󰌷" },
   { name = "*/", is = "link", text = "󰌷" },
@@ -174,8 +174,9 @@ rules = [
   { name = "*.dockerignore", text = "" },
   { name = "*.editorconfig", text = "" },
   { name = "*.env", text = "" },
-  { name = "*.{eslintrc,eslintrc.js,npmrc,nvmrc}", text = "" },
+  { name = "*.{eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", text = "" },
   { name = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", text = "" },
+  { name = "*.lock", text = "󰤱" },
   { name = "*.{luacheckrc,luarc.json,stylua.toml}", text = "" },
   { name = "*.{prettierignore,prettierrc}", text = "" },
   { name = "*.pylintrc", text = "" },
