@@ -149,6 +149,7 @@ rules = [
 ]
 
 [icon]
+
 rules = [
   { name = "*", is = "link", text = "󰌷" },
   { name = "*/", is = "link", text = "󰌷" },
