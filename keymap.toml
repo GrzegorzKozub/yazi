@@ -20,6 +20,12 @@ prepend_keymap = [
   { on = ["g", "c"], run = "cd ~/code", desc = "Go to the code directory" },
   { on = ["g", "m"], run = "cd /run/media/greg", desc = "Go to the mount directory" },
 
+  # { on = ["g", "c"], run = "cd D:/Code", desc = "Go to the code directory" },
+  { on = ["g", "a"], run = "cd D:/Apps", desc = "Go to the apps directory" },
+  { on = ["g", "u"], run = "cd D:/Users", desc = "Go to the users directory" },
+  { on = ["g", "w"], run = "cd D:/Win", desc = "Go to the win directory" },
+  { on = ["g", "g"], run = "cd E:/Games", desc = "Go to the games directory" },
+
   { on = ["<F1>"], run = "help", desc = "Open help" },
 ]
 
