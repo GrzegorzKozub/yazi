@@ -109,12 +109,6 @@ icon_error = ""
 [filetype]
 
 rules = [
-  { name = "*", is = "link", fg = "blue" },
-  { name = "*/", is = "link", fg = "blue" },
-
-  { name = "*", is = "orphan", fg = "red" },
-  { name = "*/", is = "orphan", fg = "red" },
-
   { name = "*", is = "exec", fg = "green" },
 
   { name = "*.{bat,cmd,exe,ps1}", fg = "green" },
@@ -136,13 +130,26 @@ rules = [
   { name = "*.taplo.toml", fg = "gray" },
 
   { name = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
-  { name = "*~", fg = "darkgray" },
 
   { name = "*.{cache,config,local}/", fg = "gray" },
-  { name = "*.{azure-pipelines,git,github,vscode}/", fg = "gray" },
+  { name = "*.{azure-pipelines,git,github,husky,vscode}/", fg = "gray" },
+  { name = "*.{pki,ssh}/", fg = "gray" },
   { name = "*node_modules/", fg = "gray" },
 
-  { name = "**/.*/", fg = "gray" },
+  # hidden
+
+  { name = "**/.?*", fg = "darkgray" },
+  { name = "**/.*/", fg = "darkgray" },
+
+  # links
+
+  { name = "*", is = "link", fg = "blue" },
+  { name = "*/", is = "link", fg = "blue" },
+
+  { name = "*", is = "orphan", fg = "red" },
+  { name = "*/", is = "orphan", fg = "red" },
+
+  # defaults
 
   { name = "*", fg = "reset" },
   { name = "*/", fg = "cyan" },
@@ -151,12 +158,6 @@ rules = [
 [icon]
 
 rules = [
-  { name = "*", is = "link", text = "󰌷" },
-  { name = "*/", is = "link", text = "󰌷" },
-
-  { name = "*", is = "orphan", text = "󰌸" },
-  { name = "*/", is = "orphan", text = "󰌸" },
-
   { name = "*.{bat,cmd}", text = "󰑷" },
   { name = "*.exe", text = "" },
   { name = "*.ps1", text = "" },
@@ -187,7 +188,6 @@ rules = [
   { name = "*.taplo.toml", text = "" },
 
   { name = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", text = "󰘓" },
-  { name = "*~", text = "󰘓" },
 
   # no dir_colors from here
 
@@ -198,10 +198,10 @@ rules = [
   { name = "*.azure-pipelines/", text = "󰿕" },
   { name = "*.git/", text = "" },
   { name = "*.github/", text = "󰊤" },
+  { name = "*.husky/", text = "󰛢" },
+  { name = "*.{pki,ssh}/", text = "󰍁" },
   { name = "*.vscode/", text = "󰨞" },
   { name = "*node_modules/", text = "󰎙" },
-
-  { name = "**/.*/", text = "󰷏" },
 
   # no yazi colors from here
 
@@ -270,6 +270,21 @@ rules = [
 
   { name = "*.{csv,xlsx}", text = "" },
   { name = "*.docx", text = "" },
+
+  # hidden
+
+  { name = "**/.?*", text = "󰘓" },
+  { name = "**/.*/", text = "󰷏" },
+
+  # links
+
+  { name = "*", is = "link", text = "󰌷" },
+  { name = "*/", is = "link", text = "󰌷" },
+
+  { name = "*", is = "orphan", text = "󰌸" },
+  { name = "*/", is = "orphan", text = "󰌸" },
+
+  # defaults
 
   { name = "*", text = "󰈤" },
   { name = "*/", text = "󰝰" },
