@@ -138,6 +138,9 @@ rules = [
 
   # hidden
 
+  { name = "*desktop.ini", fg = "darkgray" },
+  { name = "*ntuser*", fg = "darkgray" },
+
   { name = "**/.?*", fg = "darkgray" },
   { name = "**/.*/", fg = "darkgray" },
 
@@ -272,6 +275,8 @@ rules = [
   { name = "*.docx", text = "" },
 
   # hidden
+
+  { name = "*ntuser*", text = "" },
 
   { name = "**/.?*", text = "󰘓" },
   { name = "**/.*/", text = "󰷏" },
