@@ -136,10 +136,16 @@ rules = [
   { name = "*.{pki,ssh}/", fg = "gray" },
   { name = "*node_modules/", fg = "gray" },
 
-  # hidden
+  # windows
 
-  { name = "*desktop.ini", fg = "darkgray" },
+  { name = "*$winre_backup_partition.marker", fg = "darkgray" },
+  { name = "*{hiberfil,pagefile,swapfile}.sys", fg = "darkgray" },
   { name = "*ntuser*", fg = "darkgray" },
+  { name = "*desktop.ini", fg = "darkgray" },
+
+  { name = "*{$recycle.bin,system volume information}/", fg = "darkgray" },
+
+  # hidden
 
   { name = "**/.?*", fg = "darkgray" },
   { name = "**/.*/", fg = "darkgray" },
@@ -274,9 +280,16 @@ rules = [
   { name = "*.{csv,xlsx}", text = "" },
   { name = "*.docx", text = "" },
 
+  # windows
+
+  { name = "*$winre_backup_partition.marker", text = "󰘓" },
+  { name = "*{hiberfil,pagefile,swapfile}.sys", text = "󰘓" },
+  { name = "*ntuser*", text = "󰘓" },
+
+  { name = "*{$recycle.bin,system volume information}/", text = "󰷏" },
+
   # hidden
 
-  { name = "*ntuser*", text = "" },
 
   { name = "**/.?*", text = "󰘓" },
   { name = "**/.*/", text = "󰷏" },
