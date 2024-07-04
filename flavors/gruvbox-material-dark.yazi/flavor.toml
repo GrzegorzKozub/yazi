@@ -290,7 +290,6 @@ rules = [
 
   # hidden
 
-
   { name = "**/.?*", text = "󰘓" },
   { name = "**/.*/", text = "󰷏" },
 
