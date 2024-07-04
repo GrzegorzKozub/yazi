@@ -47,7 +47,7 @@ play = [
 
 rules = [
   { name = "*/", use = ["edit", "open", "reveal"] },
-  { mime = "text/*", use = ["edit", "reveal"] },
+  { mime = "text/*", use = ["edit", "open", "reveal"] },
   { mime = "*/{csv,javascript,json,x-ndjson}", use = ["edit", "reveal"] },
   { name = "*.{epub,pdf}", use = ["open_document", "reveal"] },
   { mime = "image/*", use = ["open_image", "reveal"] },
