@@ -132,9 +132,14 @@ rules = [
   { name = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
 
   { name = "*.{cache,config,local}/", fg = "gray" },
+
+  { name = "*.{cert,pki,ssh}/", fg = "gray" },
+
   { name = "*.{azure-pipelines,git,github,husky,vscode}/", fg = "gray" },
-  { name = "*.{pki,ssh}/", fg = "gray" },
+
   { name = "*node_modules/", fg = "gray" },
+
+  { name = "*.steam/", fg = "gray" },
 
   # windows
 
@@ -204,13 +209,17 @@ rules = [
   { name = "*.config/", text = "" },
   { name = "*.local/", text = "󰆼" },
 
+  { name = "*.{cert,pki,ssh}/", text = "󰍁" },
+
   { name = "*.azure-pipelines/", text = "󰿕" },
   { name = "*.git/", text = "" },
   { name = "*.github/", text = "󰊤" },
   { name = "*.husky/", text = "󰛢" },
-  { name = "*.{pki,ssh}/", text = "󰍁" },
   { name = "*.vscode/", text = "󰨞" },
+
   { name = "*node_modules/", text = "󰎙" },
+
+  { name = "*.steam/", text = "󰓓" },
 
   # no yazi colors from here
 
