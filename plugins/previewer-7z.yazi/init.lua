@@ -1,31 +1,35 @@
 local M = {}
 
 function M:peek()
-  local child = Command('ouch')
-    :args({ 'list', '--tree', '--yes', tostring(self.file.url) })
+  if ya.target_family() ~= 'unix' then
+    return
+  end
+  local child = Command('zsh')
+    :args({
+      '-c',
+      '7z l -ba "'
+        .. tostring(self.file.url)
+        .. "\" | tr -s ' ' | cut -d' ' -f6 | grep --color=never .",
+    })
     :stdout(Command.PIPED)
     :stderr(Command.PIPED)
     :spawn()
-  local lines = ''
-  local count = 1
-  local skip = 0
+  local count, lines = 0, ''
   repeat
     local line, event = child:read_line()
     if event ~= 0 then
       break
-    elseif not line:find('Archive') then
-      if skip >= self.skip then
+    else
+      count = count + 1
+      if count > self.skip then
         lines = lines .. line
-        count = count + 1
-      else
-        skip = skip + 1
       end
     end
-  until count >= self.area.h
+  until count >= self.skip + self.area.h
   child:start_kill()
-  if self.skip > 0 and count < self.area.h then
+  if self.skip > 0 and count < self.skip + self.area.h then
     ya.manager_emit('peek', {
-      tostring(math.max(0, self.skip - self.area.h - count)),
+      tostring(math.max(0, count - self.area.h)),
       only_if = self.file.url,
       upper_bound = '',
     })
