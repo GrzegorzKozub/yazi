@@ -1,19 +1,17 @@
 local M = {}
 
 function M:peek()
-  if ya.target_family() ~= 'unix' then
-    return
+  local cmd = ya.target_family() == 'unix' and 'zsh' or 'pwsh'
+  local args = {
+    '-c',
+    '7z l -ba "'
+      .. tostring(self.file.url)
+      .. "\" | tr -s ' ' | cut -d' ' -f6 | grep --color=never .",
+  }
+  if cmd == 'pwsh' then
+    table.insert(args, 1, '-NoProfile')
   end
-  local child = Command('zsh')
-    :args({
-      '-c',
-      '7z l -ba "'
-        .. tostring(self.file.url)
-        .. "\" | tr -s ' ' | cut -d' ' -f6 | grep --color=never .",
-    })
-    :stdout(Command.PIPED)
-    :stderr(Command.PIPED)
-    :spawn()
+  local child = Command(cmd):args(args):stdout(Command.PIPED):stderr(Command.PIPED):spawn()
   local count, lines = 0, ''
   repeat
     local line, event = child:read_line()
