@@ -6,7 +6,7 @@ function M:peek()
     '-c',
     '7z l -ba "'
       .. tostring(self.file.url)
-      .. "\" | tr -s ' ' | cut -d' ' -f6 | grep --color=never .",
+      .. "\" | tr -s ' ' | cut -d' ' -f6- | grep --color=never .",
   }
   if cmd == 'pwsh' then
     table.insert(args, 1, '-NoProfile')
