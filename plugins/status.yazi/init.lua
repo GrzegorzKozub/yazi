@@ -57,6 +57,15 @@ function Status:modified()
   return ui.Span(tostring(os.date(format, modified)):lower()):fg 'gray'
 end
 
+function Status:name()
+  local h = cx.active.current.hovered
+  if not h then
+    return ui.Span ''
+  end
+  local name = h:icon().text .. ' ' .. h.url:name()
+  return ui.Span(name):style(h:style())
+end
+
 function Status:link()
   local h = cx.active.current.hovered
   if not h or not h.link_to then
@@ -92,6 +101,8 @@ function Status:render(area)
         space(),
         self:modified(),
         space(),
+        self:name(),
+        space(),
         self:link(),
       }
     or ui.Line {
@@ -102,6 +113,8 @@ function Status:render(area)
       self:owner(),
       space(),
       self:modified(),
+      space(),
+      self:name(),
       space(),
       self:link(),
     }
