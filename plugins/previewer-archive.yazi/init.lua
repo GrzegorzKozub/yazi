@@ -2,12 +2,17 @@ local M = {}
 
 function M:peek()
   local cmd = ya.target_family() == 'unix' and 'zsh' or 'pwsh'
-  local args = {
-    '-c',
-    '7z l -ba "'
-      .. tostring(self.file.url)
-      .. "\" | tr -s ' ' | cut -d' ' -f6- | grep --color=never .",
-  }
+  local args = { '-c' }
+  if tostring(self.file.url):sub(-#'.tar.gz') == '.tar.gz' then
+    table.insert(args, 'tar -tf "' .. tostring(self.file.url) .. '"')
+  else
+    table.insert(
+      args,
+      '7z l -ba "'
+        .. tostring(self.file.url)
+        .. "\" | tr -s ' ' | cut -d' ' -f6- | grep --color=never ."
+    )
+  end
   if cmd == 'pwsh' then
     table.insert(args, 1, '-NoProfile')
   end
