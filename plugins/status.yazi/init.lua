@@ -72,7 +72,7 @@ function Status:link()
     return ui.Span ''
   end
   local link = '-> ' .. tostring(h.link_to)
-  return ui.Span(link):fg(h.cha.is_orphan and 'red' or 'blue')
+  return h.cha.is_orphan and ui.Span(link):fg 'red' or ui.Span(link):style(h:style())
 end
 
 function Status:mode()
