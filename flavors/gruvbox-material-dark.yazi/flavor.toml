@@ -111,6 +111,8 @@ icon_error = ""
 rules = [
   { name = "*", is = "exec", fg = "green" },
 
+  { name = "*.AppImage", fg = "green" },
+
   { name = "*.{bat,cmd,exe,ps1}", fg = "green" },
 
   { name = "*.{7z,gz,rar,tar,zip}", fg = "yellow" },
@@ -172,11 +174,13 @@ rules = [
 [icon]
 
 rules = [
+  { name = "*.AppImage", text = "󰘔" },
+
+  { name = "*.{sh,zsh}", text = "" },
+
   { name = "*.{bat,cmd}", text = "󰑷" },
   { name = "*.exe", text = "" },
   { name = "*.ps1", text = "" },
-
-  { name = "*.{sh,zsh}", text = "" },
 
   { name = "*.{7z,gz,rar,tar,zip}", text = "" },
 
