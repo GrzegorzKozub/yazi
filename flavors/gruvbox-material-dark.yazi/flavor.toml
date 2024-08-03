@@ -176,7 +176,7 @@ rules = [
 rules = [
   { name = "*.AppImage", text = "󰘔" },
 
-  { name = "*.{sh,zsh}", text = "" },
+  { name = "*.{nu,sh,zsh}", text = "" },
 
   { name = "*.{bat,cmd}", text = "󰑷" },
   { name = "*.exe", text = "" },
