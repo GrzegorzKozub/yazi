@@ -176,6 +176,15 @@ rules = [
 dirs = [
   # no dir_colors from here
 
+  { name = "home", text = "󱂵" },
+  { name = "greg", text = "󰉌" },
+  { name = "code", text = "󱃪" },
+
+  { name = "Desktop", text = "" },
+  { name = "Downloads", text = "󰉍" },
+  { name = "Music", text = "󱍙" },
+  { name = "Pictures", text = "󰉏" },
+
   { name = ".cache", text = "󱐋" },
   { name = ".config", text = "" },
   { name = ".local", text = "󰆼" },
@@ -193,22 +202,6 @@ dirs = [
   { name = "node_modules", text = "󰎙" },
 
   { name = ".steam", text = "󰓓" },
-
-  { name = ".git", text = "" },
-
-  { name = "home", text = "󱂵" },
-  { name = "greg", text = "󰉌" },
-  { name = "code", text = "󱃪" },
-
-  { name = "Desktop", text = "" },
-  { name = "Downloads", text = "󰉍" },
-  { name = "Music", text = "󱍙" },
-  { name = "Pictures", text = "󰉏" },
-
-  # windows
-
-  { name = "$recycle.bin", text = "󰷏" },
-  { name = "system volume information", text = "󰷏" },
 ]
 
 files = [
@@ -244,13 +237,13 @@ files = [
 
   # no dir_colors from here
 
-  { name = "credentials", text = "󱕴" },
-
   { name = ".zprofile", text = "" },
   { name = ".zshenv", text = "" },
   { name = ".zshrc", text = "" },
 
   { name = "config", text = "" },
+
+  { name = "credentials", text = "󱕴" },
 
   { name = "dir_colors,icons", text = "󰏘" },
   { name = "icons", text = "󰏘" },
