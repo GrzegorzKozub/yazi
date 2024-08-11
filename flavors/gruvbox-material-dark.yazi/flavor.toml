@@ -404,13 +404,3 @@ conds = [
   { if = "exec", text = "" },
   { if = "!dir", text = "󰈤" },
 ]
-
-rules = [
-  # no yazi colors from here
-
-  # windows
-
-  { name = "*$winre_backup_partition.marker", text = "󰘓" },
-  { name = "*{hiberfil,pagefile,swapfile}.sys", text = "󰘓" },
-  { name = "*ntuser*", text = "󰘓" },
-]
