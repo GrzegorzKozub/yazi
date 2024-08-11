@@ -176,14 +176,15 @@ rules = [
 dirs = [
   # no dir_colors from here
 
-  { name = "home", text = "󱂵" },
-  { name = "greg", text = "󰉌" },
   { name = "code", text = "󱃪" },
+  { name = "greg", text = "󰉌" },
+  { name = "home", text = "󱂵" },
+  { name = "users", text = "󱂵" },
 
-  { name = "Desktop", text = "" },
-  { name = "Downloads", text = "󰉍" },
-  { name = "Music", text = "󱍙" },
-  { name = "Pictures", text = "󰉏" },
+  { name = "desktop", text = "" },
+  { name = "downloads", text = "󰉍" },
+  { name = "music", text = "󱍙" },
+  { name = "pictures", text = "󰉏" },
 
   { name = ".cache", text = "󱐋" },
   { name = ".config", text = "" },
