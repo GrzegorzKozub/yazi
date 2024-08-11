@@ -93,8 +93,7 @@ local function space()
   return ui.Span ' '
 end
 
-function Status:render(area)
-  self.area = area
+function Status:render()
   local left = ya.target_family() == 'windows'
       and ui.Line {
         self:size(),
@@ -124,9 +123,9 @@ function Status:render(area)
     self:position(),
   }
   return {
-    ui.Paragraph(area, { left }),
-    ui.Paragraph(area, { right }):align(ui.Paragraph.RIGHT),
-    table.unpack(Progress:render(area, right:width())),
+    ui.Paragraph(self._area, { left }),
+    ui.Paragraph(self._area, { right }):align(ui.Paragraph.RIGHT),
+    table.unpack(Progress:render(self._area, right:width())),
   }
 end
 

@@ -19,28 +19,28 @@ edit = [
   { run = 'nvim "%*"', block = true, desc = "Edit", for = "windows" },
 ]
 open = [
-  { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+  { run = 'xdg-open "$1"', desc = "Open", for = "linux" },
   { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 open_document = [
-  { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+  { run = 'xdg-open "$1"', desc = "Open", for = "linux" },
   { run = 'D:\Apps\SumatraPDF\sumatrapdf.exe "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 open_image = [
-  { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+  { run = 'xdg-open "$1"', desc = "Open", for = "linux" },
   { run = 'D:\Apps\JPEGView\JPEGView.exe "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
-  { run = 'xdg-open "$(dirname "$0")"', desc = "Reveal", for = "linux" },
+  { run = 'xdg-open "$(dirname "$1")"', desc = "Reveal", for = "linux" },
   { run = 'totalcmd64 /o /p=l "%1"', orphan = true, desc = "Reveal", for = "windows" },
 ]
 extract = [
-  { run = 'ouch decompress "$1"', desc = "Extract", for = "unix" },
-  { run = 'ouch decompress "%1"', desc = "Extract", for = "windows" },
+  { run = 'ya pub extract --list "$@"', desc = "Extract", for = "unix" },
+  { run = 'ya pub extract --list %*', desc = "Extract", for = "windows" },
 ]
 play = [
-  { run = 'mpv "$@"', orphan = true, desc = "Play", for = "unix" },
-  { run = 'mpv "%1"', orphan = true, desc = "Play", for = "windows" },
+  { run = 'mpv --force-window "$@"', orphan = true, desc = "Play", for = "unix" },
+  { run = 'mpv --force-window "%1"', orphan = true, desc = "Play", for = "windows" },
 ]
 
 [open]
@@ -53,7 +53,7 @@ rules = [
   { name = "*.{epub,pdf}", use = ["open_document", "reveal"] },
   { mime = "image/*", use = ["open_image", "reveal"] },
   { mime = "{audio,video}/*", use = ["play", "reveal"] },
-  { mime = "application/{gzip,zip}", use = ["extract", "reveal"] },
+  { mime = "application/{,g}zip", use = ["extract", "reveal"] },
   { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = ["extract", "reveal"] },
   { mime = "inode/x-empty", use = ["edit", "reveal"] },
   { mime = "*", use = ["open", "reveal"] },
@@ -67,12 +67,12 @@ previewers = [
   { mime = "application/octet-stream", run = "code" },
   { mime = "*/{csv,javascript,json,x-ndjson}", run = "code" },
   { name = "*.[ot]tf", run = "font" },
-  { mime = "image/{heic,jxl,svg+xml}", run = "magick" },
+  { mime = "image/{avif,heic,jxl,svg+xml}", run = "magick" },
   { mime = "image/*", run = "image" },
   { mime = "video/*", run = "video" },
-  { mime = "application/{gzip,zip}", run = "previewer-archive" },
-  { mime = "application/x-iso9660-image", run = "previewer-archive" },
-  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", run = "previewer-archive" },
+  { mime = "application/{,g}zip", run = "archive" },
+  { mime = "application/x-iso9660-image", run = "archive" },
+  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", run = "archive" },
   { mime = "application/pdf", run = "pdf" },
   # { mime = "inode/x-empty", run = "noop" },
   { name = "*", run = "noop" },

@@ -6,7 +6,7 @@ use = ""
 
 [manager]
 
-cwd = { fg = "cyan", bold = true }
+cwd = { fg = "cyan" }
 
 hovered = { reversed = true }
 preview_hovered = {}
@@ -173,149 +173,244 @@ rules = [
 
 [icon]
 
-rules = [
-  { name = "*.AppImage", text = "󰘔" },
+dirs = [
+  # no dir_colors from here
 
-  { name = "*.{nu,sh,zsh}", text = "" },
+  { name = ".cache", text = "󱐋" },
+  { name = ".config", text = "" },
+  { name = ".local", text = "󰆼" },
 
-  { name = "*.{bat,cmd}", text = "󰑷" },
-  { name = "*.exe", text = "" },
-  { name = "*.ps1", text = "" },
+  { name = ".cert", text = "󰍁" },
+  { name = ".pki", text = "󰍁" },
+  { name = ".ssh", text = "󰍁" },
 
-  { name = "*.{7z,gz,rar,tar,zip}", text = "" },
+  { name = ".azure-pipelines", text = "󰿕" },
+  { name = ".git", text = "" },
+  { name = ".github", text = "󰊤" },
+  { name = ".husky", text = "󰛢" },
+  { name = ".vscode", text = "󰨞" },
 
-  { name = "*.{cow,fsa,mrimg,wim}", text = "󰋊" },
+  { name = "node_modules", text = "󰎙" },
 
-  { name = "*.iso", text = "󰗮" },
+  { name = ".steam", text = "󰓓" },
 
-  { name = "*.{ico,jpeg,jpg,png,svg}", text = "" },
+  { name = ".git", text = "" },
 
-  { name = "*.{mp3,ogg,opus}", text = "󰝚" },
+  { name = "greg", text = "󱂵" },
 
-  { name = "*.{mkv,mp4,webm}", text = "󰷝" },
+  { name = "Desktop", text = "" },
+  { name = "Documents", text = "󱧶" },
+  { name = "Downloads", text = "󰉍" },
+  { name = "Music", text = "󱍙" },
+  { name = "Pictures", text = "󰉏" },
+  { name = "Videos", text = "󱧺" },
 
-  { name = "*.dockerignore", text = "" },
-  { name = "*.editorconfig", text = "" },
-  { name = "*.env", text = "" },
-  { name = "*.{eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", text = "" },
-  { name = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", text = "" },
-  { name = "*.lock", text = "󰤱" },
-  { name = "*.{luacheckrc,luarc.json,stylua.toml}", text = "" },
-  { name = "*.{prettierignore,prettierrc}", text = "" },
-  { name = "*.pylintrc", text = "" },
-  { name = "*.taplo.toml", text = "" },
+  # windows
 
-  { name = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", text = "󰘓" },
+  { name = "$recycle.bin", text = "󰷏" },
+  { name = "system volume information", text = "󰷏" },
+]
+
+files = [
+  { name = ".dockerignore", text = "" },
+
+  { name = ".editorconfig", text = "" },
+
+  { name = ".env", text = "" },
+
+  { name = ".eslintrc", text = "" },
+  { name = ".eslintrc.js", text = "" },
+  { name = ".eslintrc.json", text = "" },
+  { name = ".npmrc", text = "" },
+  { name = ".nvmrc", text = "" },
+  { name = ".yarnrc", text = "" },
+
+  { name = ".git", text = "" },
+  { name = ".gitattributes", text = "" },
+  { name = ".gitignore", text = "" },
+  { name = ".gitkeep", text = "" },
+  { name = ".gitmodules", text = "" },
+
+  { name = ".luacheckrc", text = "" },
+  { name = ".luarc.json", text = "" },
+  { name = ".stylua.toml", text = "" },
+
+  { name = ".prettierignore", text = "" },
+  { name = ".prettierrc", text = "" },
+
+  { name = ".pylintrc", text = "" },
+
+  { name = ".taplo.toml", text = "" },
 
   # no dir_colors from here
 
-  { name = "*.cache/", text = "󱐋" },
-  { name = "*.config/", text = "" },
-  { name = "*.local/", text = "󰆼" },
+  { name = "credentials", text = "󱕴" },
 
-  { name = "*.{cert,pki,ssh}/", text = "󰍁" },
+  { name = ".zprofile", text = "" },
+  { name = ".zshenv", text = "" },
+  { name = ".zshrc", text = "" },
 
-  { name = "*.azure-pipelines/", text = "󰿕" },
-  { name = "*.git/", text = "" },
-  { name = "*.github/", text = "󰊤" },
-  { name = "*.husky/", text = "󰛢" },
-  { name = "*.vscode/", text = "󰨞" },
+  { name = "config", text = "" },
 
-  { name = "*node_modules/", text = "󰎙" },
+  { name = "dir_colors,icons", text = "󰏘" },
+  { name = "icons", text = "󰏘" },
 
-  { name = "*.steam/", text = "󰓓" },
+  { name = "history", text = "" },
 
+  { name = "lfrc", text = "" },
+  { name = "npmrc", text = "" },
+  { name = "ripgreprc", text = "" },
+
+  { name = "LICENSE", text = "󰿃" },
+
+  { name = "Dockerfile", text = "󰡨" },
+
+  { name = "go.mod", text = "" },
+  { name = "go.sum", text = "" },
+]
+
+exts = [
+  { name = "AppImage", text = "󰘔" },
+
+  { name = "nu", text = "" },
+  { name = "sh", text = "" },
+  { name = "zsh", text = "" },
+
+  { name = "bat", text = "󰑷" },
+  { name = "cmd", text = "󰑷" },
+  { name = "exe", text = "" },
+  { name = "ps1", text = "" },
+
+  { name = "7z", text = "" },
+  { name = "gz", text = "" },
+  { name = "rar", text = "" },
+  { name = "tar", text = "" },
+  { name = "zip", text = "" },
+
+  { name = "cow", text = "󰋊" },
+  { name = "fsa", text = "󰋊" },
+  { name = "mrimg", text = "󰋊" },
+  { name = "wim", text = "󰋊" },
+
+  { name = "iso", text = "󰗮" },
+
+  { name = "ico", text = "" },
+  { name = "jpeg", text = "" },
+  { name = "jpg", text = "" },
+  { name = "png", text = "" },
+  { name = "svg", text = "" },
+
+  { name = "mp3", text = "󰝚" },
+  { name = "ogg", text = "󰝚" },
+  { name = "opus", text = "󰝚" },
+
+  { name = "mkv", text = "󰷝" },
+  { name = "mp4", text = "󰷝" },
+  { name = "webm", text = "󰷝" },
+
+  { name = "env", text = "" },
+
+  { name = "lock", text = "󰤱" },
+
+  { name = "backup", text = "󰘓" },
+  { name = "bak", text = "󰘓" },
+  { name = "log", text = "󰘓" },
+  { name = "off", text = "󰘓" },
+  { name = "old", text = "󰘓" },
+  { name = "orig", text = "󰘓" },
+  { name = "original", text = "󰘓" },
+  { name = "part", text = "󰘓" },
+  { name = "swp", text = "󰘓" },
+
+  # no dir_colors from here
+
+  { name = "icm", text = "󰏘" },
+  { name = "otf", text = "" },
+  { name = "ttf", text = "" },
+
+  { name = "kdbx", text = "󰌾" },
+  { name = "key", text = "" },
+
+  { name = "gpg", text = "󰦝" },
+  { name = "kbx", text = "󰯄" },
+
+  { name = "pem", text = "" },
+  { name = "pub", text = "󰷖" },
+
+  { name = "conf", text = "" },
+  { name = "rules", text = "" },
+  { name = "service", text = "" },
+  { name = "timer", text = "" },
+
+  { name = "ini", text = "" },
+  { name = "kdl", text = "" },
+
+  { name = "json", text = "" },
+  { name = "jsonc", text = "" },
+  { name = "tmTheme", text = "󰗀" },
+  { name = "xml", text = "󰗀" },
+  { name = "toml", text = "" },
+  { name = "yaml", text = "" },
+  { name = "yml", text = "" },
+
+  { name = "ahk", text = "󰑷" },
+  { name = "vbs", text = "󰑷" },
+  { name = "reg", text = "" },
+
+  { name = "Dockerfile", text = "󰡨" },
+
+  { name = "cs", text = "󰌛" },
+  { name = "csproj", text = "󰗀" },
+  { name = "sln", text = "󰗀" },
+
+  { name = "go", text = "" },
+
+  { name = "js", text = "" },
+  { name = "ts", text = "" },
+
+  { name = "lua", text = "" },
+
+  { name = "py", text = "" },
+
+  { name = "rb", text = "" },
+
+  { name = "rs", text = "" },
+
+  { name = "css", text = "" },
+  { name = "html", text = "" },
+  { name = "scss", text = "" },
+
+  { name = "po", text = "" },
+
+  { name = "md", text = "" },
+  { name = "txt", text = "" },
+
+  { name = "epub", text = "" },
+  { name = "pdf", text = "" },
+
+  { name = "csv", text = "" },
+  { name = "xlsx", text = "" },
+  { name = "docx", text = "" },
+]
+
+conds = [
+  { if = "hidden & dir", text = "󰷏" },
+  { if = "hidden & !dir", text = "󰘓" },
+
+  { if = "orphan", text = "󰌸" },
+  { if = "link", text = "󰌷" },
+
+  { if = "dir", text = "󰝰" },
+  { if = "exec", text = "" },
+  { if = "!dir", text = "󰈤" },
+]
+
+rules = [
   # no yazi colors from here
-
-  { name = "*.icm", text = "󰏘" },
-  { name = "*.[ot]tf", text = "" },
-
-  { name = "*.kdbx", text = "󰌾" },
-  { name = "*.key", text = "" },
-
-  { name = "*.gpg", text = "󰦝" },
-  { name = "*.kbx", text = "󰯄" },
-
-  { name = "*.pem", text = "" },
-  { name = "*.pub", text = "󰷖" },
-
-  { name = "*credentials", text = "󱕴" },
-
-  { name = "*.{conf,rules,service,timer}", text = "" },
-  { name = "*.{ini,kdl}", text = "" },
-  { name = "*.{zprofile,zshenv,zshrc}", text = "" },
-
-  { name = "*config", text = "" },
-  { name = "*{dir_colors,icons}", text = "󰏘" },
-  { name = "*history", text = "" },
-  { name = "*{lfrc,npmrc,ripgreprc}", text = "" },
-
-  { name = "*.{json,jsonc}", text = "" },
-  { name = "*.{tmTheme,xml}", text = "󰗀" },
-  { name = "*.toml", text = "" },
-  { name = "*.{yaml,yml}", text = "" },
-
-  { name = "*.{ahk,vbs}", text = "󰑷" },
-  { name = "*.reg", text = "" },
-
-  { name = "*Dockerfile", text = "󰡨" },
-  { name = "*LICENSE", text = "󰿃" },
-
-  { name = "*.cs", text = "󰌛" },
-  { name = "*.{csproj,sln}", text = "󰗀" },
-
-  { name = "*.go", text = "" },
-  { name = "*go.{mod,sum}", text = "" },
-
-  { name = "*.js", text = "" },
-  { name = "*.ts", text = "" },
-
-  { name = "*.lua", text = "" },
-
-  { name = "*.py", text = "" },
-
-  { name = "*.rb", text = "" },
-
-  { name = "*.rs", text = "" },
-
-  { name = "*.css", text = "" },
-  { name = "*.html", text = "" },
-  { name = "*.scss", text = "" },
-
-  { name = "*.po", text = "" },
-
-  { name = "*.md", text = "" },
-  { name = "*.txt", text = "" },
-
-  { name = "*.epub", text = "" },
-  { name = "*.pdf", text = "" },
-
-  { name = "*.{csv,xlsx}", text = "" },
-  { name = "*.docx", text = "" },
 
   # windows
 
   { name = "*$winre_backup_partition.marker", text = "󰘓" },
   { name = "*{hiberfil,pagefile,swapfile}.sys", text = "󰘓" },
   { name = "*ntuser*", text = "󰘓" },
-
-  { name = "*{$recycle.bin,system volume information}/", text = "󰷏" },
-
-  # hidden
-
-  { name = "**/.?*", text = "󰘓" },
-  { name = "**/.*/", text = "󰷏" },
-
-  # links
-
-  { name = "*", is = "link", text = "󰌷" },
-  { name = "*/", is = "link", text = "󰌷" },
-
-  { name = "*", is = "orphan", text = "󰌸" },
-  { name = "*/", is = "orphan", text = "󰌸" },
-
-  # defaults
-
-  { name = "*", text = "󰈤" },
-  { name = "*/", text = "󰝰" },
 ]
