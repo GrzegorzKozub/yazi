@@ -154,8 +154,8 @@ rules = [
 
   # hidden
 
-  { name = "**/.?*", fg = "darkgray" },
-  { name = "**/.*/", fg = "darkgray" },
+  # { name = "**/.?*", fg = "darkgray" },
+  # { name = "**/.*/", fg = "darkgray" },
 
   # links
 
@@ -238,7 +238,7 @@ files = [
 
   # no dir_colors from here
 
-  { name = ".zprofile", text = "" },
+  # { name = ".zprofile", text = "" },
   { name = ".zshenv", text = "" },
   { name = ".zshrc", text = "" },
 
@@ -250,6 +250,7 @@ files = [
   { name = "icons", text = "󰏘" },
 
   { name = "history", text = "" },
+  { name = "history.txt", text = "" },
 
   { name = "lfrc", text = "" },
   { name = "npmrc", text = "" },
