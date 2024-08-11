@@ -196,14 +196,14 @@ dirs = [
 
   { name = ".git", text = "" },
 
-  { name = "greg", text = "󱂵" },
+  { name = "home", text = "󱂵" },
+  { name = "greg", text = "󰉌" },
+  { name = "code", text = "󱃪" },
 
   { name = "Desktop", text = "" },
-  { name = "Documents", text = "󱧶" },
   { name = "Downloads", text = "󰉍" },
   { name = "Music", text = "󱍙" },
   { name = "Pictures", text = "󰉏" },
-  { name = "Videos", text = "󱧺" },
 
   # windows
 
