@@ -154,6 +154,7 @@ rules = [
 
   # hidden
 
+  # https://github.com/sxyazi/yazi/issues/1481
   # { name = "**/.?*", fg = "darkgray" },
   # { name = "**/.*/", fg = "darkgray" },
 
