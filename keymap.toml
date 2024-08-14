@@ -31,11 +31,9 @@ prepend_keymap = [
   { on = "F", run = "filter --smart", desc = "Filter files" },
   { on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
 
-  { on = "P", run = "plugin --sync max-preview", desc = "Maximize preview" },
-  { on = "<C-p>", run = "plugin --sync hide-preview", desc = "Hide preview" },
+  { on = "<C-p>", run = "plugin --sync cycle-preview", desc = "Cycle preview" },
 
   { on = [".", "a"], run = "plugin compress", desc = "Compress" },
-  { on = [".", "s"], run = "plugin what-size", desc = "Calculate total size" },
 ]
 
 [tasks]
