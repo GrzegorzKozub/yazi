@@ -1,7 +1,9 @@
 globals = {
   'Command',
+  'MANAGER',
   'Progress',
   'Status',
+  'Tab',
   'THEME',
   'cx',
   'ui',
