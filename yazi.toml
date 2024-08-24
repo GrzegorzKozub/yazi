@@ -82,36 +82,51 @@ previewers = [
 
 cd_title = " Change directory "
 cd_origin = "center"
+cd_offset = [ 0, 0, 48, 3 ]
 
 create_title = " Create file or directory "
 create_origin = "center"
+create_offset = [ 0, 0, 48, 3 ]
 
 rename_title = " Rename "
 rename_origin = "center"
-
-trash_title = " Trash {n} file{s}? (y/N) "
-trash_origin = "center"
-
-delete_title = " Delete {n} file{s}? (y/N) "
-delete_origin = "center"
+rename_offset = [ 0, 0, 48, 3 ]
 
 filter_title = " Filter "
 filter_origin = "center"
+filter_offset = [ 0, 0, 48, 3 ]
 
 find_title = [" Find next ", " Find previous "]
 find_origin = "center"
+find_offset = [ 0, 0, 48, 3 ]
 
 search_title = " Search with {n} "
 search_origin = "center"
+search_offset = [ 0, 0, 48, 3 ]
 
 shell_title = [" Shell ", " Shell (blocking) "]
 shell_origin = "center"
+shell_offset = [ 0, 0, 48, 3 ]
 
-overwrite_title = " Overwrite? (y/N) "
+[confirm]
+
+trash_title = " Trash {n} file{s}? "
+trash_origin = "center"
+trash_offset = [0, 0, 48, 8]
+
+delete_title = " Delete {n} file{s}? "
+delete_origin = "center"
+delete_offset = [0, 0, 48, 8]
+
+overwrite_title = " Overwrite? "
+overwrite_content = "Overwrite this file?"
 overwrite_origin = "center"
+overwrite_offset = [0, 0, 48, 8]
 
-quit_title = " Quit with {n} task{s} running? (y/N) "
+quit_title = " Quit? "
+quit_content = "Quit with these task running?"
 quit_origin = "center"
+quit_offset = [0, 0, 48, 8]
 
 [select]
 
