@@ -4,23 +4,25 @@ require('session'):setup { sync_yanked = true }
 
 -- git.yazi
 
-THEME.git_ignored = ui.Style():fg 'darkgray'
-THEME.git_ignored_sign = '!'
+THEME.git = THEME.git or {}
 
-THEME.git_untracked = ui.Style():fg 'yellow'
-THEME.git_untracked_sign = '*'
+THEME.git.ignored = ui.Style():fg 'darkgray'
+THEME.git.ignored_sign = '!'
 
-THEME.git_added = ui.Style():fg 'green'
-THEME.git_added_sign = '+'
+THEME.git.untracked = ui.Style():fg 'yellow'
+THEME.git.untracked_sign = '*'
 
-THEME.git_modified = ui.Style():fg 'blue'
-THEME.git_modified_sign = '~'
+THEME.git.added = ui.Style():fg 'green'
+THEME.git.added_sign = '+'
 
-THEME.git_updated = ui.Style():fg 'blue'
-THEME.git_updated_sign = '~'
+THEME.git.modified = ui.Style():fg 'blue'
+THEME.git.modified_sign = '~'
 
-THEME.git_deleted = ui.Style():fg 'red'
-THEME.git_deleted_sign = '-'
+THEME.git.updated = ui.Style():fg 'blue'
+THEME.git.updated_sign = '~'
+
+THEME.git.deleted = ui.Style():fg 'red'
+THEME.git.deleted_sign = '-'
 
 require('git'):setup()
 
