@@ -70,6 +70,7 @@ prepend_preloaders = [{ mime = "video/*", run = "video-ffmpeg" }]
 
 previewers = [
   { name = "*/", run = "folder", sync = true },
+  { name = "*.md", run = "md" },
   { mime = "text/*", run = "code" },
   { mime = "application/octet-stream", run = "code" },
   { mime = "*/{csv,javascript,json,x-ndjson}", run = "code" },
