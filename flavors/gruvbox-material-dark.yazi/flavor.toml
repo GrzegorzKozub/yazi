@@ -117,7 +117,7 @@ rules = [
 
   { name = "*.{7z,gz,rar,tar,zip}", fg = "yellow" },
 
-  { name = "*.{cow,fsa,iso,mrimg,wim}", fg = "magenta" },
+  { name = "*.{cow,fsa,iso,mrimg,mrimgx,wim}", fg = "magenta" },
 
   { mime = "{audio,image,video}/*", fg = "magenta" },
 
@@ -285,6 +285,7 @@ exts = [
   { name = "cow", text = "󰋊" },
   { name = "fsa", text = "󰋊" },
   { name = "mrimg", text = "󰋊" },
+  { name = "mrimgx", text = "󰋊" },
   { name = "wim", text = "󰋊" },
 
   { name = "iso", text = "󰗮" },
