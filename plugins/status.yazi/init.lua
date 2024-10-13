@@ -19,7 +19,7 @@ function Status:size()
   if not h then
     return ui.Span ''
   end
-  local size = h:size() or h.cha.length
+  local size = h:size() or h.cha.len
   return ui.Span(string.format('%6s', ya.readable_size(size))):fg(size_color(size))
 end
 
@@ -51,7 +51,7 @@ function Status:modified()
   if not h then
     return ui.Span ''
   end
-  local modified = math.floor(h.cha.modified)
+  local modified = math.floor(h.cha.mtime)
   local now = math.floor(ya.time())
   local format = year(modified) < year(now) and '%d %b  %Y' or '%d %b %H:%M'
   return ui.Span(tostring(os.date(format, modified)):lower()):fg 'gray'
