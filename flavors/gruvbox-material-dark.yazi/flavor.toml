@@ -50,6 +50,7 @@ permissions_w = { fg = "gray", bg = "reset" }
 permissions_x = { fg = "gray", bg = "reset" }
 permissions_s = { fg = "darkgray", bg = "reset" }
 
+# change select to pick soon
 [select]
 
 border = { fg = "darkgray" }
@@ -62,6 +63,15 @@ border = { fg = "darkgray" }
 title = { fg = "darkgray" }
 value = { fg = "reset" }
 selected = { bg = "darkgray" }
+
+[confirm]
+
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+content = { fg = "reset" }
+buttons = { fg = "gray" }
+button_yes = "Yes"
+button_no = "No"
 
 [completion]
 
