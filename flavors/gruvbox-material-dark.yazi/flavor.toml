@@ -50,8 +50,7 @@ permissions_w = { fg = "gray", bg = "reset" }
 permissions_x = { fg = "gray", bg = "reset" }
 permissions_s = { fg = "darkgray", bg = "reset" }
 
-# change select to pick soon
-[select]
+[pick]
 
 border = { fg = "darkgray" }
 active = { fg = "reset" }
@@ -67,6 +66,8 @@ selected = { bg = "darkgray" }
 [confirm]
 
 border = { fg = "darkgray" }
+separator = false
+scrollbar = false
 title = { fg = "darkgray" }
 content = { fg = "reset" }
 buttons = { fg = "gray" }

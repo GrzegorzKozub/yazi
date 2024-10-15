@@ -93,12 +93,13 @@ cd_origin = "center"
 cd_offset = [0, 0, 48, 3]
 
 create_title = " Create file or directory "
+# create_title = [" Create file or directory ", " Create directory "]
 create_origin = "center"
 create_offset = [0, 0, 48, 3]
 
 rename_title = " Rename "
-rename_origin = "center"
-rename_offset = [0, 0, 48, 3]
+rename_origin = "hovered"
+rename_offset = [0, 1, 48, 3]
 
 filter_title = " Filter "
 filter_origin = "center"
@@ -132,11 +133,12 @@ overwrite_origin = "center"
 overwrite_offset = [0, 0, 48, 8]
 
 quit_title = " Quit? "
-quit_content = "Quit with these task running?"
+quit_content = "Quit with these tasks running?"
 quit_origin = "center"
 quit_offset = [0, 0, 48, 8]
 
-[select]
+[pick]
 
 open_title = " Open "
-open_origin = "center"
+open_origin = "hovered"
+open_offset = [0, 1, 16, 8]
