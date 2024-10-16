@@ -11,6 +11,7 @@ scrolloff = 3
 
 max_width = 1920
 max_height = 1080
+wrap = "no"
 
 [opener]
 
