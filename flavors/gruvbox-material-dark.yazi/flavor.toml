@@ -65,14 +65,15 @@ selected = { bg = "darkgray" }
 
 [confirm]
 
-border = { fg = "darkgray" }
-separator = false
-scrollbar = false
-title = { fg = "darkgray" }
-content = { fg = "reset" }
-buttons = { fg = "gray" }
+show_separators = false
+show_scrollbar = false
 button_yes = "Yes"
 button_no = "No"
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+content = { fg = "gray" }
+list = { fg = "reset" }
+buttons = { fg = "gray" }
 
 [completion]
 
