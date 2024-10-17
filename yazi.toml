@@ -93,8 +93,7 @@ cd_title = " Change directory "
 cd_origin = "center"
 cd_offset = [0, 0, 48, 3]
 
-create_title = " Create file or directory "
-# create_title = [" Create file or directory ", " Create directory "]
+create_title = [" Create file or directory ", " Create directory "]
 create_origin = "center"
 create_offset = [0, 0, 48, 3]
 
