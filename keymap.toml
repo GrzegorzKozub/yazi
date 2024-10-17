@@ -29,8 +29,6 @@ prepend_keymap = [
   { on = ["g", "w"], run = "cd D:/Win", desc = "Go to the win directory" },
   { on = ["g", "g"], run = "cd E:/Games", desc = "Go to the games directory" },
 
-  { on = ["<F1>"], run = "help", desc = "Open help" },
-
   { on = "F", run = "filter --smart", desc = "Filter files" },
   { on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
 
@@ -38,19 +36,3 @@ prepend_keymap = [
 
   { on = [".", "a"], run = "plugin compress", desc = "Compress" },
 ]
-
-[tasks]
-
-prepend_keymap = [{ on = ["<F1>"], run = "help", desc = "Open help" }]
-
-[select]
-
-prepend_keymap = [{ on = ["<F1>"], run = "help", desc = "Open help" }]
-
-[input]
-
-prepend_keymap = [{ on = ["<F1>"], run = "help", desc = "Open help" }]
-
-[completion]
-
-prepend_keymap = [{ on = ["<F1>"], run = "help", desc = "Open help" }]
