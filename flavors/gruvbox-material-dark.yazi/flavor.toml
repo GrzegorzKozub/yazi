@@ -65,13 +65,13 @@ selected = { bg = "darkgray" }
 
 [confirm]
 
-button_labels = ["Yes", "No"]
 border = { fg = "darkgray" }
 title = { fg = "darkgray" }
 content = { fg = "gray" }
-list = { fg = "reset" }
-button_yes = { fg = "gray" }
-button_no = { fg = "darkgray" }
+list = {}
+btn_yes = {}
+btn_no = { fg = "gray" }
+btn_labels = ["Yes", "No"]
 
 [completion]
 
