@@ -28,4 +28,4 @@ require('git'):setup()
 
 -- status.yazi
 
-require 'status'
+require('status'):setup()

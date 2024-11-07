@@ -14,13 +14,13 @@ local function size_color(size)
   end
 end
 
-function Status:size()
+local function size()
   local h = cx.active.current.hovered
   if not h then
     return ui.Span ''
   end
-  local size = h:size() or h.cha.len
-  return ui.Span(string.format('%6s', ya.readable_size(size))):fg(size_color(size))
+  local s = h:size() or h.cha.len
+  return ui.Span(string.format('%6s', ya.readable_size(s))):fg(size_color(s))
 end
 
 local function owner_color(owner)
@@ -33,57 +33,67 @@ local function owner_color(owner)
   end
 end
 
-function Status:owner()
+local function owner()
   local h = cx.active.current.hovered
   if not h or ya.target_family() ~= 'unix' then
     return ui.Span ''
   end
-  local owner = ya.user_name(h.cha.uid) or tostring(h.cha.uid)
-  return ui.Span(owner):fg(owner_color(owner))
+  local o = ya.user_name(h.cha.uid) or tostring(h.cha.uid)
+  return ui.Span(o):fg(owner_color(o))
 end
 
 local function year(date)
   return tonumber(os.date('%Y', date))
 end
 
-function Status:modified()
+local function modified()
   local h = cx.active.current.hovered
   if not h then
     return ui.Span ''
   end
-  local modified = math.floor(h.cha.mtime)
+  local m = math.floor(h.cha.mtime)
   local now = math.floor(ya.time())
-  local format = year(modified) < year(now) and '%d %b  %Y' or '%d %b %H:%M'
-  return ui.Span(tostring(os.date(format, modified)):lower()):fg 'gray'
+  local format = year(m) < year(now) and '%d %b  %Y' or '%d %b %H:%M'
+  return ui.Span(tostring(os.date(format, m)):lower()):fg 'gray'
 end
 
-function Status:name()
+local function name()
   local h = cx.active.current.hovered
   if not h then
     return ui.Span ''
   end
-  local name = h:icon().text .. ' ' .. h.url:name()
-  return ui.Span(name):style(h:style())
+  local n = h:icon().text .. ' ' .. h.url:name()
+  return ui.Span(n):style(h:style())
 end
 
-function Status:link()
+local function link()
   local h = cx.active.current.hovered
   if not h or not h.link_to then
     return ui.Span ''
   end
-  local link = '-> ' .. tostring(h.link_to)
-  return h.cha.is_orphan and ui.Span(link):fg 'red' or ui.Span(link):style(h:style())
+  local l = '-> ' .. tostring(h.link_to)
+  return h.cha.is_orphan and ui.Span(l):fg 'red' or ui.Span(l):style(h:style())
 end
 
-function Status:mode()
-  local mode = tostring(cx.active.mode):sub(1, 1)
-  if mode == 'n' then
+local function mode_style()
+  if cx.active.mode.is_select then
+    return THEME.status.mode_select
+  elseif cx.active.mode.is_unset then
+    return THEME.status.mode_unset
+  else
+    return THEME.status.mode_normal
+  end
+end
+
+local function mode()
+  local m = tostring(cx.active.mode):sub(1, 1)
+  if m == 'n' then
     return ui.Span '    '
   end
-  return ui.Span(' ' .. mode .. ' '):style(self.style())
+  return ui.Span(' ' .. m .. ' '):style(mode_style())
 end
 
-function Status:position()
+local function position()
   local cursor = cx.active.current.cursor
   local length = #cx.active.current.files
   return ui.Span(string.format('%2d/%-2d', cursor + 1, length)):fg 'darkgray'
@@ -93,41 +103,41 @@ local function space()
   return ui.Span ' '
 end
 
-function Status:render()
+M.setup = function()
+  for i = 1, 3 do
+    Status:children_remove(i, Status.LEFT)
+  end
   local left = ya.target_family() == 'windows'
-      and ui.Line {
-        self:size(),
-        space(),
-        self:modified(),
-        space(),
-        self:name(),
-        space(),
-        self:link(),
+      and {
+        size,
+        space,
+        modified,
+        space,
+        name,
+        space,
+        link,
       }
-    or ui.Line {
-      self:permissions(),
-      space(),
-      self:size(),
-      space(),
-      self:owner(),
-      space(),
-      self:modified(),
-      space(),
-      self:name(),
-      space(),
-      self:link(),
+    or {
+      size,
+      space,
+      owner,
+      space,
+      modified,
+      space,
+      name,
+      space,
+      link,
     }
-  local right = ui.Line {
-    self:mode(),
-    space(),
-    self:position(),
-  }
-  local right_width = right:width()
-  return {
-    ui.Text(left):area(self._area),
-    ui.Text(right):area(self._area):align(ui.Text.RIGHT),
-    table.unpack(Progress:render(self._area, right_width)),
-  }
+  for i, value in ipairs(left) do
+    Status:children_add(value, i, Status.LEFT)
+  end
+  for i = 4, 6 do
+    Status:children_remove(i, Status.RIGHT)
+  end
+  local right = { mode, space, position }
+  for i, value in ipairs(right) do
+    Status:children_add(value, i, Status.RIGHT)
+  end
 end
 
 return M
