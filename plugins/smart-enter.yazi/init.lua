@@ -1,3 +1,5 @@
+--- @sync entry
+
 local M = {}
 
 function M:entry()

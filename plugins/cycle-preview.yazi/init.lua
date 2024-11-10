@@ -1,4 +1,8 @@
-local function entry(st)
+--- @sync entry
+
+local M = {}
+
+function M.entry(st)
   if not st.curr then
     st.orig, st.curr = Tab.layout, 'maximized'
     Tab.layout = function(self)
@@ -30,4 +34,4 @@ local function entry(st)
   ya.app_emit('resize', {})
 end
 
-return { entry = entry }
+return M
