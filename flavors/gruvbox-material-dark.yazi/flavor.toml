@@ -30,15 +30,16 @@ count_selected = { fg = "black", bg = "magenta" }
 border_symbol = " "
 border_style = { fg = "black" }
 
+[mode]
+
+normal_main = { fg = "black", bg = "gray" }
+select_main = { fg = "black", bg = "lightmagenta" }
+unset_main = { fg = "black", bg = "red" }
+
 [status]
 
 separator_open = ""
 separator_close = ""
-separator_style = { fg = "gray", bg = "gray" }
-
-mode_normal = { fg = "black", bg = "gray" }
-mode_select = { fg = "black", bg = "lightmagenta" }
-mode_unset = { fg = "black", bg = "red" }
 
 progress_label = { reverse = true }
 progress_normal = { fg = "blue", bg = "reset" }

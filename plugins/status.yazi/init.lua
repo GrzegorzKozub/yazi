@@ -75,13 +75,13 @@ local function link()
   return h.cha.is_orphan and ui.Span(l):fg 'red' or ui.Span(l):style(h:style())
 end
 
-local function mode_style()
-  if cx.active.mode.is_select then
-    return THEME.status.mode_select
-  elseif cx.active.mode.is_unset then
-    return THEME.status.mode_unset
+local function mode_style(mode)
+  if mode.is_select then
+    return THEME.mode.select_main
+  elseif mode.is_unset then
+    return THEME.mode.unset_main
   else
-    return THEME.status.mode_normal
+    return THEME.mode.normal_main
   end
 end
 
@@ -90,7 +90,7 @@ local function mode()
   if m == 'n' then
     return ui.Span '    '
   end
-  return ui.Span(' ' .. m .. ' '):style(mode_style())
+  return ui.Span(' ' .. m .. ' '):style(mode_style(cx.active.mode))
 end
 
 local function position()
