@@ -148,9 +148,11 @@ rules = [
 
   { name = "*.{cert,pki,ssh}/", fg = "gray" },
 
-  { name = "*.{azure-pipelines,git,github,husky,vscode}/", fg = "gray" },
+  { name = "*.{azure-pipelines,devcontainer,git,github,husky,vscode}/", fg = "gray" },
 
   { name = "*node_modules/", fg = "gray" },
+
+  { name = "*.obsidian/", fg = "gray" },
 
   { name = "*.steam/", fg = "gray" },
 
@@ -206,12 +208,15 @@ dirs = [
   { name = ".ssh", text = "󰍁" },
 
   { name = ".azure-pipelines", text = "󰿕" },
+  { name = ".devcontainer", text = "" },
   { name = ".git", text = "" },
   { name = ".github", text = "󰊤" },
   { name = ".husky", text = "󰛢" },
   { name = ".vscode", text = "󰨞" },
 
   { name = "node_modules", text = "󰎙" },
+
+  { name = ".obsidian", text = "" },
 
   { name = ".steam", text = "󰓓" },
 ]
