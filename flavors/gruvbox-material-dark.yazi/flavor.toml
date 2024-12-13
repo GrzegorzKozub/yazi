@@ -1,9 +1,5 @@
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
-[flavor]
-
-use = ""
-
 [manager]
 
 cwd = { fg = "cyan" }
@@ -45,11 +41,10 @@ progress_label = { reverse = true }
 progress_normal = { fg = "blue", bg = "reset" }
 progress_error = { fg = "red", bg = "reset" }
 
-permissions_t = { fg = "gray", bg = "reset" }
-permissions_r = { fg = "gray", bg = "reset" }
-permissions_w = { fg = "gray", bg = "reset" }
-permissions_x = { fg = "gray", bg = "reset" }
-permissions_s = { fg = "darkgray", bg = "reset" }
+perm_type = { fg = "gray", bg = "reset" }
+perm_read = { fg = "gray", bg = "reset" }
+perm_write = { fg = "gray", bg = "reset" }
+perm_exec = { fg = "gray", bg = "reset" }
 
 [pick]
 
