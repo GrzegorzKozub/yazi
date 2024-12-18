@@ -145,10 +145,10 @@ rules = [
 
   { name = "*.{azure-pipelines,devcontainer,git,github,husky,vscode}/", fg = "gray" },
 
+  { name = "*__pycache__/", fg = "gray" },
   { name = "*node_modules/", fg = "gray" },
 
   { name = "*.obsidian/", fg = "gray" },
-
   { name = "*.steam/", fg = "gray" },
 
   # windows
@@ -209,10 +209,10 @@ dirs = [
   { name = ".husky", text = "󰛢" },
   { name = ".vscode", text = "󰨞" },
 
+  { name = "__pycache__", text = "" },
   { name = "node_modules", text = "󰎙" },
 
   { name = ".obsidian", text = "" },
-
   { name = ".steam", text = "󰓓" },
 ]
 
