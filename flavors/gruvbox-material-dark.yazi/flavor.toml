@@ -136,6 +136,7 @@ rules = [
   { name = "*.{prettierignore,prettierrc}", fg = "gray" },
   { name = "*.pylintrc", fg = "gray" },
   { name = "*.taplo.toml", fg = "gray" },
+  { name = "*.vscodeignore", fg = "gray" },
 
   { name = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
 
@@ -246,6 +247,8 @@ files = [
   { name = ".pylintrc", text = "" },
 
   { name = ".taplo.toml", text = "" },
+
+  { name = ".vscodeignore", text = "󰨞" },
 
   # no dir_colors from here
 
