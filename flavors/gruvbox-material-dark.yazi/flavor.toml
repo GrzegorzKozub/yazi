@@ -69,6 +69,11 @@ btn_yes = {}
 btn_no = { fg = "gray" }
 btn_labels = ["Yes", "No"]
 
+[spot]
+
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+
 [completion]
 
 border = { fg = "darkgray" }
