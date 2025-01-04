@@ -56,6 +56,7 @@ rules = [
   { mime = "{audio,video}/*", use = ["play", "reveal"] },
   { mime = "application/{,g}zip", use = ["extract", "reveal"] },
   { mime = "application/{tar,bzip*,7z-compressed,xz,rar}", use = ["extract", "reveal"] },
+  { name = "*.zip", use = ["extract", "reveal"] }, # for windows
   { mime = "inode/empty", use = ["edit", "reveal"] },
   { mime = "*", use = ["open", "reveal"] },
 ]
@@ -70,7 +71,6 @@ prepend_fetchers = [
 previewers = [
   { name = "*/", run = "folder", sync = true },
   { mime = "text/*", run = "code" },
-  { mime = "application/octet-stream", run = "code" },
   { mime = "*/{csv,javascript,json,ndjson}", run = "code" },
   { name = "*.[ot]tf", run = "font" },
   { mime = "image/{avif,heic,jxl,svg+xml}", run = "magick" },
@@ -79,7 +79,9 @@ previewers = [
   { mime = "application/{,g}zip", run = "archive" },
   { mime = "application/iso9660-image", run = "archive" },
   { mime = "application/{tar,bzip*,7z-compressed,xz,rar}", run = "archive" },
+  { name = "*.zip", run = "archive" }, # for windows
   { mime = "application/pdf", run = "pdf" },
+  # { mime = "application/octet-stream", run = "code" },
   # { mime = "inode/empty", run = "noop" },
   { name = "*", run = "noop" },
 ]
