@@ -381,6 +381,7 @@ exts = [
   { name = "go", text = "" },
 
   { name = "js", text = "" },
+  { name = "mjs", text = "" },
   { name = "ts", text = "" },
 
   { name = "lua", text = "" },
