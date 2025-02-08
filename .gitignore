@@ -2,6 +2,5 @@ package.toml
 
 plugins/*
 
-!plugins/cycle-preview.yazi
 !plugins/smart-enter.yazi
 !plugins/status.yazi
