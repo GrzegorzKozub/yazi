@@ -30,5 +30,7 @@ prepend_keymap = [
   { on = "F", run = "filter --smart", desc = "Filter files" },
   { on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
 
-  { on = [".", "a"], run = "plugin compress", desc = "Compress" },
+  { on = [".", "c"], run = "plugin compress", desc = "Compress" },
+  { on = [".", "d"], run = "plugin diff", desc = "Diff" },
+  { on = [".", "s"], run = "plugin size", desc = "Size" },
 ]
