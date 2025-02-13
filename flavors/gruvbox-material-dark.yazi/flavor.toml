@@ -113,9 +113,9 @@ title_info = { fg = "green" }
 title_warn = { fg = "yellow" }
 title_error = { fg = "red" }
 
-icon_info = ""
-icon_warn = ""
-icon_error = ""
+icon_info = " "
+icon_warn = " "
+icon_error = " "
 
 [filetype]
 

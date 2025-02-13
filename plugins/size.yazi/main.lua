@@ -1,57 +1,59 @@
 local M = {}
 
 local get_paths = ya.sync(function()
-  local paths, selected = {}, true
+  local paths, selected = {}, 0
   for _, value in pairs(cx.active.selected) do
     paths[#paths + 1] = tostring(value)
   end
   if #paths == 0 then
     paths[1] = tostring(cx.active.current.cwd)
-    selected = false
+  else
+    selected = #paths
   end
   return paths, selected
 end)
 
-local fetch_size = function(paths)
-  local output, err = Command('du'):arg('-scb'):args(paths):output()
+local function format(bytes)
+  local size, units, index = bytes, { 'B', 'K', 'M', 'G', 'T' }, 1
+  while size > 1024 and index < #units do
+    size = size / 1024
+    index = index + 1
+  end
+  return string.format('%.1f%s', size, units[index])
+end
+
+local get_total = function(paths)
+  local cmd, arg
+  if ya.target_family() == 'unix' then
+    cmd, arg = 'du', '-bcs'
+  end
+  local output, err = Command(cmd):arg(arg):args(paths):output()
   if not output then
     return nil, tostring(err)
   end
-  return output.stdout, nil
-end
-
-local get_total_size = function(sizes)
-  for size, name in sizes:gmatch '(%d+)%s+([^\n]+)' do
-    if name == 'total' then
-      return size
+  if ya.target_family() == 'unix' then
+    for size, name in output.stdout:gmatch '(%d+)%s+([^\n]+)' do
+      if name == 'total' then
+        return format(tonumber(size)), nil
+      end
     end
   end
 end
 
-local function format_size(size)
-  local units = { 'B', 'KB', 'MB', 'GB', 'TB' }
-  local unit_index = 1
-  while size > 1024 and unit_index < #units do
-    size = size / 1024
-    unit_index = unit_index + 1
-  end
-  return string.format('%.2f %s', size, units[unit_index])
-end
-
 M.entry = function()
-  local items, selected = get_paths()
-  local output, err = fetch_size(items)
+  local paths, selected = get_paths()
+  local total, err = get_total(paths)
   if err then
-    ya.notify { level = 'error', title = 'size', content = err, timeout = 10 }
+    ya.notify { content = err, level = 'error', timeout = 5, title = 'size ' }
     return
   end
-  local total_size = get_total_size(output)
-  local formatted_size = format_size(tonumber(total_size))
-  local notification_content = 'Total size: ' .. formatted_size
   ya.notify {
-    title = 'Size',
-    content = notification_content,
-    timeout = 10,
+    content = (selected > 0 and ' selected ' .. selected .. ' items: ' or ' current dir: ')
+      .. total
+      .. ' ',
+    level = 'info',
+    timeout = 5,
+    title = 'size ',
   }
 end
 
