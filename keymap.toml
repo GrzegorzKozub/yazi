@@ -3,34 +3,62 @@
 [manager]
 
 prepend_keymap = [
-  { on = ["<A-Up>"], run = "seek -5", desc = "Seek up 5 units in the preview" },
-  { on = ["<A-Down>"], run = "seek 5", desc = "Seek down 5 units in the preview" },
+  { on = "<A-Up>", run = "seek -5", desc = "Seek up 5 units in the preview" },
+  { on = "<A-Down>", run = "seek 5", desc = "Seek down 5 units in the preview" },
 
-  { on = ["<A-u>"], run = "seek -25", desc = "Seek up 25 units in the preview" },
-  { on = ["<A-d>"], run = "seek 25", desc = "Seek down 25 units in the preview" },
+  { on = "<A-u>", run = "seek -25", desc = "Seek up 25 units in the preview" },
+  { on = "<A-d>", run = "seek 25", desc = "Seek down 25 units in the preview" },
 
-  { on = ["<Enter>"], run = "plugin smart-enter", desc = "Enter the directory or open the file" },
+  { on = "<Enter>", run = "plugin smart-enter", desc = "Enter the directory or open the file" },
 
   { on = "A", run = "create --dir", desc = "Create a directory" },
-  { on = ["<F7>"], run = "create --dir", desc = "Create a directory" },
+  { on = "<F7>", run = "create --dir", desc = "Create a directory" },
 
-  { on = ["<F2>"], run = "rename --cursor=before_ext", desc = "Rename a file or directory" },
+  { on = "<F2>", run = "rename --cursor=before_ext", desc = "Rename a file or directory" },
 
-  { on = ["<Delete>"], run = "remove", desc = "Move the files to the trash" },
+  { on = "<Delete>", run = "remove", desc = "Move the files to the trash" },
 
-  { on = ["g", "c"], run = "cd ~/code", desc = "Go to the code directory" },
-  { on = ["g", "m"], run = "cd /run/media/greg", desc = "Go to the mount directory" },
+  { on = "<Tab>", run = "tasks_show", desc = "Show task manager" },
 
-  # { on = ["g", "c"], run = "cd D:/Code", desc = "Go to the code directory" },
-  { on = ["g", "a"], run = "cd D:/Apps", desc = "Go to the apps directory" },
-  { on = ["g", "u"], run = "cd D:/Users", desc = "Go to the users directory" },
-  { on = ["g", "w"], run = "cd D:/Win", desc = "Go to the win directory" },
-  { on = ["g", "g"], run = "cd E:/Games", desc = "Go to the games directory" },
+  { on = ["g", "h"], run = "cd ~", desc = "Home dir" },
+  { on = ["g", "d"], run = "cd ~/Downloads", desc = "Downloads dir" },
 
-  { on = "F", run = "filter --smart", desc = "Filter files" },
-  { on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
+  { on = ["g", "c"], run = "cd ~/code", desc = "Code dir (Linux)" },
+  { on = ["g", "m"], run = "cd /run/media/greg", desc = "Mount dir" },
+
+  { on = ["g", "a"], run = "cd D:/Apps", desc = "Apps dir" },
+  { on = ["g", "C"], run = "cd D:/Code", desc = "Code dir (Windows)" },
+  { on = ["g", "u"], run = "cd D:/Users", desc = "Users dir" },
+  { on = ["g", "w"], run = "cd D:/Win", desc = "Win dir" },
+  { on = ["g", "g"], run = "cd E:/Games", desc = "Games dir" },
 
   { on = [".", "c"], run = "plugin compress", desc = "Compress" },
   { on = [".", "d"], run = "plugin diff", desc = "Diff" },
   { on = [".", "s"], run = "plugin size", desc = "Size" },
+
+  { on = "<C-F1>", run = "help", desc = "Open help" }, # some terminals capture f1
 ]
+
+[tasks]
+
+prepend_keymap = [{ on = "<C-F1>", run = "help", desc = "Open help" }]
+
+[spot]
+
+prepend_keymap = [{ on = "<C-F1>", run = "help", desc = "Open help" }]
+
+[pick]
+
+prepend_keymap = [{ on = "<C-F1>", run = "help", desc = "Open help" }]
+
+[input]
+
+prepend_keymap = [{ on = "<C-F1>", run = "help", desc = "Open help" }]
+
+[confirm]
+
+prepend_keymap = [{ on = "<C-F1>", run = "help", desc = "Open help" }]
+
+[help]
+
+prepend_keymap = [{ on = "/", run = "filter", desc = "Apply a filter for the help items" }]
