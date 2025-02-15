@@ -69,10 +69,10 @@ btn_yes = {}
 btn_no = { fg = "gray" }
 btn_labels = ["Yes", "No"]
 
-[spot]
+# [spot]
 
-border = { fg = "darkgray" }
-title = { fg = "darkgray" }
+# border = { fg = "darkgray" }
+# title = { fg = "darkgray" }
 
 [completion]
 
@@ -113,9 +113,9 @@ title_info = { fg = "green" }
 title_warn = { fg = "yellow" }
 title_error = { fg = "red" }
 
-icon_info = " "
-icon_warn = " "
-icon_error = " "
+icon_info = ""
+icon_warn = ""
+icon_error = ""
 
 [filetype]
 

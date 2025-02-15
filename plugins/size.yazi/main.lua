@@ -38,16 +38,15 @@ M.entry = function()
   local paths, selected = get_paths()
   local total, err = get_total(paths)
   if err then
-    ya.notify { content = err, level = 'error', timeout = 5, title = 'size ' }
+    ya.notify { content = err, level = 'error', timeout = 5, title = 'Size' }
     return
   end
   ya.notify {
-    content = (selected > 0 and ' selected ' .. selected .. ' items: ' or ' current dir: ')
-      .. total
-      .. ' ',
-    level = 'info',
+    content = (selected > 0 and 'Selected ' .. selected .. ' items: ' or 'Current dir: ')
+      .. total,
+    -- level = 'info',
     timeout = 5,
-    title = 'size ',
+    title = 'Size',
   }
 end
 
