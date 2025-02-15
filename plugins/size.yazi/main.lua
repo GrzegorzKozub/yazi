@@ -23,19 +23,13 @@ local function format(bytes)
 end
 
 local get_total = function(paths)
-  local cmd, arg
-  if ya.target_family() == 'unix' then
-    cmd, arg = 'du', '-bcs'
-  end
-  local output, err = Command(cmd):arg(arg):args(paths):output()
+  local output, err = Command('du'):arg('-bcs'):args(paths):output()
   if not output then
     return nil, tostring(err)
   end
-  if ya.target_family() == 'unix' then
-    for size, name in output.stdout:gmatch '(%d+)%s+([^\n]+)' do
-      if name == 'total' then
-        return format(tonumber(size)), nil
-      end
+  for size, name in output.stdout:gmatch '(%d+)%s+([^\n]+)' do
+    if name == 'total' then
+      return format(tonumber(size)), nil
     end
   end
 end
