@@ -88,7 +88,7 @@ icon_command = ""
 
 border = { fg = "darkgray" }
 title = { fg = "darkgray" }
-hovered = { fg = "reset" }
+hovered = { fg = "reset", bg = "darkgray" }
 
 [which]
 

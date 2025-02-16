@@ -6,6 +6,7 @@ globals = {
   'Tab',
   'THEME',
   'cx',
+  'fs',
   'ui',
   'ya',
 }

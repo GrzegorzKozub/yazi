@@ -1,35 +1,41 @@
 local M = {}
 
--- local get_paths = ya.sync(function()
---   local paths, selected = {}, nil
---   for _, value in pairs(cx.active.selected) do
---     paths[#paths + 1] = tostring(value)
---   end
---   if #paths == 0 then
---     local h = cx.active.current.hovered.url
---     paths[1] = tostring(h)
---     selected = h:name()
---   else
---     selected = #paths
---   end
---   return paths, selected
--- end)
---
--- M.entry = function()
---   local paths, selected = get_paths()
---   local total, err = get_total(paths)
---   if err then
---     ya.notify { content = err, level = 'error', timeout = 3, title = 'Size' }
---     return
---   end
---   ya.notify {
---     content = (type(selected) == 'string' and selected .. ': ' or selected .. ' selected: ')
---       .. total,
---     -- level = 'info',
---     timeout = 3,
---     title = 'Size',
---   }
--- end
+local get_paths = ya.sync(function()
+  local paths = {}
+  for _, value in pairs(cx.active.selected) do
+    paths[#paths + 1] = value
+  end
+  local h = cx.active.current.hovered.url
+  if paths[#paths] ~= h then
+    paths[#paths + 1] = h
+  end
+  return paths
+end)
+
+local filter_files = function(paths)
+  local files = {}
+  for _, value in ipairs(paths) do
+    if not fs.cha(value).is_dir then
+      files[#files + 1] = tostring(value)
+    end
+  end
+  if #files < 2 then
+    return {}, 'Not enough files selected'
+  end
+  return { files[#files - 1], files[#files] }, nil
+end
+
+M.entry = function()
+  local files, err = filter_files(get_paths())
+  if err then
+    ya.notify { content = err, level = 'Error', timeout = 3, title = 'Diff' }
+    return
+  end
+  ya.manager_emit('shell', {
+    'nvim -d ' .. files[1] .. ' ' .. files[2],
+    block = true,
+    orphan = true,
+  })
+end
 
 return M
-
