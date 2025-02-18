@@ -28,7 +28,7 @@ end
 M.entry = function()
   local files, err = filter_files(get_paths())
   if err then
-    ya.notify { content = err, level = 'Error', timeout = 3, title = 'Diff' }
+    ya.notify { content = err, level = 'error', timeout = 3, title = 'Diff' }
     return
   end
   ya.manager_emit('shell', {
