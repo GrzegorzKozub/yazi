@@ -151,7 +151,9 @@ rules = [
 
   { name = "*.{azure-pipelines,devcontainer,git,github,husky,vscode}/", fg = "gray" },
 
+  { name = "*.venv/", fg = "gray" },
   { name = "*__pycache__/", fg = "gray" },
+  { name = "*dist/", fg = "gray" },
   { name = "*node_modules/", fg = "gray" },
 
   { name = "*.obsidian/", fg = "gray" },
@@ -215,7 +217,9 @@ dirs = [
   { name = ".husky", text = "󰛢" },
   { name = ".vscode", text = "󰨞" },
 
+  { name = ".venv", text = "" },
   { name = "__pycache__", text = "" },
+  { name = "dist", text = "" },
   { name = "node_modules", text = "󰎙" },
 
   { name = ".obsidian", text = "" },
@@ -278,6 +282,10 @@ files = [
   { name = "LICENSE", text = "󰿃" },
 
   { name = "Dockerfile", text = "󰡨" },
+
+  { name = "requirements.txt", text = "" },
+
+  { name = "eslint.config.mjs", text = "" },
 
   { name = "go.mod", text = "" },
   { name = "go.sum", text = "" },
