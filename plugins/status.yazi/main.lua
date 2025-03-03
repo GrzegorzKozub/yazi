@@ -77,11 +77,11 @@ end
 
 local function mode_style(mode)
   if mode.is_select then
-    return THEME.mode.select_main
+    return th.mode.select_main
   elseif mode.is_unset then
-    return THEME.mode.unset_main
+    return th.mode.unset_main
   else
-    return THEME.mode.normal_main
+    return th.mode.normal_main
   end
 end
 

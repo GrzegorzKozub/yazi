@@ -34,8 +34,10 @@ unset_main = { fg = "black", bg = "red" }
 
 [status]
 
-separator_open = ""
-separator_close = ""
+overall = { fg = "gray" }
+
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 
 progress_label = { reverse = true }
 progress_normal = { fg = "blue", bg = "reset" }
@@ -69,12 +71,14 @@ btn_yes = {}
 btn_no = { fg = "gray" }
 btn_labels = ["Yes", "No"]
 
-# [spot]
+[spot]
 
-# border = { fg = "darkgray" }
-# title = { fg = "darkgray" }
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+tbl_col = { fg = "reset" }
+tbl_cell = { fg = "reset", reversed = true }
 
-[completion]
+[cmp]
 
 border = { fg = "darkgray" }
 active = { fg = "reset" }
