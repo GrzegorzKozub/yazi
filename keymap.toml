@@ -22,14 +22,14 @@ prepend_keymap = [
   { on = ["g", "h"], run = "cd ~", desc = "Home dir" },
   { on = ["g", "d"], run = "cd ~/Downloads", desc = "Downloads dir" },
 
-  { on = ["g", "c"], run = "cd ~/code", desc = "Code dir (Linux)" },
-  { on = ["g", "m"], run = "cd /run/media/greg", desc = "Mount dir" },
+  { on = ["g", "c"], run = "cd ~/code", desc = "Code dir", for = "unix" },
+  { on = ["g", "m"], run = "cd /run/media/greg", desc = "Mount dir", for = "unix" },
 
-  { on = ["g", "a"], run = "cd D:/Apps", desc = "Apps dir" },
-  { on = ["g", "C"], run = "cd D:/Code", desc = "Code dir (Windows)" },
-  { on = ["g", "u"], run = "cd D:/Users", desc = "Users dir" },
-  { on = ["g", "w"], run = "cd D:/Win", desc = "Win dir" },
-  { on = ["g", "g"], run = "cd E:/Games", desc = "Games dir" },
+  { on = ["g", "a"], run = "cd D:/Apps", desc = "Apps dir", for = "windows" },
+  { on = ["g", "c"], run = "cd D:/Code", desc = "Code dir", for = "windows" },
+  { on = ["g", "u"], run = "cd D:/Users", desc = "Users dir", for = "windows" },
+  { on = ["g", "w"], run = "cd D:/Win", desc = "Win dir", for = "windows" },
+  { on = ["g", "e"], run = "cd E:/Games", desc = "Games dir", for = "windows" },
 
   { on = [".", "c"], run = "plugin compress", desc = "Compress" },
   { on = [".", "d"], run = "plugin diff", desc = "Diff" },
