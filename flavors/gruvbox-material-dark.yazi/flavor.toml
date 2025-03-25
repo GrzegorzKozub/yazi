@@ -43,10 +43,11 @@ progress_label = { reverse = true }
 progress_normal = { fg = "blue", bg = "reset" }
 progress_error = { fg = "red", bg = "reset" }
 
-perm_type = { fg = "gray", bg = "reset" }
-perm_read = { fg = "gray", bg = "reset" }
-perm_write = { fg = "gray", bg = "reset" }
-perm_exec = { fg = "gray", bg = "reset" }
+perm_type = { fg = "darkgray", bg = "reset" }
+perm_read = { fg = "darkgray", bg = "reset" }
+perm_write = { fg = "darkgray", bg = "reset" }
+perm_exec = { fg = "darkgray", bg = "reset" }
+perm_sep = { fg = "black", bg = "reset" }
 
 [pick]
 

@@ -20,7 +20,7 @@ local function size()
     return ui.Span ''
   end
   local s = h:size() or h.cha.len
-  return ui.Span(string.format('%6s', ya.readable_size(s))):fg(size_color(s))
+  return ui.Span(string.format('%7s', ya.readable_size(s))):fg(size_color(s))
 end
 
 local function owner_color(owner)
@@ -40,6 +40,29 @@ local function owner()
   end
   local o = ya.user_name(h.cha.uid) or tostring(h.cha.uid)
   return ui.Span(o):fg(owner_color(o))
+end
+
+local function permissions()
+  local h = cx.active.current.hovered
+  if not h or ya.target_family() ~= 'unix' then
+    return ui.Span ''
+  end
+  local perm = h.cha:perm()
+  local spans = {}
+  for i = 1, #perm do
+    local sign, style = perm:sub(i, i), th.status.perm_type
+    if sign == 'r' then
+      style = th.status.perm_read
+    elseif sign == 'w' then
+      style = th.status.perm_write
+    elseif sign == 'x' then
+      style = th.status.perm_exec
+    elseif sign == '-' then
+      style = th.status.perm_sep
+    end
+    spans[i] = ui.Span(sign):style(style)
+  end
+  return ui.Line(spans)
 end
 
 local function year(date)
@@ -118,6 +141,7 @@ M.setup = function()
         link,
       }
     or {
+      permissions,
       size,
       space,
       owner,
