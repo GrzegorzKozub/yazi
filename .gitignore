@@ -2,6 +2,7 @@ package.toml
 
 plugins/*
 
+!plugins/compress.yazi
 !plugins/diff.yazi
 !plugins/size.yazi
 !plugins/smart-enter.yazi
