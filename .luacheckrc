@@ -1,7 +1,7 @@
 globals = {
   'Command',
   'Status',
-  'THEME',
+  'Url',
   'cx',
   'fs',
   'th',
