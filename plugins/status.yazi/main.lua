@@ -54,6 +54,8 @@ local function permissions()
     if i == 1 then
       if sign == 'd' then
         style = { fg = 'cyan', bg = 'reset' }
+      elseif sign == '-' then
+        style = { fg = 'darkgray', bg = 'reset' }
       else
         style = th.status.perm_type
       end
