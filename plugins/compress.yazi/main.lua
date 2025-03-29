@@ -2,6 +2,26 @@ local M = {}
 
 local windows = ya.target_family() == 'windows'
 
+local get_paths = ya.sync(function()
+  local paths, names, items = {}, {}, {}
+  for _, value in pairs(cx.active.selected) do
+    paths[#paths + 1] = tostring(value:parent())
+    names[#names + 1] = tostring(value:name())
+  end
+  local h = cx.active.current.hovered
+  if #paths == 0 and h then
+    paths[1] = tostring(h.url:parent())
+    names[1] = tostring(h.name)
+  end
+  for index, value in ipairs(names) do
+    if not items[paths[index]] then
+      items[paths[index]] = {}
+    end
+    table.insert(items[paths[index]], value)
+  end
+  return items, tostring(cx.active.current.cwd), h and tostring(h.name) or ''
+end)
+
 local function find_packer(archive_name)
   local unix = {
     ['%.7z$'] = { cmd = '7z', args = { 'a' } },
@@ -55,30 +75,23 @@ local function find_packer(archive_name)
 end
 
 local function installed(cmd)
-  local unix = 'command -v %s >/dev/null 2>&1'
-  local win = 'where %s > nul 2>&1'
-  return os.execute(string.format(windows and win or unix, cmd))
+  local test, args = 'command', { '-v', cmd }
+  if windows then
+    test = 'pwsh'
+    args = {
+      '-NoLogo',
+      '-NonInteractive',
+      '-NoProfile',
+      '-Command',
+      string.format("'Get-Command -Name %s'", cmd),
+    }
+  end
+  local status = Command(test):args(args):spawn():wait()
+  if not status or not status.success then
+    return false
+  end
+  return true
 end
-
-local get_paths = ya.sync(function()
-  local paths, names, items = {}, {}, {}
-  for _, value in pairs(cx.active.selected) do
-    paths[#paths + 1] = tostring(value:parent())
-    names[#names + 1] = tostring(value:name())
-  end
-  if #paths == 0 and cx.active.current.hovered then
-    local h = cx.active.current.hovered
-    paths[1] = tostring(h.url:parent())
-    names[1] = tostring(h.name)
-  end
-  for index, value in ipairs(names) do
-    if not items[paths[index]] then
-      items[paths[index]] = {}
-    end
-    table.insert(items[paths[index]], value)
-  end
-  return items, tostring(cx.active.current.cwd)
-end)
 
 local function join(dir, name)
   return tostring(Url(dir):join(Url(name)))
@@ -167,8 +180,15 @@ end
 
 M.entry = function()
   ya.manager_emit('escape', { visual = true })
-  local archive_name, event =
-    ya.input { title = 'Create archive', position = { 'center', w = 48 } }
+  local items, cwd, hovered = get_paths()
+  if next(items) == nil then
+    return
+  end
+  local archive_name, event = ya.input {
+    title = 'Create archive',
+    value = hovered .. '.zip',
+    position = { 'center', w = 48 },
+  }
   if event ~= 1 then
     return
   end
@@ -183,10 +203,6 @@ M.entry = function()
   end
   if packer.compressor and not installed(packer.compressor) then
     error('Command ' .. packer.compressor .. ' not installed')
-    return
-  end
-  local items, cwd = get_paths()
-  if next(items) == nil then
     return
   end
   local archive_exists, archive_path, archive_temp = get_archive_path(cwd, archive_name, packer)
