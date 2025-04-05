@@ -93,7 +93,7 @@ local function name()
   if not h then
     return ui.Span ''
   end
-  local n = h:icon().text .. ' ' .. h.url:name()
+  local n = h:icon().text .. ' ' .. h.url.name
   return ui.Span(n):style(h:style())
 end
 

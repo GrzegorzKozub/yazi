@@ -8,7 +8,7 @@ local get_paths = ya.sync(function()
   if #paths == 0 then
     local h = cx.active.current.hovered.url
     paths[1] = tostring(h)
-    selected = h:name()
+    selected = h.name
   else
     selected = #paths
   end
