@@ -15,16 +15,20 @@ marker_cut = { fg = "red", bg = "reset" }
 marker_marked = { fg = "lightmagenta", bg = "reset" }
 marker_selected = { fg = "magenta", bg = "reset" }
 
-tab_active = { fg = "gray" }
-tab_inactive = { fg = "darkgray" }
-tab_width = 32
-
 count_copied = { fg = "black", bg = "yellow" }
 count_cut = { fg = "black", bg = "red" }
 count_selected = { fg = "black", bg = "magenta" }
 
 border_symbol = " "
 border_style = { fg = "black" }
+
+[tabs]
+
+active = { fg = "gray", bg = "reset" }
+inactive = { fg = "darkgray", bg = "reset" }
+
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
 
 [mode]
 
