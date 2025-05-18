@@ -75,7 +75,7 @@ local function find_packer(archive_name)
 end
 
 local function installed(cmd)
-  local test, args = 'command', { '-v', cmd }
+  local test, args = 'which', { cmd }
   if windows then
     test = 'pwsh'
     args = {
@@ -86,7 +86,7 @@ local function installed(cmd)
       string.format("'Get-Command -Name %s'", cmd),
     }
   end
-  local status = Command(test):args(args):spawn():wait()
+  local status = Command(test):arg(args):spawn():wait()
   if not status or not status.success then
     return false
   end
@@ -152,9 +152,9 @@ end
 local function pack(items, packer, archive_path)
   for path, names in pairs(items) do
     local status, err = Command(packer.cmd)
-      :args(packer.args or {})
+      :arg(packer.args or {})
       :arg(archive_path)
-      :args(names)
+      :arg(names)
       :cwd(path)
       :spawn()
       :wait()
@@ -167,7 +167,7 @@ end
 
 local function compress(packer, archive_temp, cwd)
   local status, err = Command(packer.compressor)
-    :args(packer.compressor_args or {})
+    :arg(packer.compressor_args or {})
     :arg(archive_temp)
     :cwd(cwd)
     :spawn()
