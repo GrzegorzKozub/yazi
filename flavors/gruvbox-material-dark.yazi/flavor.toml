@@ -71,9 +71,9 @@ selected = { bg = "darkgray" }
 border = { fg = "darkgray" }
 title = { fg = "darkgray" }
 content = { fg = "gray" }
-list = {}
-btn_yes = {}
-btn_no = { fg = "gray" }
+list = { fg = "gray" }
+btn_yes = { fg = "darkgray" }
+btn_no = { fg = "darkgray" }
 btn_labels = ["Yes", "No"]
 
 [spot]
