@@ -31,7 +31,7 @@ M.entry = function()
     ya.notify { content = err, level = 'error', timeout = 3, title = 'Diff' }
     return
   end
-  ya.mgr_emit('shell', {
+  ya.emit('shell', {
     'nvim -d ' .. files[1] .. ' ' .. files[2],
     block = true,
     orphan = true,
@@ -39,3 +39,4 @@ M.entry = function()
 end
 
 return M
+
