@@ -389,6 +389,8 @@ exts = [
   { name = "vbs", text = "󰑷" },
   { name = "reg", text = "" },
 
+  { name = "sql", text = "󰆼" },
+
   { name = "Dockerfile", text = "󰡨" },
 
   { name = "cs", text = "󰌛" },
