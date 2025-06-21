@@ -47,7 +47,7 @@ progress_label = { reverse = true }
 progress_normal = { fg = "blue", bg = "reset" }
 progress_error = { fg = "red", bg = "reset" }
 
-perm_type = { fg = "gray", bg = "reset" }
+perm_type = { fg = "cyan", bg = "reset" } # used only for dirs
 perm_read = { fg = "gray", bg = "reset" }
 perm_write = { fg = "gray", bg = "reset" }
 perm_exec = { fg = "gray", bg = "reset" }
