@@ -143,7 +143,7 @@ rules = [
 
   { name = "*.dockerignore", fg = "gray" },
   { name = "*.editorconfig", fg = "gray" },
-  { name = "*.{env,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
+  { name = "*.{env,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
   { name = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", fg = "gray" },
   { name = "*.lock", fg = "gray" },
   { name = "*.{luacheckrc,luarc.json,stylua.toml}", fg = "gray" },
@@ -158,7 +158,7 @@ rules = [
 
   { name = "*.{cert,pki,ssh}/", fg = "gray" },
 
-  { name = "*.{azure-pipelines,devcontainer,git,github,husky,vscode}/", fg = "gray" },
+  { name = "*.{angular,azure-pipelines,devcontainer,git,github,husky,vscode}/", fg = "gray" },
 
   { name = "*.venv/", fg = "gray" },
   { name = "*__pycache__/", fg = "gray" },
@@ -219,6 +219,7 @@ dirs = [
   { name = ".pki", text = "󰍁" },
   { name = ".ssh", text = "󰍁" },
 
+  { name = ".angular", text = "󰚲" },
   { name = ".azure-pipelines", text = "󰿕" },
   { name = ".devcontainer", text = "" },
   { name = ".git", text = "" },
@@ -242,6 +243,7 @@ files = [
 
   { name = ".env", text = "" },
 
+  { name = ".eslintignore", text = "" },
   { name = ".eslintrc", text = "" },
   { name = ".eslintrc.js", text = "" },
   { name = ".eslintrc.json", text = "" },
