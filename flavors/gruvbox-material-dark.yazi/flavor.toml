@@ -334,9 +334,8 @@ exts = [
   { name = "png", text = "" },
   { name = "svg", text = "" },
 
-  { name = "mp3", text = "󰝚" },
-  { name = "ogg", text = "󰝚" },
-  { name = "opus", text = "󰝚" },
+  { name = "flac", text = "󰝚" },
+  { name = "m4a", text = "󰝚" },
 
   { name = "mkv", text = "󰷝" },
   { name = "mp4", text = "󰷝" },
