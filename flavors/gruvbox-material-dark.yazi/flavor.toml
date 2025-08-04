@@ -219,6 +219,8 @@ dirs = [
   { name = ".pki", text = "󰍁" },
   { name = ".ssh", text = "󰍁" },
 
+  { name = ".android", text = "" },
+
   { name = ".angular", text = "󰚲" },
   { name = ".azure-pipelines", text = "󰿕" },
   { name = ".devcontainer", text = "" },
