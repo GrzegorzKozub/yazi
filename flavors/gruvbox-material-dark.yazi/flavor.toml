@@ -129,71 +129,71 @@ icon_error = ""
 [filetype]
 
 rules = [
-  { name = "*", is = "exec", fg = "green" },
+  { url = "*", is = "exec", fg = "green" },
 
-  { name = "*.AppImage", fg = "green" },
+  { url = "*.AppImage", fg = "green" },
 
-  { name = "*.{bat,cmd,exe,ps1}", fg = "green" },
+  { url = "*.{bat,cmd,exe,ps1}", fg = "green" },
 
-  { name = "*.{7z,gz,rar,tar,zip}", fg = "yellow" },
+  { url = "*.{7z,gz,rar,tar,zip}", fg = "yellow" },
 
-  { name = "*.{cow,fsa,iso,mrimg,mrimgx,wim}", fg = "magenta" },
+  { url = "*.{cow,fsa,iso,mrimg,mrimgx,wim}", fg = "magenta" },
 
   { mime = "{audio,image,video}/*", fg = "magenta" },
 
-  { name = "*.dockerignore", fg = "gray" },
-  { name = "*.editorconfig", fg = "gray" },
-  { name = "*.{env,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
-  { name = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", fg = "gray" },
-  { name = "*.lock", fg = "gray" },
-  { name = "*.{luacheckrc,luarc.json,stylua.toml}", fg = "gray" },
-  { name = "*.{prettierignore,prettierrc}", fg = "gray" },
-  { name = "*.pylintrc", fg = "gray" },
-  { name = "*.taplo.toml", fg = "gray" },
-  { name = "*.vscodeignore", fg = "gray" },
+  { url = "*.dockerignore", fg = "gray" },
+  { url = "*.editorconfig", fg = "gray" },
+  { url = "*.{env,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
+  { url = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", fg = "gray" },
+  { url = "*.lock", fg = "gray" },
+  { url = "*.{luacheckrc,luarc.json,stylua.toml}", fg = "gray" },
+  { url = "*.{prettierignore,prettierrc}", fg = "gray" },
+  { url = "*.pylintrc", fg = "gray" },
+  { url = "*.taplo.toml", fg = "gray" },
+  { url = "*.vscodeignore", fg = "gray" },
 
-  { name = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
+  { url = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
 
-  { name = "*.{cache,config,local}/", fg = "gray" },
+  { url = "*.{cache,config,local}/", fg = "gray" },
 
-  { name = "*.{cert,pki,ssh}/", fg = "gray" },
+  { url = "*.{cert,pki,ssh}/", fg = "gray" },
 
-  { name = "*.{angular,azure-pipelines,devcontainer,git,github,husky,vscode}/", fg = "gray" },
+  { url = "*.{angular,azure-pipelines,devcontainer,git,github,husky,vscode}/", fg = "gray" },
 
-  { name = "*.venv/", fg = "gray" },
-  { name = "*__pycache__/", fg = "gray" },
-  { name = "*dist/", fg = "gray" },
-  { name = "*node_modules/", fg = "gray" },
+  { url = "*.venv/", fg = "gray" },
+  { url = "*__pycache__/", fg = "gray" },
+  { url = "*dist/", fg = "gray" },
+  { url = "*node_modules/", fg = "gray" },
 
-  { name = "*.obsidian/", fg = "gray" },
-  { name = "*.steam/", fg = "gray" },
+  { url = "*.obsidian/", fg = "gray" },
+  { url = "*.steam/", fg = "gray" },
 
   # windows
 
-  { name = "*$winre_backup_partition.marker", fg = "darkgray" },
-  { name = "*{hiberfil,pagefile,swapfile}.sys", fg = "darkgray" },
-  { name = "*ntuser*", fg = "darkgray" },
-  { name = "*desktop.ini", fg = "darkgray" },
+  { url = "*$winre_backup_partition.marker", fg = "darkgray" },
+  { url = "*{hiberfil,pagefile,swapfile}.sys", fg = "darkgray" },
+  { url = "*ntuser*", fg = "darkgray" },
+  { url = "*desktop.ini", fg = "darkgray" },
 
-  { name = "*{$recycle.bin,system volume information}/", fg = "darkgray" },
+  { url = "*{$recycle.bin,system volume information}/", fg = "darkgray" },
 
   # hidden
 
-  { name = "*", is = "hidden", fg = "darkgray" },
-  { name = "*/", is = "hidden", fg = "darkgray" },
+  { url = "*", is = "hidden", fg = "darkgray" },
+  { url = "*/", is = "hidden", fg = "darkgray" },
 
   # links
 
-  { name = "*", is = "link", fg = "blue" },
-  { name = "*/", is = "link", fg = "blue" },
+  { url = "*", is = "link", fg = "blue" },
+  { url = "*/", is = "link", fg = "blue" },
 
-  { name = "*", is = "orphan", fg = "red" },
-  { name = "*/", is = "orphan", fg = "red" },
+  { url = "*", is = "orphan", fg = "red" },
+  { url = "*/", is = "orphan", fg = "red" },
 
   # defaults
 
-  { name = "*", fg = "reset" },
-  { name = "*/", fg = "cyan" },
+  { url = "*", fg = "reset" },
+  { url = "*/", fg = "cyan" },
 ]
 
 [icon]
