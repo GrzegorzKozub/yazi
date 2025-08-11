@@ -158,7 +158,7 @@ rules = [
 
   { url = "*.{cert,pki,ssh}/", fg = "gray" },
 
-  { url = "*.{android,angular,azure-pipelines,devcontainer,dotnet,git,github,husky,java,swt,vscode}/", fg = "gray" },
+  { url = "*.{android,angular,azure-pipelines,devcontainer,dotnet,git,github,husky,java,swt,vscode,yarn}/", fg = "gray" },
 
   { url = "*.venv/", fg = "gray" },
   { url = "*__pycache__/", fg = "gray" },
@@ -230,6 +230,7 @@ dirs = [
   { name = ".java", text = "" },
   { name = ".swt", text = "" },
   { name = ".vscode", text = "󰨞" },
+  { name = ".yarn", text = "" },
 
   { name = ".venv", text = "" },
   { name = "__pycache__", text = "" },
