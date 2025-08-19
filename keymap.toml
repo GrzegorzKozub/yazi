@@ -30,6 +30,7 @@ prepend_keymap = [
 
   { on = ["g", "a"], run = "cd D:/Apps", desc = "Apps dir", for = "windows" },
   { on = ["g", "c"], run = "cd D:/Code", desc = "Code dir", for = "windows" },
+  { on = ["g", "m"], run = "cd D:/Music", desc = "Music dir", for = "windows" },
   { on = ["g", "u"], run = "cd D:/Users", desc = "Users dir", for = "windows" },
   { on = ["g", "w"], run = "cd D:/Win", desc = "Win dir", for = "windows" },
   { on = ["g", "e"], run = "cd E:/Games", desc = "Games dir", for = "windows" },
