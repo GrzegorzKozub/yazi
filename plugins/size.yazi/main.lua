@@ -53,7 +53,7 @@ local get_total = function(paths)
 end
 
 M.entry = function()
-  ya.manager_emit('escape', { visual = true })
+  ya.emit('escape', { visual = true })
   local paths, selected = get_paths()
   -- local total, err = get_total(paths)
   -- if err then

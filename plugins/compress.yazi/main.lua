@@ -179,7 +179,7 @@ local function compress(packer, archive_temp, cwd)
 end
 
 M.entry = function()
-  ya.manager_emit('escape', { visual = true })
+  ya.emit('escape', { visual = true })
   local items, cwd, hovered = get_paths()
   if next(items) == nil then
     return
@@ -187,7 +187,7 @@ M.entry = function()
   local archive_name, event = ya.input {
     title = 'Create archive',
     value = hovered .. '.zip',
-    position = { 'center', w = 48 },
+    pos = { 'center', w = 48 },
   }
   if event ~= 1 then
     return
