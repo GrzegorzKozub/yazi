@@ -48,7 +48,7 @@ play = [
 [open]
 
 rules = [
-  { url = "*/", use = ["edit", "open", "reveal"] },
+  { url = "*/", use = ["open", "reveal"] },
   { mime = "text/*", use = ["edit", "open", "reveal"] },
   { mime = "application/octet-stream", use = ["edit", "open", "reveal"] },
   { mime = "*/{csv,javascript,json,ndjson}", use = ["edit", "reveal"] },
@@ -59,7 +59,6 @@ rules = [
   { mime = "application/{tar,bzip*,7z-compressed,xz,rar}", use = ["extract", "reveal"] },
   { url = "*.zip", use = ["extract", "reveal"] }, # for windows
   { mime = "inode/empty", use = ["edit", "reveal"] },
-  { mime = "*", use = ["open", "reveal"] },
 ]
 
 [plugin]
@@ -70,20 +69,23 @@ prepend_fetchers = [
 ]
 
 previewers = [
-  { url = "*/", run = "folder", sync = true },
+  { url = "*/", run = "folder" },
   { mime = "text/*", run = "code" },
-  { mime = "*/{csv,javascript,json,ndjson}", run = "code" },
-  { url = "*.[ot]tf", run = "font" },
-  { mime = "image/{avif,heic,jxl,svg+xml}", run = "magick" },
+  { mime = "*/{javascript}", run = "code" },
+  { mime = "application/{json,ndjson}", run = "code" },
+  # { mime = "application/octet-stream", run = "code" },
+  { mime = "image/{avif,hei?,jxl}", run = "magick" },
+  { mime = "image/svg+xml", run = "svg" },
   { mime = "image/*", run = "image" },
   { mime = "{audio,video}/*", run = "video" },
-  { mime = "application/{,g}zip", run = "archive" },
-  { mime = "application/iso9660-image", run = "archive" },
-  { mime = "application/{tar,bzip*,7z-compressed,xz,rar}", run = "archive" },
-  { url = "*.zip", run = "archive" }, # for windows
   { mime = "application/pdf", run = "pdf" },
-  # { mime = "application/octet-stream", run = "code" },
+  { mime = "application/{7z-compressed,bzip*,gzip,rar,tar,xz,zip}", run = "archive" },
+  { url = "*.zip", run = "archive" }, # for windows
+  { mime = "application/{iso9660-image,qemu-disk}", run = "archive" },
+  { url = "*.{AppImage,appimage,squashfs}", run = "archive" },
+  { url = "*.[ot]tf", run = "font" },
   # { mime = "inode/empty", run = "noop" },
+  { mime = "vfs/*", run = "vfs" },
   { url = "*", run = "noop" },
 ]
 
