@@ -131,9 +131,11 @@ icon_error = ""
 rules = [
   { url = "*", is = "exec", fg = "green" },
 
-  { url = "*.AppImage", fg = "green" },
+  { url = "*.{AppImage,flatpak}", fg = "green" },
 
   { url = "*.{bat,cmd,exe,ps1}", fg = "green" },
+
+  { url = "*.{deb,rpm}", fg = "yellow" },
 
   { url = "*.{7z,gz,rar,tar,zip}", fg = "yellow" },
 
@@ -158,9 +160,8 @@ rules = [
 
   { url = "*.{cert,pki,ssh}/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,azure-pipelines,devcontainer,dotnet,gemini,git,github,husky,java,swt,vscode,yarn}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,azure-pipelines,devcontainer,dotnet,gemini,git,github,husky,idea,java,swt,venv,vscode,yarn}/", fg = "gray" },
 
-  { url = "*.venv/", fg = "gray" },
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
   { url = "*node_modules/", fg = "gray" },
@@ -229,12 +230,13 @@ dirs = [
   { name = ".git", text = "" },
   { name = ".github", text = "󰊤" },
   { name = ".husky", text = "󰛢" },
+  { name = ".idea", text = "" },
   { name = ".java", text = "" },
   { name = ".swt", text = "" },
+  { name = ".venv", text = "" },
   { name = ".vscode", text = "󰨞" },
   { name = ".yarn", text = "" },
 
-  { name = ".venv", text = "" },
   { name = "__pycache__", text = "" },
   { name = "dist", text = "" },
   { name = "node_modules", text = "󰎙" },
@@ -309,10 +311,13 @@ files = [
 
   { name = "go.mod", text = "" },
   { name = "go.sum", text = "" },
+
+  { name = "pom.xml", text = "" },
 ]
 
 exts = [
   { name = "AppImage", text = "󰘔" },
+  { name = "flatpak", text = "󰘔" },
 
   { name = "nu", text = "" },
   { name = "sh", text = "" },
@@ -322,6 +327,9 @@ exts = [
   { name = "cmd", text = "󰑷" },
   { name = "exe", text = "" },
   { name = "ps1", text = "" },
+
+  { name = "deb", text = "󰣚" },
+  { name = "rpm", text = "󱄛" },
 
   { name = "7z", text = "" },
   { name = "gz", text = "" },
@@ -341,7 +349,7 @@ exts = [
   { name = "jpeg", text = "" },
   { name = "jpg", text = "" },
   { name = "png", text = "" },
-  { name = "svg", text = "" },
+  { name = "svg", text = "󰕙" },
 
   { name = "flac", text = "󰝚" },
   { name = "m4a", text = "󰝚" },
@@ -381,6 +389,7 @@ exts = [
 
   { name = "cfg", text = "" },
   { name = "conf", text = "" },
+  { name = "config", text = "" },
   { name = "rules", text = "" },
   { name = "service", text = "" },
   { name = "timer", text = "" },
@@ -422,11 +431,15 @@ exts = [
 
   { name = "rs", text = "" },
 
+  { name = "java", text = "" },
+  { name = "properties", text = "" },
+
   { name = "css", text = "" },
   { name = "html", text = "" },
   { name = "scss", text = "" },
 
   { name = "po", text = "" },
+  { name = "pot", text = "" },
 
   { name = "md", text = "" },
   { name = "txt", text = "" },
@@ -437,6 +450,8 @@ exts = [
   { name = "csv", text = "" },
   { name = "xlsx", text = "" },
   { name = "docx", text = "" },
+
+  { name = "tex", text = "" },
 ]
 
 conds = [
