@@ -160,7 +160,7 @@ rules = [
 
   { url = "*.{cert,pki,ssh}/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,azure-pipelines,devcontainer,dotnet,gemini,git,github,husky,idea,ipython,java,jupyter,swt,venv,vscode,yarn}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,azure-pipelines,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,swt,venv,vscode,yarn}/", fg = "gray" },
 
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
@@ -231,7 +231,6 @@ dirs = [
   { name = ".github", text = "󰊤" },
   { name = ".husky", text = "󰛢" },
   { name = ".idea", text = "" },
-  { name = ".ipython", text = "" },
   { name = ".java", text = "" },
   { name = ".jupyter", text = "" },
   { name = ".swt", text = "" },
