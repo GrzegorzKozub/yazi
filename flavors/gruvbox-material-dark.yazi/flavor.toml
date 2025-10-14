@@ -143,6 +143,7 @@ rules = [
 
   { mime = "{audio,image,video}/*", fg = "magenta" },
 
+  { url = "*.{classpath,factorypath,project}", fg = "gray" },
   { url = "*.dockerignore", fg = "gray" },
   { url = "*.editorconfig", fg = "gray" },
   { url = "*.{env,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
@@ -160,7 +161,7 @@ rules = [
 
   { url = "*.{cert,pki,ssh}/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,azure-pipelines,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,swt,venv,vscode,yarn}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,azure-pipelines,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,settings,swt,venv,vscode,yarn}/", fg = "gray" },
 
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
@@ -233,6 +234,7 @@ dirs = [
   { name = ".idea", text = "" },
   { name = ".java", text = "" },
   { name = ".jupyter", text = "" },
+  { name = ".settings", text = "" },
   { name = ".swt", text = "" },
   { name = ".venv", text = "" },
   { name = ".vscode", text = "󰨞" },
@@ -247,6 +249,10 @@ dirs = [
 ]
 
 files = [
+  { name = ".classpath", text = "" },
+  { name = ".factorypath", text = "" },
+  { name = ".project", text = "" },
+
   { name = ".dockerignore", text = "" },
 
   { name = ".editorconfig", text = "" },
