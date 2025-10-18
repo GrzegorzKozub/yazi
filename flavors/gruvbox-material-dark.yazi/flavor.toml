@@ -460,6 +460,8 @@ exts = [
   { name = "docx", text = "" },
 
   { name = "qmd", text = "󰐗" },
+
+  { name = "aux", text = "" },
   { name = "tex", text = "" },
 ]
 
