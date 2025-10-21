@@ -217,9 +217,9 @@ dirs = [
   { name = ".config", text = "" },
   { name = ".local", text = "󰆼" },
 
-  { name = ".cert", text = "󰍁" },
+  { name = ".cert", text = "󱆈" },
   { name = ".pki", text = "󰍁" },
-  { name = ".ssh", text = "󰍁" },
+  { name = ".ssh", text = "" },
 
   { name = ".android", text = "" },
   { name = ".angular", text = "󰚲" },
