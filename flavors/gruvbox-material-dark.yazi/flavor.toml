@@ -405,6 +405,8 @@ exts = [
   { name = "ini", text = "" },
   { name = "kdl", text = "" },
 
+  { name = "nix", text = "󱄅" },
+
   { name = "json", text = "" },
   { name = "jsonc", text = "" },
   { name = "tmTheme", text = "󰗀" },
@@ -430,6 +432,8 @@ exts = [
   { name = "js", text = "" },
   { name = "mjs", text = "" },
   { name = "ts", text = "" },
+
+  { name = "qml", text = "󰫾" },
 
   { name = "lua", text = "" },
 
