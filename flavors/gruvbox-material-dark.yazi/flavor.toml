@@ -143,6 +143,8 @@ rules = [
 
   { mime = "{audio,image,video}/*", fg = "magenta" },
 
+  { url = "*.SRCINFO", fg = "gray" },
+
   { url = "*.{classpath,factorypath,project}", fg = "gray" },
   { url = "*.dockerignore", fg = "gray" },
   { url = "*.editorconfig", fg = "gray" },
@@ -310,6 +312,9 @@ files = [
   { name = "ripgreprc", text = "" },
 
   { name = "LICENSE", text = "󰿃" },
+
+  { name = ".SRCINFO", text = "󰣇" },
+  { name = "PKGBUILD", text = "󰣇" },
 
   { name = "Dockerfile", text = "󰡨" },
 
