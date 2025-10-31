@@ -221,7 +221,7 @@ dirs = [
 
   { name = ".cert", text = "󱆈" },
   { name = ".pki", text = "󰍁" },
-  { name = ".ssh", text = "" },
+  { name = ".ssh", text = "󰒋" },
 
   { name = ".android", text = "" },
   { name = ".angular", text = "󰚲" },
