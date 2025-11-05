@@ -160,6 +160,7 @@ rules = [
   { url = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
 
   { url = "*.{cache,config,local}/", fg = "gray" },
+  { url = "*.{secrets}/", fg = "gray" },
 
   { url = "*.{cert,pki,ssh}/", fg = "gray" },
 
@@ -215,9 +216,14 @@ dirs = [
   { name = "music", text = "󱍙" },
   { name = "pictures", text = "󰉏" },
 
+  { name = "backup", text = "󰁯" },
+  { name = "vm", text = "" },
+
   { name = ".cache", text = "󱐋" },
   { name = ".config", text = "" },
   { name = ".local", text = "󰆼" },
+
+  { name = ".secrets", text = "󰍁" },
 
   { name = ".cert", text = "󱆈" },
   { name = ".pki", text = "󰍁" },
@@ -300,6 +306,7 @@ files = [
   { name = "config", text = "" },
 
   { name = "credentials", text = "󱕴" },
+  { name = "vault", text = "󱕴" },
 
   { name = "dir_colors,icons", text = "󰏘" },
   { name = "icons", text = "󰏘" },
