@@ -144,8 +144,8 @@ rules = [
   { mime = "{audio,image,video}/*", fg = "magenta" },
 
   { url = "*.SRCINFO", fg = "gray" },
-
   { url = "*.{classpath,factorypath,project}", fg = "gray" },
+  { url = "*.claude.json", fg = "gray" },
   { url = "*.dockerignore", fg = "gray" },
   { url = "*.editorconfig", fg = "gray" },
   { url = "*.{env,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
@@ -156,6 +156,7 @@ rules = [
   { url = "*.pylintrc", fg = "gray" },
   { url = "*.taplo.toml", fg = "gray" },
   { url = "*.vscodeignore", fg = "gray" },
+  { url = "*.{zprofile,zshenv,zshrc}", fg = "gray" },
 
   { url = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
 
@@ -263,6 +264,9 @@ files = [
   { name = ".factorypath", text = "" },
   { name = ".project", text = "" },
 
+  { name = ".claude.json", text = "" },
+  { name = ".claude.json.backup", text = "" },
+
   { name = ".dockerignore", text = "" },
 
   { name = ".editorconfig", text = "" },
@@ -300,7 +304,7 @@ files = [
 
   # no dir_colors from here
 
-  # { name = ".zprofile", text = "" },
+  { name = ".zprofile", text = "" },
   { name = ".zshenv", text = "" },
   { name = ".zshrc", text = "" },
 
@@ -309,7 +313,7 @@ files = [
   { name = "credentials", text = "󱕴" },
   { name = "vault", text = "󱕴" },
 
-  { name = "dir_colors,icons", text = "󰏘" },
+  { name = "dir_colors", text = "󰏘" },
   { name = "icons", text = "󰏘" },
 
   { name = "history", text = "" },
@@ -340,8 +344,8 @@ exts = [
   { name = "AppImage", text = "󰘔" },
   { name = "flatpak", text = "󰘔" },
 
-  { name = "nu", text = "" },
-  { name = "sh", text = "" },
+  { name = "nu", text = "" },
+  { name = "sh", text = "󱆃" },
   { name = "zsh", text = "" },
 
   { name = "bat", text = "󰑷" },
