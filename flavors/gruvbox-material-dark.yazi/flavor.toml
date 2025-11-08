@@ -413,6 +413,11 @@ exts = [
   { name = "pem", text = "" },
   { name = "pub", text = "󰷖" },
 
+  { name = "cert", text = "󱆈" },
+  { name = "crt", text = "󱆈" },
+
+  { name = "ovpn", text = "󰖂" },
+
   { name = "cfg", text = "" },
   { name = "conf", text = "" },
   { name = "config", text = "" },
