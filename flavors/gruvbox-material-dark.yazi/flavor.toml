@@ -331,6 +331,7 @@ files = [
 
   { name = "Dockerfile", text = "󰡨" },
 
+  { name = "pyrightconfig.json", text = "" },
   { name = "requirements.txt", text = "" },
 
   { name = "eslint.config.mjs", text = "" },
