@@ -30,7 +30,7 @@ open_document = [
 ]
 open_image = [
   { run = "xdg-open %s1", desc = "Open", for = "linux" },
-  { run = 'D:\Apps\JPEGView\JPEGView.exe %s1', orphan = true, desc = "Open", for = "windows" },
+  { run = 'D:\Apps\ImageGlass\ImageGlass.exe %s1', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
   { run = "xdg-open %d1", desc = "Reveal", for = "linux" },
