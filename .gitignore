@@ -2,6 +2,7 @@ package.toml
 
 plugins/*
 
+!plugins/audio.yazi
 !plugins/compress.yazi
 !plugins/diff.yazi
 !plugins/size.yazi

@@ -1,6 +1,17 @@
 {
   "diagnostics": {
-    "globals": ["Command", "Status", "Url", "cx", "fs", "th", "ui", "ya"]
+    "globals": [
+      "Command",
+      "Err",
+      "Status",
+      "Url",
+      "cx",
+      "fs",
+      "rt",
+      "th",
+      "ui",
+      "ya"
+    ]
   },
   "hint.enable": true,
   "hint.setType": true,

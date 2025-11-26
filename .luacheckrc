@@ -1,9 +1,11 @@
 globals = {
   'Command',
+  'Err',
   'Status',
   'Url',
   'cx',
   'fs',
+  'rt',
   'th',
   'ui',
   'ya',

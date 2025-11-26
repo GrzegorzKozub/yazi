@@ -77,7 +77,8 @@ previewers = [
   { mime = "image/{avif,hei?,jxl}", run = "magick" },
   { mime = "image/svg+xml", run = "svg" },
   { mime = "image/*", run = "image" },
-  { mime = "{audio,video}/*", run = "video" },
+  { mime = "audio/*", run = "audio" },
+  { mime = "video/*", run = "video" },
   { mime = "application/pdf", run = "pdf" },
   { mime = "application/{7z-compressed,bzip*,gzip,rar,tar,xz,zip}", run = "archive" },
   { url = "*.zip", run = "archive" }, # for windows
