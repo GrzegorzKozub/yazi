@@ -78,6 +78,7 @@ previewers = [
   { mime = "image/svg+xml", run = "svg" },
   { mime = "image/*", run = "image" },
   { mime = "audio/*", run = "audio" },
+  { url = "*.m4a", run = "audio" }, # mime is video/mp4
   { mime = "video/*", run = "video" },
   { mime = "application/pdf", run = "pdf" },
   { mime = "application/{7z-compressed,bzip*,gzip,rar,tar,xz,zip}", run = "archive" },
