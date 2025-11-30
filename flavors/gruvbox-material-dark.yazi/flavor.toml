@@ -174,7 +174,9 @@ rules = [
   { url = "*node_modules/", fg = "gray" },
 
   { url = "*.obsidian/", fg = "gray" },
+
   { url = "*.steam/", fg = "gray" },
+  { url = "*.steampid", fg = "gray" },
 
   # windows
 
@@ -346,6 +348,9 @@ files = [
   { name = "go.sum", text = "" },
 
   { name = "pom.xml", text = "" },
+
+  { name = ".steampath", text = "󰓓" },
+  { name = ".steampid", text = "󰓓" },
 ]
 
 exts = [
