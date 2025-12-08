@@ -167,7 +167,7 @@ rules = [
 
   { url = "*.var/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,azure-pipelines,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,settings,swt,venv,vscode,yarn,zed}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,azure-pipelines,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,redhat,settings,swt,venv,vscode,yarn,zed}/", fg = "gray" },
 
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
@@ -253,6 +253,7 @@ dirs = [
   { name = ".jupyter", text = "" },
   { name = ".m2", text = "" },
   { name = ".mvn", text = "" },
+  { name = ".redhat", text = "󱄛" },
   { name = ".settings", text = "" },
   { name = ".swt", text = "" },
   { name = ".venv", text = "" },
