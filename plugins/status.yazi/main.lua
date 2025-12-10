@@ -115,9 +115,14 @@ end
 local function mode()
   local m = tostring(cx.active.mode):sub(1, 1)
   if m == 'n' then
-    return ui.Span '    '
+    return ui.Span '   '
   end
-  return ui.Span(' ' .. m .. ' '):style(mode_style(cx.active.mode))
+  local style = mode_style(cx.active.mode)
+  return ui.Line {
+    ui.Span(th.status.sep_right.open):style(style):reverse(),
+    ui.Span(m):style(style),
+    ui.Span(th.status.sep_right.close):style(style):reverse(),
+  }
 end
 
 local function position()

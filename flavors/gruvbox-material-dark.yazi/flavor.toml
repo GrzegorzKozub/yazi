@@ -4,9 +4,6 @@
 
 cwd = { fg = "cyan" }
 
-hovered = { reversed = true }
-preview_hovered = {}
-
 find_keyword = { fg = "yellow", bold = true }
 find_position = { fg = "yellow", reversed = true }
 
@@ -19,7 +16,7 @@ count_copied = { fg = "black", bg = "yellow" }
 count_cut = { fg = "black", bg = "red" }
 count_selected = { fg = "black", bg = "magenta" }
 
-border_symbol = " "
+border_symbol = " " # │
 border_style = { fg = "black" }
 
 [tabs]
@@ -36,12 +33,20 @@ normal_main = { fg = "black", bg = "gray" }
 select_main = { fg = "black", bg = "lightmagenta" }
 unset_main = { fg = "black", bg = "red" }
 
+[indicator]
+
+parent = { reversed = true }
+current = { reversed = true }
+preview = {}
+
+padding = { open = "", close = "" } # █
+
 [status]
 
 overall = { fg = "gray" }
 
 sep_left = { open = "", close = "" }
-sep_right = { open = "", close = "" }
+sep_right = { open = "", close = "" }
 
 progress_label = { reverse = true }
 progress_normal = { fg = "blue", bg = "reset" }
