@@ -5,6 +5,7 @@ plugins/*
 !plugins/audio.yazi
 !plugins/compress.yazi
 !plugins/diff.yazi
+!plugins/header.yazi
 !plugins/size.yazi
 !plugins/smart-enter.yazi
 !plugins/status.yazi
