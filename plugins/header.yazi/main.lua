@@ -3,10 +3,19 @@ local M = {}
 local function cwd()
   return ui.Line {
     ui.Span(
-      ui.truncate(ya.readable_path(tostring(cx.active.current.cwd)), { max = 64, rtl = true })
-    )
-      :style(th.mgr.cwd),
+      ui.truncate(
+        ya.readable_path(tostring(cx.active.current.cwd.path)),
+        { max = 64, rtl = true }
+      )
+    ):style(th.mgr.cwd),
   }
+end
+
+local function search()
+  local cwd = cx.active.current.cwd
+  return cwd.is_search
+      and ui.Line(ui.Span(string.format(' %s', cwd.domain)):style(th.mgr.find_keyword))
+    or ''
 end
 
 local function count(style, val)
@@ -57,7 +66,7 @@ end
 
 M.setup = function()
   Header:children_remove(1, Header.LEFT)
-  local left = { cwd }
+  local left = { cwd, space, search }
   for i, value in ipairs(left) do
     Header:children_add(value, i, Header.LEFT)
   end
