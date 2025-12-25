@@ -4,7 +4,7 @@
 
 cwd = { fg = "cyan" }
 
-find_keyword = { fg = "yellow", bold = true }
+find_keyword = { fg = "yellow" }
 find_position = { fg = "yellow", reversed = true }
 
 marker_copied = { fg = "yellow", bg = "reset" }

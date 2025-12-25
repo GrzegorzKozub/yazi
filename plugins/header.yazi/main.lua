@@ -11,14 +11,26 @@ local function cwd()
   }
 end
 
-local function search()
-  local cwd = cx.active.current.cwd
-  return cwd.is_search
-      and ui.Line(ui.Span(string.format(' %s', cwd.domain)):style(th.mgr.find_keyword))
-    or ''
+local function search_indicator(icon, text)
+  return ui.Line(ui.Span(string.format('%s %s', icon, text)):style(th.mgr.find_keyword))
 end
 
-local function count(style, val)
+local function search()
+  local c = cx.active.current.cwd
+  return c.is_search and search_indicator('', c.domain) or ''
+end
+
+local function filter()
+  local f = cx.active.current.files.filter
+  return f and search_indicator('', f) or ''
+end
+
+local function finder()
+  local f = cx.active.finder
+  return f and search_indicator('', f) or ''
+end
+
+local function count_badge(style, val)
   return ui.Line {
     ui.Span(''):style(style):reverse(),
     ui.Span(val):style(style),
@@ -28,14 +40,14 @@ end
 
 local function selected()
   local s = #cx.active.selected
-  return s > 0 and ui.Line(count(th.mgr.count_selected, string.format('%d', s))) or ''
+  return s > 0 and ui.Line(count_badge(th.mgr.count_selected, string.format('%d', s))) or ''
 end
 
 local function yanked()
   local y = #cx.yanked
   return y > 0
       and ui.Line(
-        count(
+        count_badge(
           cx.yanked.is_cut and th.mgr.count_cut or th.mgr.count_copied,
           string.format('%d', y)
         )
@@ -43,30 +55,13 @@ local function yanked()
     or ''
 end
 
--- function Header:flags()
---   local cwd = self._current.cwd
---   local filter = self._current.files.filter
---   local finder = self._tab.finder
---   local t = {}
---   if cwd.is_search then
---     t[#t + 1] = string.format('search: %s', cwd.domain)
---   end
---   if filter then
---     t[#t + 1] = string.format('filter: %s', filter)
---   end
---   if finder then
---     t[#t + 1] = string.format('find: %s', finder)
---   end
---   return #t == 0 and '--' or ' (' .. table.concat(t, ', ') .. ')'
--- end
-
 local function space()
   return ui.Span ' '
 end
 
 M.setup = function()
   Header:children_remove(1, Header.LEFT)
-  local left = { cwd, space, search }
+  local left = { cwd, space, search, filter, finder }
   for i, value in ipairs(left) do
     Header:children_add(value, i, Header.LEFT)
   end
