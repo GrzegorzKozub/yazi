@@ -128,7 +128,7 @@ end
 local function position()
   local cursor = cx.active.current.cursor
   local length = #cx.active.current.files
-  return ui.Span(string.format('%2d %-2d', cursor + 1, length)):fg 'darkgray'
+  return ui.Span(string.format('%2d/%-2d', cursor + 1, length)):fg 'darkgray'
 end
 
 local function space()
