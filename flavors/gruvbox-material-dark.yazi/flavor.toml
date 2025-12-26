@@ -153,7 +153,7 @@ rules = [
   { url = "*.claude.json", fg = "gray" },
   { url = "*.dockerignore", fg = "gray" },
   { url = "*.editorconfig", fg = "gray" },
-  { url = "*.{env,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
+  { url = "*.{env,envrc,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
   { url = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", fg = "gray" },
   { url = "*.lock", fg = "gray" },
   { url = "*.{luacheckrc,luarc.json,stylua.toml}", fg = "gray" },
@@ -172,7 +172,7 @@ rules = [
 
   { url = "*.var/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,azure-pipelines,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,redhat,settings,swt,venv,vscode,yarn,zed}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,azure-pipelines,cargo,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,redhat,settings,swt,venv,vscode,yarn,zed}/", fg = "gray" },
 
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
@@ -245,6 +245,7 @@ dirs = [
   { name = ".angular", text = "󰚲" },
   { name = ".ansible", text = "󱂚" },
   { name = ".azure-pipelines", text = "󰿕" },
+  { name = ".cargo", text = "" },
   { name = ".claude", text = "" },
   { name = ".copilot", text = "" },
   { name = ".devcontainer", text = "" },
@@ -287,6 +288,7 @@ files = [
   { name = ".editorconfig", text = "" },
 
   { name = ".env", text = "" },
+  { name = ".envrc", text = "" },
 
   { name = ".lock", text = "󰤱" },
 

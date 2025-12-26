@@ -98,7 +98,7 @@ local function link()
   if not h or not h.link_to then
     return ui.Span ''
   end
-  local l = '-> ' .. tostring(h.link_to)
+  local l = '󰁔 ' .. tostring(h.link_to)
   return h.cha.is_orphan and ui.Span(l):fg 'red' or ui.Span(l):style(h:style())
 end
 
@@ -128,7 +128,7 @@ end
 local function position()
   local cursor = cx.active.current.cursor
   local length = #cx.active.current.files
-  return ui.Span(string.format('%2d/%-2d', cursor + 1, length)):fg 'darkgray'
+  return ui.Span(string.format('%2d %-2d', cursor + 1, length)):fg 'darkgray'
 end
 
 local function space()
