@@ -328,7 +328,6 @@ files = [
   { name = "config", text = "" },
 
   { name = "credentials", text = "󱕴" },
-  { name = "vault", text = "󱕴" },
 
   { name = "dir_colors", text = "󰏘" },
   { name = "icons", text = "󰏘" },
@@ -437,6 +436,8 @@ exts = [
   { name = "crt", text = "󱆈" },
 
   { name = "ovpn", text = "󰖂" },
+
+  { name = "secret", text = "󱕴" },
 
   { name = "cfg", text = "" },
   { name = "conf", text = "" },
