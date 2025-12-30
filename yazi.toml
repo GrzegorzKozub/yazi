@@ -132,12 +132,12 @@ delete_origin = "center"
 delete_offset = [0, 0, 48, 8]
 
 overwrite_title = "Overwrite?"
-overwrite_content = "Overwrite this file?"
+overwrite_body = "Overwrite this file?"
 overwrite_origin = "center"
 overwrite_offset = [0, 0, 48, 8]
 
 quit_title = "Quit?"
-quit_content = "Quit with these tasks running?"
+quit_body = "Quit with these tasks running?"
 quit_origin = "center"
 quit_offset = [0, 0, 48, 8]
 

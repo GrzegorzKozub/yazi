@@ -75,7 +75,7 @@ selected = { bg = "darkgray" }
 
 border = { fg = "darkgray" }
 title = { fg = "darkgray" }
-content = { fg = "gray" }
+body = { fg = "gray" }
 list = { fg = "gray" }
 btn_yes = { fg = "darkgray" }
 btn_no = { fg = "darkgray" }
