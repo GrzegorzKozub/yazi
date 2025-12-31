@@ -3,8 +3,8 @@
 [mgr]
 
 prepend_keymap = [
-  { on = "<Up>", run = "arrow prev", desc = "Previous file" },
-  { on = "<Down>", run = "arrow next", desc = "Next file" },
+  { on = "<Up>", run = "arrow -1", desc = "Previous file" }, # prev/next wraps around
+  { on = "<Down>", run = "arrow 1", desc = "Next file" },
 
   { on = "<Home>", run = "arrow top", desc = "Go to top" },
   { on = "<End>", run = "arrow bot", desc = "Go to bottom" },
