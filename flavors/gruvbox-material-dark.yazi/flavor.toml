@@ -152,6 +152,7 @@ rules = [
   { url = "*.{classpath,factorypath,project}", fg = "gray" },
   { url = "*.claude.json", fg = "gray" },
   { url = "*.dockerignore", fg = "gray" },
+  { url = "*.devcontainer.json", fg = "gray" },
   { url = "*.editorconfig", fg = "gray" },
   { url = "*.{env,envrc,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
   { url = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", fg = "gray" },
@@ -284,6 +285,9 @@ files = [
   { name = ".claude.json.backup", text = "" },
 
   { name = ".dockerignore", text = "" },
+
+  { name = ".devcontainer.json", text = "" },
+  { name = "devcontainer.json", text = "" },
 
   { name = ".editorconfig", text = "" },
 
