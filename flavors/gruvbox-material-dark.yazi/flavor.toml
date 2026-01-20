@@ -173,7 +173,7 @@ rules = [
 
   { url = "*.var/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,azure-pipelines,cargo,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,redhat,settings,swt,venv,vscode,yarn,zed}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,aws-sam,azure-pipelines,cargo,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,redhat,settings,swt,venv,vscode,yarn,zed}/", fg = "gray" },
 
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
@@ -245,6 +245,7 @@ dirs = [
   { name = ".android", text = "" },
   { name = ".angular", text = "󰚲" },
   { name = ".ansible", text = "󱂚" },
+  { name = ".aws-sam", text = "󰸏" },
   { name = ".azure-pipelines", text = "󰿕" },
   { name = ".cargo", text = "" },
   { name = ".claude", text = "" },
