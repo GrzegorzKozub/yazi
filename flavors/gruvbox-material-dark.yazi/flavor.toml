@@ -150,7 +150,7 @@ rules = [
 
   { url = "*.SRCINFO", fg = "gray" },
   { url = "*.{classpath,factorypath,project}", fg = "gray" },
-  { url = "*.claude.json", fg = "gray" },
+  { url = "*.{claude.json,mcp.json}", fg = "gray" },
   { url = "*.dockerignore", fg = "gray" },
   { url = "*.devcontainer.json", fg = "gray" },
   { url = "*.editorconfig", fg = "gray" },
@@ -173,7 +173,7 @@ rules = [
 
   { url = "*.var/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,aws-sam,azure-pipelines,cargo,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,redhat,settings,swt,venv,vscode,yarn,zed}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,aws-sam,azure-pipelines,cargo,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,redhat,settings,swt,terraform.d,venv,vscode,yarn,zed}/", fg = "gray" },
 
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
@@ -264,6 +264,7 @@ dirs = [
   { name = ".redhat", text = "󱄛" },
   { name = ".settings", text = "" },
   { name = ".swt", text = "" },
+  { name = ".terraform.d", text = "" },
   { name = ".venv", text = "" },
   { name = ".vscode", text = "󰨞" },
   { name = ".yarn", text = "" },
@@ -360,6 +361,8 @@ files = [
   { name = "go.sum", text = "" },
 
   { name = "pom.xml", text = "" },
+
+  { name = "makefile", text = "" },
 
   { name = ".steampath", text = "󰓓" },
   { name = ".steampid", text = "󰓓" },
@@ -501,6 +504,8 @@ exts = [
 
   { name = "po", text = "" },
   { name = "pot", text = "" },
+
+  { name = "tf", text = "" },
 
   { name = "md", text = "" },
   { name = "txt", text = "" },
