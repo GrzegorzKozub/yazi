@@ -149,6 +149,7 @@ rules = [
   { mime = "{audio,image,video}/*", fg = "magenta" },
 
   { url = "*.SRCINFO", fg = "gray" },
+  { url = "*.cfnlintrc", fg = "gray" },
   { url = "*.{classpath,factorypath,project}", fg = "gray" },
   { url = "*.{claude.json,mcp.json}", fg = "gray" },
   { url = "*.dockerignore", fg = "gray" },
@@ -158,6 +159,7 @@ rules = [
   { url = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", fg = "gray" },
   { url = "*.lock", fg = "gray" },
   { url = "*.{luacheckrc,luarc.json,stylua.toml}", fg = "gray" },
+  { url = "*.markdownlint.json", fg = "gray" },
   { url = "*.{prettierignore,prettierrc}", fg = "gray" },
   { url = "*.pylintrc", fg = "gray" },
   { url = "*.taplo.toml", fg = "gray" },
@@ -279,6 +281,8 @@ dirs = [
 ]
 
 files = [
+  { name = ".cfnlintrc", text = "" },
+
   { name = ".classpath", text = "" },
   { name = ".factorypath", text = "" },
   { name = ".project", text = "" },
