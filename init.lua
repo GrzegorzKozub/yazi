@@ -28,8 +28,8 @@ require('git'):setup()
 
 -- header.yazi
 
-require('header'):setup()
+require('my-header'):setup()
 
 -- status.yazi
 
-require('status'):setup()
+require('my-status'):setup()
