@@ -175,7 +175,7 @@ rules = [
 
   { url = "*.var/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,aws-sam,azure-pipelines,cargo,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,redhat,settings,swt,terraform.d,venv,vscode,yarn,zed}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,aws-sam,azure-pipelines,bun,cargo,claude,copilot,devcontainer,dotnet,gemini,git,github,husky,idea,java,jupyter,m2,mvn,redhat,settings,swt,terraform.d,venv,vscode,yarn,zed}/", fg = "gray" },
 
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
