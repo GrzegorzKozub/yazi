@@ -506,6 +506,7 @@ exts = [
   { name = "properties", text = "" },
 
   { name = "css", text = "" },
+  { name = "hbs", text = "󱗞" },
   { name = "html", text = "" },
   { name = "scss", text = "" },
 
