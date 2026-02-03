@@ -434,7 +434,10 @@ exts = [
 
   # no dir_colors from here
 
+  { name = "dll", text = "" },
+
   { name = "icm", text = "󰏘" },
+
   { name = "otf", text = "" },
   { name = "ttf", text = "" },
 
@@ -529,6 +532,8 @@ exts = [
 
   { name = "aux", text = "" },
   { name = "tex", text = "" },
+
+  { name = "gguf", text = "󰚩" }, # 󱙺
 ]
 
 conds = [
