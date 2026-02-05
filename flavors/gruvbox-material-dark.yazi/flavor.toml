@@ -168,7 +168,7 @@ rules = [
 
   { url = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
 
-  { url = "*.{cache,config,local}/", fg = "gray" },
+  { url = "*.{cache,config,data,local}/", fg = "gray" },
   { url = "*.{secrets}/", fg = "gray" },
 
   { url = "*.{cert,pki,ssh}/", fg = "gray" },
@@ -234,6 +234,7 @@ dirs = [
 
   { name = ".cache", text = "󱐋" },
   { name = ".config", text = "" },
+  { name = ".data", text = "󰆼" },
   { name = ".local", text = "󰆼" },
 
   { name = ".secrets", text = "󰍁" },
