@@ -237,6 +237,8 @@ dirs = [
   { name = ".data", text = "󰆼" },
   { name = ".local", text = "󰆼" },
 
+  { name = ".Trash-1000", text = "" },
+
   { name = ".secrets", text = "󰍁" },
 
   { name = ".cert", text = "󱆈" },
