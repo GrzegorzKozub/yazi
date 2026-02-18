@@ -479,6 +479,8 @@ exts = [
   { name = "yaml", text = "" },
   { name = "yml", text = "" },
 
+  { name = "puml", text = "󰇞" },
+
   { name = "ahk", text = "󰑷" },
   { name = "vbs", text = "󰑷" },
   { name = "reg", text = "" },
