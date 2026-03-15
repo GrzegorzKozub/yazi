@@ -219,17 +219,25 @@ rules = [
 dirs = [
   # no dir_colors from here
 
-  { name = "code", text = "󱃪" },
-  { name = "greg", text = "󰉌" },
-  { name = "home", text = "󱂵" },
-  { name = "users", text = "󱂵" },
+  { name = "code", text = "" },
+  { name = "greg", text = "" },
+  { name = "home", text = "󰋜" },
+  { name = "users", text = "󰋜" },
+
+  { name = "arch", text = "󰣇" },
+  { name = "dot", text = "" },
 
   { name = "desktop", text = "" },
-  { name = "downloads", text = "󰉍" },
-  { name = "music", text = "󱍙" },
-  { name = "pictures", text = "󰉏" },
+  { name = "documents", text = "󰈙" },
+  { name = "downloads", text = "󰇚" },
+  { name = "music", text = "󰝚" },
+  { name = "pictures", text = "" },
+  { name = "public", text = "" },
+  { name = "templates", text = "" },
+  { name = "videos", text = "󰷝" },
 
-  { name = "backup", text = "󰁯" },
+  { name = "backup", text = "" },
+  { name = "github", text = "󰊤" },
   { name = "vm", text = "" },
 
   { name = ".cache", text = "󱐋" },
