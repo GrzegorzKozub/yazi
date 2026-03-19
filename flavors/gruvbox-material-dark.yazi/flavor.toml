@@ -169,6 +169,7 @@ rules = [
   { url = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
 
   { url = "*.{cache,config,data,local}/", fg = "gray" },
+
   { url = "*.{secrets}/", fg = "gray" },
 
   { url = "*.{cert,pki,ssh}/", fg = "gray" },
@@ -187,6 +188,8 @@ rules = [
   { url = "*.steampid", fg = "gray" },
 
   # windows
+
+  { url = "*AppData/", fg = "gray" },
 
   { url = "*$winre_backup_partition.marker", fg = "darkgray" },
   { url = "*{hiberfil,pagefile,swapfile}.sys", fg = "darkgray" },
@@ -289,6 +292,25 @@ dirs = [
 
   { name = ".obsidian", text = "" },
   { name = ".steam", text = "󰓓" },
+
+  # windows
+
+  { name = "Windows", text = "" },
+
+  { name = "AppData", text = "󰆼" },
+
+  { name = "Contacts", text = "󰛋" },
+  { name = "Favorites", text = "" },
+  { name = "Links", text = "" },
+  { name = "Saved Games", text = "󰊴" },
+  { name = "Searches", text = "" },
+
+  { name = "Images", text = "" },
+  { name = "Movies", text = "󰷝" },
+  { name = "Win", text = "" },
+
+  { name = "Games", text = "󰊴" },
+  { name = "Steam", text = "󰓓" },
 ]
 
 files = [
