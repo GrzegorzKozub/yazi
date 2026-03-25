@@ -166,11 +166,12 @@ rules = [
   { url = "*.vscodeignore", fg = "gray" },
   { url = "*.{zprofile,zshenv,zshrc}", fg = "gray" },
 
+  { url = "*lost+found/", fg = "darkgray" },
   { url = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
 
   { url = "*.{cache,config,data,local}/", fg = "gray" },
 
-  { url = "*.{secrets}/", fg = "gray" },
+  { url = "*.secrets/", fg = "gray" },
 
   { url = "*.{cert,pki,ssh}/", fg = "gray" },
 
@@ -219,16 +220,21 @@ rules = [
 
 [icon]
 
+globs = [{ url = "/home/greg/code/", text = "" }]
+
 dirs = [
   # no dir_colors from here
 
-  { name = "code", text = "" },
-  { name = "greg", text = "" },
-  { name = "home", text = "󰋜" },
-  { name = "users", text = "󰋜" },
+  { name = "home", text = "" },
+  { name = "greg", text = "󰋜" },
 
   { name = "arch", text = "󰣇" },
   { name = "dot", text = "" },
+  { name = "hist", text = "" },
+  { name = "keys", text = "󱕴" },
+  { name = "notes", text = "" },
+  { name = "pass", text = "󰟵" },
+  { name = "walls", text = "" },
 
   { name = "desktop", text = "" },
   { name = "documents", text = "󰈙" },
@@ -295,6 +301,7 @@ dirs = [
 
   # windows
 
+  { name = "Users", text = "" },
   { name = "Windows", text = "" },
 
   { name = "AppData", text = "󰆼" },
@@ -372,7 +379,7 @@ files = [
 
   { name = "config", text = "" },
 
-  { name = "credentials", text = "󱕴" },
+  { name = "credentials", text = "" },
 
   { name = "dir_colors", text = "󰏘" },
   { name = "icons", text = "󰏘" },
@@ -480,14 +487,14 @@ exts = [
   { name = "kbx", text = "󰯄" },
 
   { name = "pem", text = "" },
-  { name = "pub", text = "󰷖" },
+  { name = "pub", text = "" },
 
   { name = "cert", text = "󱆈" },
   { name = "crt", text = "󱆈" },
 
   { name = "ovpn", text = "󰖂" },
 
-  { name = "secret", text = "󱕴" },
+  { name = "secret", text = "" },
 
   { name = "cfg", text = "" },
   { name = "conf", text = "" },
