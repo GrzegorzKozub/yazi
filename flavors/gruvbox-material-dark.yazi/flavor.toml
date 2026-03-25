@@ -220,12 +220,11 @@ rules = [
 
 [icon]
 
-globs = [{ url = "/home/greg/code/", text = "" }]
+# no dir_colors from here
+
+globs = [{ url = "/home/", text = "" }, { url = "/home/greg/code/", text = "" }]
 
 dirs = [
-  # no dir_colors from here
-
-  { name = "home", text = "" },
   { name = "greg", text = "󰋜" },
 
   { name = "arch", text = "󰣇" },
