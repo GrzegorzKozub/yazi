@@ -222,18 +222,27 @@ rules = [
 
 # no dir_colors from here
 
-globs = [{ url = "/home/", text = "" }, { url = "/home/greg/code/", text = "" }]
+globs = [
+  { url = "/home/", text = "" },
+
+  { url = "/home/greg/code/", text = "" },
+
+  { url = "**/code/arch/", text = "󰣇" },
+  { url = "**/code/dot/", text = "" },
+  { url = "**/code/hist/", text = "" },
+  { url = "**/code/keys/", text = "󱕴" },
+  { url = "**/code/pass/", text = "󰟵" },
+  { url = "**/code/notes/", text = "" },
+  { url = "**/code/toys/", text = "󱊈" },
+  { url = "**/code/walls/", text = "" },
+
+  # windows
+
+  { url = "D:\\Code", text = "" },
+]
 
 dirs = [
   { name = "greg", text = "󰋜" },
-
-  { name = "arch", text = "󰣇" },
-  { name = "dot", text = "" },
-  { name = "hist", text = "" },
-  { name = "keys", text = "󱕴" },
-  { name = "notes", text = "" },
-  { name = "pass", text = "󰟵" },
-  { name = "walls", text = "" },
 
   { name = "desktop", text = "" },
   { name = "documents", text = "󰈙" },
