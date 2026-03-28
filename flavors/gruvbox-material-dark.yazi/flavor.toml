@@ -238,7 +238,8 @@ globs = [
 
   # windows
 
-  { url = "D:\\Code", text = "" },
+  { url = "**/Users/Greg/", text = "󰋜" },
+  { url = "D:/Code/", text = "" },
 ]
 
 dirs = [
