@@ -224,7 +224,7 @@ rules = [
 
 globs = [
   { url = "/home/", text = "" },
-
+  { url = "/home/greg/", text = "󰋜" },
   { url = "/home/greg/code/", text = "" },
 
   { url = "**/code/arch/", text = "󰣇" },
@@ -242,8 +242,6 @@ globs = [
 ]
 
 dirs = [
-  { name = "greg", text = "󰋜" },
-
   { name = "desktop", text = "" },
   { name = "documents", text = "󰈙" },
   { name = "downloads", text = "󰇚" },
