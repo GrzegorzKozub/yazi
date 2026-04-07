@@ -398,6 +398,7 @@ files = [
   { name = "lfrc", text = "" },
   { name = "npmrc", text = "" },
   { name = "ripgreprc", text = "" },
+  { name = "wgetrc", text = "" },
 
   { name = "LICENSE", text = "󰿃" },
 
