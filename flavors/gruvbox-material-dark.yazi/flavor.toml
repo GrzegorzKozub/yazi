@@ -177,7 +177,7 @@ rules = [
 
   { url = "*.var/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,aws,aws-sam,azure-pipelines,bun,cargo,claude,copilot,devcontainer,dotnet,git,github,husky,idea,java,jupyter,lmstudio,m2,mvn,redhat,settings,swt,terraform.d,venv,vscode,yarn,zed}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,aws,aws-sam,azure-pipelines,bun,cargo,claude,claude-plugin,copilot,devcontainer,dotnet,git,github,husky,idea,java,jupyter,lmstudio,m2,mvn,redhat,settings,swt,terraform.d,venv,vscode,yarn,zed}/", fg = "gray" },
 
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
@@ -279,6 +279,7 @@ dirs = [
   { name = ".azure-pipelines", text = "󰿕" },
   { name = ".cargo", text = "" },
   { name = ".claude", text = "" },
+  { name = ".claude-plugin", text = "" },
   { name = ".copilot", text = "" },
   { name = ".devcontainer", text = "" },
   { name = ".dotnet", text = "" },
