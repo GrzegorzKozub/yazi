@@ -535,6 +535,7 @@ exts = [
   { name = "reg", text = "" },
 
   { name = "sql", text = "󰆼" },
+  { name = "sqlite", text = "󰆼" },
 
   { name = "Dockerfile", text = "󰡨" },
 
