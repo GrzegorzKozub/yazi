@@ -45,6 +45,10 @@ prepend_keymap = [
   { on = [".", "d"], run = "plugin diff", desc = "Diff" },
   { on = [".", "s"], run = "plugin size", desc = "Size" },
 
+  { on = [".", "l"], run = "plugin toggle-pane min-parent", desc = "Toggle parent pane" },
+  { on = [".", "p"], run = "plugin toggle-pane min-preview", desc = "Toggle preview pane" },
+  { on = [".", "r"], run = "plugin toggle-pane reset", desc = "Reset panes" },
+
   { on = "<C-F1>", run = "help", desc = "Open help" }, # some terminals capture f1
 ]
 
