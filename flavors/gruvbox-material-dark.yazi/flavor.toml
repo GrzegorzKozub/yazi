@@ -248,6 +248,7 @@ dirs = [
   { name = "downloads", text = "󰇚" },
   { name = "music", text = "󰝚" },
   { name = "pictures", text = "" },
+  { name = "projects", text = "󱌢" },
   { name = "public", text = "" },
   { name = "templates", text = "" },
   { name = "videos", text = "󰷝" },
