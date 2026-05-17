@@ -226,6 +226,7 @@ globs = [
   { url = "/home/", text = "" },
   { url = "/home/greg/", text = "󰋜" },
   { url = "/home/greg/code/", text = "" },
+  { url = "/home/greg/Projects/", text = "󱌢" },
 
   { url = "**/code/arch/", text = "󰣇" },
   { url = "**/code/dot/", text = "" },
@@ -248,7 +249,6 @@ dirs = [
   { name = "downloads", text = "󰇚" },
   { name = "music", text = "󰝚" },
   { name = "pictures", text = "" },
-  { name = "projects", text = "󱌢" },
   { name = "public", text = "" },
   { name = "templates", text = "" },
   { name = "videos", text = "󰷝" },
