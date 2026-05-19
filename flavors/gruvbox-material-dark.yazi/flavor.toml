@@ -582,6 +582,7 @@ exts = [
   { name = "csv", text = "" },
   { name = "xlsx", text = "" },
   { name = "docx", text = "" },
+  { name = "pptx", text = "" },
 
   { name = "qmd", text = "󰐗" },
 
