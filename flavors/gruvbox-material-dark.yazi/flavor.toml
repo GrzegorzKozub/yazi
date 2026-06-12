@@ -155,13 +155,14 @@ rules = [
   { url = "*.dockerignore", fg = "gray" },
   { url = "*.devcontainer.json", fg = "gray" },
   { url = "*.editorconfig", fg = "gray" },
-  { url = "*.{env,envrc,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
+  { url = "*.{bun-version,env,envrc,eslintignore,eslintrc,eslintrc.js,eslintrc.json,npmrc,nvmrc,yarnrc}", fg = "gray" },
   { url = "*.{git,gitattributes,gitignore,gitkeep,gitmodules}", fg = "gray" },
   { url = "*.lock", fg = "gray" },
   { url = "*.{luacheckrc,luarc.json,stylua.toml}", fg = "gray" },
   { url = "*.markdownlint.json", fg = "gray" },
   { url = "*.{prettierignore,prettierrc}", fg = "gray" },
   { url = "*.pylintrc", fg = "gray" },
+  { url = "*.stylintrc", fg = "gray" },
   { url = "*.taplo.toml", fg = "gray" },
   { url = "*.vscodeignore", fg = "gray" },
   { url = "*.{zprofile,zshenv,zshrc}", fg = "gray" },
@@ -177,7 +178,7 @@ rules = [
 
   { url = "*.var/", fg = "gray" },
 
-  { url = "*.{android,angular,ansible,aws,aws-sam,azure-pipelines,bun,cargo,claude,claude-plugin,copilot,devcontainer,dotnet,eclipse,git,github,husky,idea,java,jupyter,lmstudio,m2,mvn,redhat,settings,swt,terraform.d,venv,vscode,vscode-shared,yarn,zed,zoom}/", fg = "gray" },
+  { url = "*.{android,angular,ansible,aws,aws-sam,azure-pipelines,bun,cargo,claude,claude-plugin,copilot,devcontainer,dotnet,eclipse,git,github,husky,idea,java,jupyter,lmstudio,m2,mvn,redhat,settings,storybook,swt,terraform.d,venv,vscode,vscode-shared,yarn,zed,zoom}/", fg = "gray" },
 
   { url = "*__pycache__/", fg = "gray" },
   { url = "*dist/", fg = "gray" },
@@ -296,6 +297,7 @@ dirs = [
   { name = ".mvn", text = "" },
   { name = ".redhat", text = "󱄛" },
   { name = ".settings", text = "" },
+  { name = ".storybook", text = "" },
   { name = ".swt", text = "" },
   { name = ".terraform.d", text = "" },
   { name = ".venv", text = "" },
@@ -357,6 +359,7 @@ files = [
 
   { name = ".lock", text = "󰤱" },
 
+  { name = ".bun-version", text = "" },
   { name = ".eslintignore", text = "" },
   { name = ".eslintrc", text = "" },
   { name = ".eslintrc.js", text = "" },
@@ -379,6 +382,8 @@ files = [
   { name = ".prettierrc", text = "" },
 
   { name = ".pylintrc", text = "" },
+
+  { name = ".stylintrc", text = "" },
 
   { name = ".taplo.toml", text = "" },
 
