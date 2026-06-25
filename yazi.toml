@@ -24,10 +24,11 @@ open = [
   { run = "xdg-open %s1", desc = "Open", for = "linux" },
   { run = 'start "" %s1', orphan = true, desc = "Open", for = "windows" },
 ]
-open_document = [
+open_pdf = [
   { run = "xdg-open %s1", desc = "Open", for = "linux" },
   { run = 'D:\Apps\SumatraPDF\sumatrapdf.exe %s1', orphan = true, desc = "Open", for = "windows" },
 ]
+open_office = [{ run = "xdg-open %s1", desc = "Open", for = "linux" }]
 open_image = [
   { run = "xdg-open %s1", desc = "Open", for = "linux" },
   { run = 'D:\Apps\ImageGlass\ImageGlass.exe %s1', orphan = true, desc = "Open", for = "windows" },
@@ -52,7 +53,8 @@ rules = [
   { mime = "text/*", use = ["edit", "open", "reveal"] },
   { mime = "application/octet-stream", use = ["edit", "open", "reveal"] },
   { mime = "*/{csv,javascript,json,ndjson}", use = ["edit", "reveal"] },
-  { url = "*.{epub,pdf}", use = ["open_document", "reveal"] },
+  { url = "*.{epub,pdf}", use = ["open_pdf", "reveal"] },
+  { url = "*.{docx,pptx,xlsx}", use = ["open_office", "reveal"] },
   { mime = "image/*", use = ["open_image", "reveal"] },
   { mime = "{audio,video}/*", use = ["play", "reveal"] },
   { mime = "application/{,g}zip", use = ["extract", "reveal"] },
