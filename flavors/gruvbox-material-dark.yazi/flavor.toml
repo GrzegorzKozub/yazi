@@ -168,7 +168,10 @@ rules = [
   { url = "*.{zprofile,zshenv,zshrc}", fg = "gray" },
 
   { url = "*lost+found/", fg = "darkgray" },
+
   { url = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
+  { url = "*.backup/", fg = "darkgray" },
+  { url = "*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/", fg = "darkgray" },
 
   { url = "*.{cache,config,data,local}/", fg = "gray" },
 
@@ -238,6 +241,9 @@ globs = [
   { url = "**/code/toys/", text = "󱊈" },
   { url = "**/code/walls/", text = "" },
 
+  { url = "*.backup/", text = "" },
+  { url = "*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/", text = "" },
+
   # windows
 
   { url = "**/Users/Greg/", text = "󰋜" },
@@ -264,6 +270,7 @@ dirs = [
   { name = ".local", text = "󰆼" },
 
   { name = ".Trash-1000", text = "" },
+  { name = "lost+found", text = "" },
 
   { name = ".secrets", text = "󰍁" },
 
