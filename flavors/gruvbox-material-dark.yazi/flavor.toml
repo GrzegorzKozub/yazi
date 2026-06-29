@@ -283,7 +283,7 @@ dirs = [
   { name = ".android", text = "" },
   { name = ".angular", text = "󰚲" },
   { name = ".ansible", text = "󱂚" },
-  { name = ".aws", text = " " },
+  { name = ".aws", text = "󰸏" },
   { name = ".aws-sam", text = "󰸏" },
   { name = ".azure-pipelines", text = "󰿕" },
   { name = ".cargo", text = "" },
