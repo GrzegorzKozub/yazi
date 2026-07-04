@@ -5,7 +5,7 @@ local windows = ya.target_family() == 'windows'
 local get_paths = ya.sync(function()
   local paths, names, items = {}, {}, {}
   for _, value in pairs(cx.active.selected) do
-    paths[#paths + 1] = tostring(value.parent)
+    paths[#paths + 1] = tostring(value.url.parent)
     names[#names + 1] = tostring(value.name)
   end
   local h = cx.active.current.hovered

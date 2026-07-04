@@ -6,6 +6,7 @@ globals = {
   'Url',
   'cx',
   'fs',
+  'ps',
   'rt',
   'th',
   'ui',

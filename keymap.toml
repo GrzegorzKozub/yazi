@@ -71,7 +71,3 @@ prepend_keymap = [{ on = "<C-F1>", run = "help", desc = "Open help" }]
 [confirm]
 
 prepend_keymap = [{ on = "<C-F1>", run = "help", desc = "Open help" }]
-
-[help]
-
-prepend_keymap = [{ on = "/", run = "filter", desc = "Apply a filter for the help items" }]

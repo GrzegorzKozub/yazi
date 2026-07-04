@@ -86,7 +86,7 @@ btn_labels = ["Yes", "No"]
 border = { fg = "darkgray" }
 title = { fg = "darkgray" }
 tbl_col = { fg = "reset" }
-tbl_cell = { fg = "reset", reversed = true }
+tbl_cell = { bold = true }
 
 [cmp]
 
@@ -114,12 +114,10 @@ desc = { fg = "gray" }
 separator = " "
 
 [help]
-
-on = { fg = "magenta", bg = "reset" }
-run = { fg = "darkgray" }
-desc = { fg = "gray" }
+border = { fg = "darkgray" }
+chord = { fg = "magenta", bg = "reset" }
+action = { fg = "gray", bg = "reset" }
 hovered = { bold = true }
-footer = { fg = "gray", bg = "reset" }
 
 [notify]
 

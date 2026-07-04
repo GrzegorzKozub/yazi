@@ -3,7 +3,7 @@ local M = {}
 local get_paths = ya.sync(function()
   local paths, selected = {}, nil
   for _, value in pairs(cx.active.selected) do
-    paths[#paths + 1] = tostring(value)
+    paths[#paths + 1] = tostring(value.url)
   end
   if #paths == 0 then
     local h = cx.active.current.hovered.url

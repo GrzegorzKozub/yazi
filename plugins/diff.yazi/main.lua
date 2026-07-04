@@ -3,7 +3,7 @@ local M = {}
 local get_paths = ya.sync(function()
   local paths = {}
   for _, value in pairs(cx.active.selected) do
-    paths[#paths + 1] = value
+    paths[#paths + 1] = value.url
   end
   local h = cx.active.current.hovered.url
   if paths[#paths] ~= h then
@@ -39,4 +39,3 @@ M.entry = function()
 end
 
 return M
-

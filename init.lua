@@ -2,6 +2,11 @@
 
 require('session'):setup { sync_yanked = true }
 
+ps.sub('ind-app-title', function(args)
+  args.value = tostring(cx.active.current.cwd)
+  return args
+end)
+
 -- git.yazi
 
 th.git = th.git or {}
