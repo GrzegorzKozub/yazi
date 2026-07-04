@@ -232,6 +232,7 @@ globs = [
   { url = "/home/greg/code/", text = "" },
   { url = "/home/greg/Projects/", text = "󱌢" },
 
+  { url = "**/code/apsis/", text = "󰇮" },
   { url = "**/code/arch/", text = "󰣇" },
   { url = "**/code/dot/", text = "" },
   { url = "**/code/hist/", text = "" },
