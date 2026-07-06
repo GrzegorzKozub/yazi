@@ -6,6 +6,7 @@ plugins/*
 !plugins/compress.yazi
 !plugins/diff.yazi
 !plugins/my-header.yazi
+!plugins/my-icon.yazi
 !plugins/my-status.yazi
 !plugins/size.yazi
 !plugins/smart-enter.yazi

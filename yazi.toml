@@ -67,6 +67,7 @@ rules = [
 prepend_fetchers = [
   { url = "*", run = "git", group = "git" },
   { url = "*/", run = "git", group = "git" },
+  { url = "*/", run = "my-icon", group = "my-icon" },
 ]
 
 previewers = [

@@ -240,8 +240,8 @@ globs = [
   { url = "**/code/toys/", text = "󱊈" },
   { url = "**/code/walls/", text = "" },
 
-  { url = "*.backup/", text = "" },
-  { url = "*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/", text = "" },
+  { url = "*.backup/", text = "󱞞" },
+  { url = "*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/", text = "󱞞" },
 
   # windows
 
@@ -269,7 +269,7 @@ dirs = [
   { name = ".local", text = "󰆼" },
 
   { name = ".Trash-1000", text = "" },
-  { name = "lost+found", text = "" },
+  { name = "lost+found", text = "󱞞" },
 
   { name = ".secrets", text = "󰍁" },
 
@@ -605,7 +605,7 @@ exts = [
 ]
 
 conds = [
-  { if = "hidden & dir", text = "󰷏" },
+  { if = "hidden & dir", text = "󱞞" },
   { if = "hidden & !dir", text = "󰘓" },
 
   { if = "orphan", text = "󰌸" },

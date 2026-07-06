@@ -1,5 +1,6 @@
 globals = {
   'Command',
+  'Entity',
   'Err',
   'Header',
   'Status',

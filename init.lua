@@ -31,10 +31,14 @@ th.git.deleted_sign = '-'
 
 require('git'):setup()
 
--- header.yazi
+-- my-header.yazi
 
 require('my-header'):setup()
 
--- status.yazi
+-- my-icon.yazi
+
+require('my-icon'):setup()
+
+-- my-status.yazi
 
 require('my-status'):setup()
