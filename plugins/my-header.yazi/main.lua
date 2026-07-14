@@ -17,7 +17,7 @@ end
 
 local function search()
   local c = cx.active.current.cwd
-  return c.is_search and search_indicator('', c.domain) or ''
+  return c.spec.is_search and search_indicator('', c.domain) or ''
 end
 
 local function filter()
