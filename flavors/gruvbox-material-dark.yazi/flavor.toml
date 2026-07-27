@@ -503,6 +503,7 @@ exts = [
 
   { name = "dll", text = "" },
 
+  { name = "icc", text = "󰏘" },
   { name = "icm", text = "󰏘" },
 
   { name = "otf", text = "" },
