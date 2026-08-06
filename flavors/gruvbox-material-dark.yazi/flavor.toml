@@ -619,3 +619,23 @@ conds = [
   { if = "exec", text = "" },
   { if = "!dir", text = "󰈤" },
 ]
+
+[git]
+
+# unknown = { fg = "darkgray" }
+# clean = { fg = "darkgray" }
+ignored = { fg = "darkgray" }
+untracked = { fg = "yellow" }
+added = { fg = "green" }
+modified = { fg = "blue" }
+updated = { fg = "blue" }
+deleted = { fg = "red" }
+
+# unknown_sign = "?"
+# clean_sign = "✔"
+ignored_sign = "!"
+untracked_sign = "*"
+added_sign = "+"
+modified_sign = "~"
+updated_sign = "~"
+deleted_sign = "~"
