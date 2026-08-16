@@ -24,13 +24,14 @@ local function setup(st)
 end
 
 local function fetch(_, job)
-  for _, file in ipairs(job.files) do
-    local contents = fs.read_dir(file.url, { limit = 1 })
-    if contents then
-      set(tostring(file.url), #contents == 0)
+  return ya.co(function()
+    for _, file in ipairs(job.files) do
+      local contents = fs.read_dir(file.url, { limit = 1 })
+      if coroutine.yield(file, { retry = not contents }) and contents then
+        set(tostring(file.url), #contents == 0)
+      end
     end
-  end
-  return true
+  end)
 end
 
 return { setup = setup, fetch = fetch }
