@@ -29,7 +29,7 @@ open_pdf = [
 ]
 open_office = [{ run = "xdg-open %s1", desc = "Open", for = "linux" }]
 open_image = [
-  { run = "xdg-open %s1", desc = "Open", for = "linux" },
+  { run = "imv -n %s1 .", desc = "Open", for = "linux" },
   { run = 'D:\Apps\ImageGlass\ImageGlass.exe %s1', orphan = true, desc = "Open", for = "windows" },
 ]
 reveal = [
