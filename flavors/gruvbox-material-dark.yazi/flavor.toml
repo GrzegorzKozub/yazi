@@ -626,16 +626,18 @@ conds = [
 # clean = { fg = "darkgray" }
 ignored = { fg = "darkgray" }
 untracked = { fg = "yellow" }
-added = { fg = "green" }
-modified = { fg = "blue" }
+unstaged = { fg = "blue" }
+staged = { fg = "blue" }
 updated = { fg = "blue" }
+added = { fg = "green" }
 deleted = { fg = "red" }
 
 # unknown_sign = "?"
 # clean_sign = "✔"
 ignored_sign = "!"
 untracked_sign = "*"
-added_sign = "+"
-modified_sign = "~"
+unstaged_sign = "~"
+staged_sign = "~"
 updated_sign = "~"
+added_sign = "+"
 deleted_sign = "~"
