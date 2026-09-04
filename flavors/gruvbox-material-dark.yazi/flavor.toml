@@ -141,6 +141,7 @@ rules = [
   { url = "*.{deb,rpm}", fg = "yellow" },
 
   { url = "*.{7z,gz,rar,tar,zip}", fg = "yellow" },
+  { url = "*.{gpg}", fg = "yellow" },
 
   { url = "*.{cow,fsa,iso,mrimg,mrimgx,wim}", fg = "magenta" },
 
