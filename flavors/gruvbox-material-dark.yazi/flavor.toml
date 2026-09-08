@@ -119,6 +119,14 @@ chord = { fg = "magenta", bg = "reset" }
 action = { fg = "gray", bg = "reset" }
 hovered = { bold = true }
 
+[fd]
+title = "Search with fd"
+position = { at = "center", x = 0, y = 0, w = 48, h = 3 }
+
+[rg]
+title = "Search with rg"
+position = { at = "center", x = 0, y = 0, w = 48, h = 3 }
+
 [notify]
 
 title_info = { fg = "green" }

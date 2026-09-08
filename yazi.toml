@@ -115,10 +115,6 @@ find_title = ["Find next", "Find previous"]
 find_origin = "center"
 find_offset = [0, 0, 48, 3]
 
-search_title = "Search with {n}"
-search_origin = "center"
-search_offset = [0, 0, 48, 3]
-
 shell_title = ["Shell", "Shell (blocking)"]
 shell_origin = "center"
 shell_offset = [0, 0, 48, 3]
