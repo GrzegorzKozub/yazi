@@ -19,7 +19,7 @@ local function size()
   if not h then
     return ui.Span ''
   end
-  local s = h:size() or h.cha.len
+  local s = h:size() or h.stat.len
   return ui.Span(string.format('%6s', ya.readable_size(s))):fg(size_color(s))
 end
 
@@ -38,7 +38,7 @@ local function owner()
   if not h or ya.target_family() ~= 'unix' then
     return ui.Span ''
   end
-  local o = ya.user_name(h.cha.uid) or tostring(h.cha.uid)
+  local o = ya.user_name(h.stat.uid) or tostring(h.stat.uid)
   return ui.Span(o):fg(owner_color(o))
 end
 
@@ -47,7 +47,7 @@ local function permissions()
   if not h or ya.target_family() ~= 'unix' then
     return ui.Span ''
   end
-  local perm = h.cha:perm()
+  local perm = h.stat:perm()
   local spans = {}
   for i = 1, #perm do
     local sign, style = perm:sub(i, i), th.status.perm_sep
@@ -69,19 +69,14 @@ local function permissions()
   return ui.Line(spans)
 end
 
-local function year(date)
-  return tonumber(os.date('%Y', date))
-end
-
 local function modified()
   local h = cx.active.current.hovered
   if not h then
     return ui.Span ''
   end
-  local m = math.floor(h.cha.mtime)
-  local now = math.floor(ya.time())
-  local format = year(m) < year(now) and '%d %b  %Y' or '%d %b %H:%M'
-  return ui.Span(tostring(os.date(format, m)):lower()):fg 'gray'
+  local m = h.stat.mtime
+  local format = m.year < ya.time().year and '%d %b  %Y' or '%d %b %H:%M'
+  return ui.Span(tostring(os.date(format, math.floor(m.unix))):lower()):fg 'gray'
 end
 
 local function name()
@@ -99,7 +94,7 @@ local function link()
     return ui.Span ''
   end
   local l = '󰁔 ' .. tostring(h.link_to)
-  return h.cha.is_orphan and ui.Span(l):fg 'red' or ui.Span(l):style(h:style())
+  return h.stat.is_orphan and ui.Span(l):fg 'red' or ui.Span(l):style(h:style())
 end
 
 local function mode_style(mode)

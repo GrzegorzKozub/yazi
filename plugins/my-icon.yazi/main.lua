@@ -7,7 +7,7 @@ local function setup(st)
   st.empty = {}
   local raw_icon = Entity.icon
   Entity.icon = function(self)
-    if not (self._file.cha.is_dir and st.empty[tostring(self._file.url)]) then
+    if not (self._file.stat.is_dir and st.empty[tostring(self._file.url)]) then
       return raw_icon(self)
     end
     local icon = th.icon:match(self._file, { hovered = self._file.is_hovered })
