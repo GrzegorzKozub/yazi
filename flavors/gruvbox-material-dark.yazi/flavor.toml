@@ -175,9 +175,9 @@ rules = [
 
   { url = "*lost+found/", fg = "darkgray" },
 
-  { url = "*.{backup,bak,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
-  { url = "*.backup/", fg = "darkgray" },
-  { url = "*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/", fg = "darkgray" },
+  { url = "*.{backup,bak,default,log,off,old,orig,original,part,swp,tmp}", fg = "darkgray" },
+  { url = "*.{backup,default,original}/", fg = "darkgray" },
+  { url = "*{.,-}[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/", fg = "darkgray" },
 
   { url = "*.{cache,config,data,local}/", fg = "gray" },
 
@@ -248,8 +248,8 @@ globs = [
   { url = "**/code/toys/", text = "󱊈" },
   { url = "**/code/walls/", text = "" },
 
-  { url = "*.backup/", text = "󱞞" },
-  { url = "*-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/", text = "󱞞" },
+  { url = "*.{backup,default,original}/", text = "󱞞" },
+  { url = "*{.,-}[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/", text = "󱞞" },
 
   # windows
 
