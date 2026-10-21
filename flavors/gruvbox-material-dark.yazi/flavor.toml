@@ -269,7 +269,7 @@ dirs = [
 
   { name = "backup", text = "" },
   { name = "github", text = "󰊤" },
-  { name = "restic", text = "󰓦" },
+  { name = "snaps", text = "󰄀" },
   { name = "vm", text = "" },
 
   { name = ".cache", text = "󱐋" },
