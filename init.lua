@@ -4,9 +4,11 @@ require('session'):setup { sync_yanked = true }
 
 ps.sub('ind-app-title', function(args)
   local c = cx.active.current.cwd
-  local title = c.spec.scheme == 'place' and tostring(c.path) == '/' and 'This PC'
-    or ya.readable_path(tostring(c.path))
-  args.value = ui.truncate(title, { max = 32, rtl = true })
+  local path = tostring(c.path)
+  args.value = c.spec.scheme == 'place' and path == '/' and 'This PC'
+    or ya.readable_path(path) == '~' and '~'
+    or c.name
+    or path
   return args
 end)
 
