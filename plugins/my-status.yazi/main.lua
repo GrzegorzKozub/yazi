@@ -20,7 +20,7 @@ local function size()
     return ui.Span ''
   end
   local s = h:size() or h.stat.len
-  return ui.Span(string.format('%6s', ya.readable_size(s))):fg(size_color(s))
+  return ui.Span(string.format('%6s ', ya.readable_size(s))):fg(size_color(s))
 end
 
 local function owner_color(owner)
@@ -39,7 +39,7 @@ local function owner()
     return ui.Span ''
   end
   local o = ya.user_name(h.stat.uid) or tostring(h.stat.uid)
-  return ui.Span(o):fg(owner_color(o))
+  return ui.Span(o .. ' '):fg(owner_color(o))
 end
 
 local function permissions()
@@ -66,17 +66,18 @@ local function permissions()
     end
     spans[i] = ui.Span(sign):style(style)
   end
+  spans[#spans + 1] = ui.Span ' '
   return ui.Line(spans)
 end
 
 local function modified()
   local h = cx.active.current.hovered
-  if not h then
+  local m = h and h.stat.mtime
+  if not m then
     return ui.Span ''
   end
-  local m = h.stat.mtime
   local format = m.year < ya.time().year and '%d %b  %Y' or '%d %b %H:%M'
-  return ui.Span(tostring(os.date(format, math.floor(m.unix))):lower()):fg 'gray'
+  return ui.Span(tostring(os.date(format, math.floor(m.unix))):lower() .. ' '):fg 'gray'
 end
 
 local function name()
@@ -84,7 +85,8 @@ local function name()
   if not h then
     return ui.Span ''
   end
-  local n = th.icon:match(h, { hovered = h.is_hovered }).text .. ' ' .. h.url.name
+  local icon = th.icon:match(h, { hovered = h.is_hovered })
+  local n = (icon and icon.text .. ' ' or '') .. (h.url.name or '')
   return ui.Span(n):style(h:style())
 end
 
@@ -93,7 +95,7 @@ local function link()
   if not h or not h.link_to then
     return ui.Span ''
   end
-  local l = '󰁔 ' .. tostring(h.link_to)
+  local l = ' 󰁔 ' .. tostring(h.link_to)
   return h.stat.is_orphan and ui.Span(l):fg 'red' or ui.Span(l):style(h:style())
 end
 
@@ -110,13 +112,14 @@ end
 local function mode()
   local m = tostring(cx.active.mode):sub(1, 1)
   if m == 'n' then
-    return ui.Span '   '
+    return ui.Span '    '
   end
   local style = mode_style(cx.active.mode)
   return ui.Line {
     ui.Span(th.status.sep_right.open):style(style):reverse(),
     ui.Span(m):style(style),
     ui.Span(th.status.sep_right.close):style(style):reverse(),
+    ui.Span ' ',
   }
 end
 
@@ -126,44 +129,19 @@ local function position()
   return ui.Span(string.format('%2d/%-2d', cursor + 1, length)):fg 'darkgray'
 end
 
-local function space()
-  return ui.Span ' '
-end
-
 M.setup = function()
   for i = 1, 3 do
     Status:children_remove(i, Status.LEFT)
   end
-  local left = ya.target_family() == 'windows'
-      and {
-        size,
-        space,
-        modified,
-        space,
-        name,
-        space,
-        link,
-      }
-    or {
-      permissions,
-      space,
-      size,
-      space,
-      owner,
-      space,
-      modified,
-      space,
-      name,
-      space,
-      link,
-    }
+  local left = ya.target_family() == 'windows' and { size, modified, name, link }
+    or { permissions, size, owner, modified, name, link }
   for i, value in ipairs(left) do
     Status:children_add(value, i, Status.LEFT)
   end
   for i = 4, 6 do
     Status:children_remove(i, Status.RIGHT)
   end
-  local right = { mode, space, position }
+  local right = { mode, position }
   for i, value in ipairs(right) do
     Status:children_add(value, i, Status.RIGHT)
   end

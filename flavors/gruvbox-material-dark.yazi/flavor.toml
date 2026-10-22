@@ -253,6 +253,9 @@ globs = [
 
   # windows
 
+  { url = "place:///C:/", text = "󰖳" },
+  { url = "place:///?:/", text = "󰋊" },
+
   { url = "**/Users/Greg/", text = "󰋜" },
   { url = "D:/Code/", text = "" },
 ]

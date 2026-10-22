@@ -1,13 +1,11 @@
 local M = {}
 
 local function cwd()
+  local c = cx.active.current.cwd
+  local path = tostring(c.path)
+  local text = c.spec.scheme == 'place' and path == '/' and 'This PC' or ya.readable_path(path)
   return ui.Line {
-    ui.Span(
-      ui.truncate(
-        ya.readable_path(tostring(cx.active.current.cwd.path)),
-        { max = 64, rtl = true }
-      )
-    ):style(th.mgr.cwd),
+    ui.Span(ui.truncate(text, { max = 64, rtl = true })):style(th.mgr.cwd),
   }
 end
 
