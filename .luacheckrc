@@ -4,6 +4,7 @@ globals = {
   'Err',
   'Header',
   'Status',
+  'Tasks',
   'Url',
   'cx',
   'fs',

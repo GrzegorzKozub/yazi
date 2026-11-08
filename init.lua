@@ -40,3 +40,7 @@ require('my-icon'):setup()
 -- my-status.yazi
 
 require('my-status'):setup()
+
+-- my-tasks.yazi
+
+require('my-tasks'):setup()

@@ -6,6 +6,7 @@
       "Err",
       "Header",
       "Status",
+      "Tasks",
       "Url",
       "cx",
       "fs",
@@ -18,5 +19,5 @@
   },
   "hint.enable": true,
   "hint.setType": true,
-  "runtime.version": "LuaJIT"
+  "runtime.version": "Lua 5.4"
 }

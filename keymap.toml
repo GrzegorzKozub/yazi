@@ -3,6 +3,9 @@
 [mgr]
 
 prepend_keymap = [
+  { on = "<C-t>", run = "tab_create --current", desc = "Create a new tab in CWD" },
+  { on = "<C-w>", run = "close", desc = "Close the current tab, or quit if it's last" },
+
   { on = "<Up>", run = "arrow -1", desc = "Previous file" }, # prev/next wraps around
   { on = "<Down>", run = "arrow 1", desc = "Next file" },
 
@@ -24,9 +27,7 @@ prepend_keymap = [
   { on = "<Delete>", run = "remove", desc = "Trash selected files" },
   { on = "<S-Delete>", run = "remove --permanently", desc = "Permanently delete selected files" },
 
-  { on = "T", run = "tasks:show", desc = "Show task manager" },
-
-  { on = "<Tab>", run = "tab_switch 1 --relative", desc = "Switch to next tab" },
+  { on = "t", run = "tasks:show", desc = "Show task manager" },
 
   { on = ["g", "h"], run = "cd ~", desc = "Home dir" },
   { on = ["g", "d"], run = "cd ~/Downloads", desc = "Downloads dir" },
