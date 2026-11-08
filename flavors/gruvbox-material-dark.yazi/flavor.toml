@@ -48,7 +48,7 @@ overall = { fg = "gray" }
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
-progress_label = { reversed = true }
+progress_label = {}
 progress_normal = { fg = "blue", bg = "reset" }
 progress_error = { fg = "red", bg = "reset" }
 
@@ -78,8 +78,8 @@ border = { fg = "darkgray" }
 title = { fg = "darkgray" }
 body = { fg = "gray" }
 list = { fg = "gray" }
-btn_yes = { fg = "darkgray" }
-btn_no = { fg = "darkgray" }
+btn_yes = { fg = "gray" }
+btn_no = { fg = "gray" }
 btn_labels = ["Yes", "No"]
 
 [spot]
