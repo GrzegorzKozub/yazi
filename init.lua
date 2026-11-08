@@ -12,6 +12,19 @@ ps.sub('ind-app-title', function(args)
   return args
 end)
 
+-- compress.yazi
+
+require('compress.form').style = function()
+  return {
+    focused = ui.Style(),
+    unfocused = ui.Style(),
+    border = th.confirm.border,
+    title = th.confirm.body,
+    checked = th.which.cand,
+    unchecked = th.which.desc,
+  }
+end
+
 -- git.yazi
 
 require('git'):setup()

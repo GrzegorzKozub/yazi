@@ -48,7 +48,7 @@ overall = { fg = "gray" }
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
-progress_label = { reverse = true }
+progress_label = { reversed = true }
 progress_normal = { fg = "blue", bg = "reset" }
 progress_error = { fg = "red", bg = "reset" }
 
@@ -69,6 +69,7 @@ inactive = { fg = "gray" }
 border = { fg = "darkgray" }
 title = { fg = "darkgray" }
 value = { fg = "reset" }
+hint = { fg = "darkgray", italic = true }
 selected = { bg = "darkgray" }
 
 [confirm]
