@@ -3,7 +3,6 @@ package.toml
 plugins/*
 
 !plugins/audio.yazi
-!plugins/compress.yazi
 !plugins/diff.yazi
 !plugins/my-header.yazi
 !plugins/my-icon.yazi
