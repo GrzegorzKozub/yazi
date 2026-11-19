@@ -1,7 +1,8 @@
 local M = {}
 
 local get_paths = ya.sync(function()
-  local paths, selected = {}, nil
+  local paths = {}
+  local selected
   for _, value in pairs(cx.active.selected) do
     paths[#paths + 1] = tostring(value.url)
   end
@@ -24,43 +25,31 @@ local function format(bytes)
   return string.format('%.1f%s', size, units[index])
 end
 
--- local get_total = function(paths)
---   local output, err = Command('du'):arg('-bcs'):arg(paths):output()
---   if not output then
---     return nil, tostring(err)
---   end
---   for size, name in output.stdout:gmatch '(%d+)%s+([^\n]+)' do
---     if name == 'total' then
---       return format(tonumber(size)), nil
---     end
---   end
--- end
-
 local get_total = function(paths)
   local total = 0
   for _, value in ipairs(paths) do
-    local it = fs.calc_size(Url(value))
-    while true do
-      local found = it:recv()
-      if found then
-        total = total + found
-      else
-        break
+    local it, err = fs.calc_size(Url(value))
+    if not it then
+      return nil, tostring(err)
+    end
+    for size, e in it do
+      if not size then
+        return nil, tostring(e)
       end
+      total = total + size
     end
   end
-  return format(total)
+  return format(total), nil
 end
 
 M.entry = function()
   ya.emit('escape', { visual = true })
   local paths, selected = get_paths()
-  -- local total, err = get_total(paths)
-  -- if err then
-  --   ya.notify { content = err, level = 'error', timeout = 3, title = 'Size' }
-  --   return
-  -- end
-  local total = get_total(paths)
+  local total, err = get_total(paths)
+  if err then
+    ya.notify { content = err, level = 'error', timeout = 3, title = 'Size' }
+    return
+  end
   ya.notify {
     content = selected .. (type(selected) == 'number' and ' selected' or '') .. ': ' .. total,
     level = 'info',
