@@ -159,7 +159,7 @@ rules = [
   { url = "*.SRCINFO", fg = "gray" },
   { url = "*.cfnlintrc", fg = "gray" },
   { url = "*.{classpath,factorypath,project}", fg = "gray" },
-  { url = "*.{claude.json,mcp.json}", fg = "gray" },
+  { url = "*.{claude.json,lsp.json,mcp.json}", fg = "gray" },
   { url = "*.dockerignore", fg = "gray" },
   { url = "*.devcontainer.json", fg = "gray" },
   { url = "*.editorconfig", fg = "gray" },
@@ -169,6 +169,7 @@ rules = [
   { url = "*.markdownlint.json", fg = "gray" },
   { url = "*.{prettierignore,prettierrc}", fg = "gray" },
   { url = "*.pylintrc", fg = "gray" },
+  { url = "*.stow-local-ignore", fg = "gray" },
   { url = "*.stylintrc", fg = "gray" },
   { url = "*.taplo.toml", fg = "gray" },
   { url = "*.vscodeignore", fg = "gray" },
@@ -406,6 +407,8 @@ files = [
   { name = ".prettierrc", text = "" },
 
   { name = ".pylintrc", text = "" },
+
+  { name = ".stow-local-ignore", text = "󰌸" },
 
   { name = ".stylintrc", text = "" },
 
