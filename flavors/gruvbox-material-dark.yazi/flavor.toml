@@ -306,6 +306,7 @@ dirs = [
   { name = ".devcontainer", text = "" },
   { name = ".dotnet", text = "" },
   { name = ".eclipse", text = "" },
+  { name = ".fx", text = "󰏆" }, # https://github.com/OfficeDev/microsoft-365-agents-toolkit
   { name = ".git", text = "" },
   { name = ".github", text = "󰊤" },
   { name = ".husky", text = "󰛢" },
@@ -323,6 +324,7 @@ dirs = [
   { name = ".venv", text = "" },
   { name = ".vscode", text = "󰨞" },
   { name = ".vscode-shared", text = "󰨞" },
+  { name = ".wiqd", text = "󰏆" }, # https://github.com/microsoft/wiqd
   { name = ".worktrees", text = "󰙅" },
   { name = ".yarn", text = "" },
   { name = ".zed", text = "󰬡" },
